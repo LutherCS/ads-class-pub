@@ -10,7 +10,8 @@ This is a repository for the Algorithms and Data Structures class.
 ### How do I get set up? ###
 
 * Clone the repo
-* Install pythonds
+* Install pythonds: `pip install pythonds`
+* [Try python notebooks (ipynb files)](https://try.jupyter.org/)
 
 ### Who do I talk to? ###
 

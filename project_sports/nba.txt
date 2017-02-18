@@ -1,0 +1,68 @@
+Year	Winning team	Result	Losing team
+1950	Minneapolis Lakers	4-2	Syracuse Nationals
+1951	Rochester Royals	4-3	New York Knicks
+1952	Minneapolis Lakers	4-3	New York Knicks
+1953	Minneapolis Lakers	4-1	New York Knicks
+1954	Minneapolis Lakers	4-3	Syracuse Nationals
+1955	Syracuse Nationals	4-3	Fort Wayne Pistons
+1956	Philadelphia Warriors	4-1	Fort Wayne Pistons
+1957	Boston Celtics	4-3	St. Louis Hawks
+1958	St. Louis Hawks	4-2	Boston Celtics
+1959	Boston Celtics	4-0	Minneapolis Lakers
+1960	Boston Celtics	4-3	St. Louis Hawks
+1961	Boston Celtics	4-1	St. Louis Hawks
+1962	Boston Celtics	4-3	Los Angeles Lakers
+1963	Boston Celtics	4-2	Los Angeles Lakers
+1964	Boston Celtics	4-1	San Francisco Warriors
+1965	Boston Celtics	4-1	Los Angeles Lakers
+1966	Boston Celtics	4-3	Los Angeles Lakers
+1967	Philadelphia 76ers	4-2	San Francisco Warriors
+1968	Boston Celtics	4-2	Los Angeles Lakers
+1969	Boston Celtics	4-3	Los Angeles Lakers
+1970	New York Knicks	4-3	Los Angeles Lakers
+1971	Milwaukee Bucks	4-0	Baltimore Bullets
+1972	Los Angeles Lakers	4-1	New York Knicks
+1973	New York Knicks	4-1	Los Angeles Lakers
+1974	Boston Celtics	4-3	Milwaukee Bucks
+1975	Golden State Warriors	4-0	Washington Bullets
+1976	Boston Celtics	4-2	Phoenix Suns
+1977	Portland Trail Blazers	4-2	Philadelphia 76ers
+1978	Washington Bullets	4-3	Seattle SuperSonics
+1979	Seattle SuperSonics	4-1	Washington Bullets
+1980	Los Angeles Lakers	4-2	Philadelphia 76ers
+1981	Boston Celtics	4-2	Houston Rockets
+1982	Los Angeles Lakers	4-2	Philadelphia 76ers
+1983	Philadelphia 76ers	4-0	Los Angeles Lakers
+1984	Boston Celtics	4-3	Los Angeles Lakers
+1985	Los Angeles Lakers	4-2	Boston Celtics
+1986	Boston Celtics	4-2	Houston Rockets
+1987	Los Angeles Lakers	4-2	Boston Celtics
+1988	Los Angeles Lakers	4-3	Detroit Pistons
+1989	Detroit Pistons	4-0	Los Angeles Lakers
+1990	Detroit Pistons	4-1	Portland Trail Blazers
+1991	Chicago Bulls	4-1	Los Angeles Lakers
+1992	Chicago Bulls	4-2	Portland Trail Blazers
+1993	Chicago Bulls	4-2	Phoenix Suns
+1994	Houston Rockets	4-3	New York Knicks
+1995	Houston Rockets	4-0	Orlando Magic
+1996	Chicago Bulls	4-2	Seattle SuperSonics
+1997	Chicago Bulls	4-2	Utah Jazz
+1998	Chicago Bulls	4-2	Utah Jazz
+1999	San Antonio Spurs	4-1	New York Knicks
+2000	Los Angeles Lakers	4-2	Indiana Pacers
+2001	Los Angeles Lakers	4-1	Philadelphia 76ers
+2002	Los Angeles Lakers	4-0	New Jersey Nets
+2003	San Antonio Spurs	4-2	New Jersey Nets
+2004	Detroit Pistons	4-1	Los Angeles Lakers
+2005	San Antonio Spurs	4-3	Detroit Pistons
+2006	Miami Heat	4-2	Dallas Mavericks
+2007	San Antonio Spurs	4-0	Cleveland Cavaliers
+2008	Boston Celtics	4-2	Los Angeles Lakers
+2009	Los Angeles Lakers	4-1	Orlando Magic
+2010	Los Angeles Lakers	4-3	Boston Celtics
+2011	Dallas Mavericks	4-2	Miami Heat
+2012	Miami Heat	4-1	Oklahoma City Thunder
+2013	Miami Heat	4-3	San Antonio Spurs
+2014	San Antonio Spurs	4-1	Miami Heat
+2015	Golden State Warriors	4-2	Cleveland Cavaliers
+2016	Cleveland Cavaliers	4-3	Golden State Warriors

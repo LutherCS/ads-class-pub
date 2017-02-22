@@ -77,7 +77,7 @@ class Stack():
     '''Stack as a Python dictionary'''
     def __init__(self):
         self._items = {}
-        self._top = -1
+        self._top = 0
     
     def push(self, new_item):
         '''Add a new item'''
@@ -137,7 +137,37 @@ print("Added {} items to a stack in {} sec".format(n, time.process_time() - t))
     160
     160
     Caught an error: The stack (dict) is empty
-    Added 1000000 items to a stack in 0.5252935169999979 sec
+    Added 1000000 items to a stack in 0.937322516 sec
+
+
+
+```python
+s = Stack()
+expr = "4 5 6 * + ="
+for token in expr.split():
+    if token == '=':
+        try:
+            result = s.pop()
+        except IndexError as ie:
+            print('Caught an error: {}'.format(ie))
+        if s.is_empty():
+            print(result)
+        else:
+            print("Too many operands in the expression")
+    elif token == "*":
+        op1 = s.pop()
+        op2 = s.pop()
+        s.push(op2 * op1)
+    elif token == '+':
+        op1 = s.pop()
+        op2 = s.pop()
+        s.push(op2 + op1)
+    else:
+        s.push(int(token))
+
+```
+
+    34
 
 
 

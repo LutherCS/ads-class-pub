@@ -137,7 +137,7 @@ print("Added {} items to a stack in {} sec".format(n, time.process_time() - t))
     160
     160
     Caught an error: The stack (dict) is empty
-    Added 1000000 items to a stack in 0.937322516 sec
+    Added 1000000 items to a stack in 0.70339102 sec
 
 
 
@@ -168,6 +168,29 @@ for token in expr.split():
 ```
 
     34
+
+
+
+```python
+sw = Stack()
+word = 'Hello'
+for c in word:
+    sw.push(c)
+word_rev = []
+while not sw.is_empty():
+    word_rev.append(sw.pop())
+ans = ''.join(word_rev)
+print(ans)
+
+
+if ans in ['alice', 'bob', 'charlie']:
+    print('Good name')
+else:
+    print('XOXOXO')
+```
+
+    olleH
+    XOXOXO
 
 
 

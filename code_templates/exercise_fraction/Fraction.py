@@ -37,3 +37,10 @@ class Fraction:
         new_denom = self.denom * other_fraction.denom
 
         return Fraction(new_numer, new_denom)
+
+def main():
+    '''Main function'''
+    pass
+
+if __name__ == '__main__':
+    main()

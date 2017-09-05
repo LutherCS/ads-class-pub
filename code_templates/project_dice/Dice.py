@@ -7,18 +7,22 @@ WARNING: This file compiles with errors without your modifications
 #encoding: UTF-8
 
 import random
-# Need a seed for randomization
+# Seeding makes randomization consistent
 random.seed(42)
 
 class Die:
     '''A die class'''
-    def __init__(self, possible_values_):
-        self.possible_values = possible_values_
-        # Task 1: assign random value (out of the list of possible_values) to self._value
+    def __init__(self, possible_values):
+        self._all_values = possible_values
+        self._value = None
+        # Task 1: assign random value (out of the list of self._all_values) to self._value
+        raise NotImplementedError('This method has not been implemented yet')
 
     def roll(self):
         '''Roll the die'''
-        # Task 2: assign random value (out of the list of possible_values) to self._value and return it
+        # Task 2a: assign random value (out of the list of self._all_values) to self._value
+        # Task 2b: return self._value
+        raise NotImplementedError('This method has not been implemented yet')
 
     @property
     def value(self):
@@ -29,35 +33,35 @@ class Die:
     def value(self, _):
         ''''value' property setter'''
         # Task 3: raise ValueError exception with a custom message
-
-    @value.deleter
-    def value(self):
-        ''''value' property deleter'''
-        del self._value
+        raise NotImplementedError('This method has not been implemented yet')
 
     def __str__(self):
         '''__str__ override'''
         # Task 4: return self._value as a string
+        raise NotImplementedError('This method has not been implemented yet')
 
 class Cup:
     '''A cup class'''
-    def __init__(self, num_dice_, num_sides_=6):
-        self._dice = [Die(range(1, num_sides_ + 1)) for _ in range(num_dice_)]
+    def __init__(self, num_dice, num_sides=6):
+        self._dice = [Die(range(1, num_sides + 1)) for _ in range(num_dice)]
 
     def shake(self):
         '''Shake a cup'''
         # Task 5: roll every die in self._dice list
+        raise NotImplementedError('This method has not been implemented yet')
 
-    def remove(self, idx_):
+    def remove(self, idx):
         '''Remove a die from the cup'''
         # Task 6: pop a die with index idx from the self._dice list
+        raise NotImplementedError('This method has not been implemented yet')
 
-    def add(self, die_):
+    def add(self, die):
         '''Add a die to the cup'''
         # Task 7: append a new die to the self._dice list
+        raise NotImplementedError('This method has not been implemented yet')
 
     def roll(self, *args):
-        '''Roll the dice'''
+        '''Roll the dice. Provided dice use 1-based index'''
         for i in args:
             if i > 0 and i <= len(args):
                 self._dice[i-1].roll()
@@ -65,6 +69,7 @@ class Cup:
     def __str__(self):
         '''__str__ override'''
         # Task 8: return a list of dice as a string
+        raise NotImplementedError('This method has not been implemented yet')
 
     def __iter__(self):
         '''Cup iterator'''

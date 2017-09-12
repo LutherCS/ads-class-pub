@@ -98,7 +98,7 @@ def main():
     my_cup.roll(1, 2, 3)
     print(my_cup)
     print("Re-rolling dice 2, 4, and 6")
-    my_cup.roll(1, 2, 3)
+    my_cup.roll(2, 4, 6)
     print(my_cup)
     print("Shaking and rolling")
     for _ in range(3):

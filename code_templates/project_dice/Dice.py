@@ -63,7 +63,7 @@ class Cup:
     def roll(self, *args):
         '''Roll the dice. Provided dice use 1-based index'''
         for i in args:
-            if i > 0 and i <= len(args):
+            if i > 0 and i <= len(self._dice):
                 self._dice[i-1].roll()
 
     def __str__(self):

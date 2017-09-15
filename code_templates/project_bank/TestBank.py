@@ -6,8 +6,6 @@ Roman Yasinovskyy, 2017
 #!/usr/bin/python3
 
 import unittest
-from unittest.mock import patch
-from io import StringIO
 
 
 class TestBankMethods(unittest.TestCase):
@@ -17,8 +15,8 @@ class TestBankMethods(unittest.TestCase):
         '''Setting up'''
         pass
 
-    def test_address(self):
-        '''Testing making new address'''
+    def tearDown(self):
+        '''Tearing down'''
         pass
 
 

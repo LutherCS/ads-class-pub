@@ -66,7 +66,7 @@ class Parrot(Bird):
 
 class Penguin(Bird):
     '''Penguin class'''
-    def __init__(self, age_, color_):
+    def __init__(self, age, color):
         super().__init__("Penguin", age, color, False)
 
     def sound(self):
@@ -92,7 +92,7 @@ class Feline(Mammal):
 
 class Dog(Canine):
     '''Dog class'''
-    def __init__(self, age_, color_):
+    def __init__(self, age, color):
         # Task 4a: call the constructor of the superclass with "Dog" as species and habitat set to "Land"
         raise NotImplementedError
 

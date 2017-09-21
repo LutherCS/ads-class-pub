@@ -7,7 +7,7 @@ WARNING: This file runs with NotImplementedError errors without your modificatio
 
 
 import random
-from Animals import Parrot, Penguin, Dog, HouseCat, BobCat
+from animals import Parrot, Penguin, Dog, HouseCat, BobCat
 
 random.seed(42)
 

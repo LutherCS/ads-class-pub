@@ -8,7 +8,7 @@ Roman Yasinovskyy, 2017
 import unittest
 from unittest.mock import patch
 from io import StringIO
-from Fraction import Fraction
+from fraction import Fraction
 
 
 class TestFractionMethods(unittest.TestCase):

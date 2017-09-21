@@ -9,7 +9,7 @@ import random
 import unittest
 from unittest.mock import patch
 from io import StringIO
-from Dice import Die, Cup
+from dice import Die, Cup
 
 
 class TestDiceMethods(unittest.TestCase):

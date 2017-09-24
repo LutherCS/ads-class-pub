@@ -1,0 +1,58 @@
+Working with ordered linked lists
+The list: []
+List is empty: True
+Size of the list: 0
+160 is in the list: False
+Position of 160 in the list: -1
+The list is empty
+-----
+Adding 160 to the list
+The list: [160]
+List is empty: False
+Size of the list: 1
+160 is in the list: True
+Position of 160 in the list: 0
+Item at position 0: 160
+-----
+Adding 5 random values to the list
+The list: [122, 144, 151, 160, 175, 191]
+List is empty: False
+Size of the list: 6
+160 is in the list: True
+Position of 160 in the list: 3
+Item at position 4: 175
+-----
+Inserting 5 random values to the list
+The list: [0, 1, 3, 6, 6, 122, 144, 151, 160, 175, 191]
+List is empty: False
+Size of the list: 11
+160 is in the list: True
+Position of 160 in the list: 8
+Item at position 0: 0
+-----
+Popping 5 items from random positions
+Popped 6
+Popped 0
+Popped 160
+Popped 175
+Popped 144
+The list: [1, 3, 6, 122, 151, 191]
+List is empty: False
+Size of the list: 6
+160 is in the list: False
+Position of 160 in the list: -1
+Item at position 2: 6
+-----
+Popping 5 last items
+Popped 191
+Popped 151
+Popped 122
+Popped 6
+Popped 3
+The list: [1]
+List is empty: False
+Size of the list: 1
+160 is in the list: False
+Position of 160 in the list: -1
+Item at position 0: 1
+-----

@@ -1,0 +1,178 @@
+Let's play a game!
+Checking the cards
+3 of diamonds is beaten by 8 of clubs
+Jack of diamonds is beaten by King of hearts
+Ten of clubs is beaten by King of hearts
+9 of spades beats 6 of spades
+7 of spades beats 5 of spades
+-----
+Making a new deck
+2 of spades
+2 of clubs
+2 of diamonds
+2 of hearts
+3 of spades
+3 of clubs
+3 of diamonds
+3 of hearts
+4 of spades
+4 of clubs
+4 of diamonds
+4 of hearts
+5 of spades
+5 of clubs
+5 of diamonds
+5 of hearts
+6 of spades
+6 of clubs
+6 of diamonds
+6 of hearts
+7 of spades
+7 of clubs
+7 of diamonds
+7 of hearts
+8 of spades
+8 of clubs
+8 of diamonds
+8 of hearts
+9 of spades
+9 of clubs
+9 of diamonds
+9 of hearts
+Ten of spades
+Ten of clubs
+Ten of diamonds
+Ten of hearts
+Jack of spades
+Jack of clubs
+Jack of diamonds
+Jack of hearts
+Queen of spades
+Queen of clubs
+Queen of diamonds
+Queen of hearts
+King of spades
+King of clubs
+King of diamonds
+King of hearts
+Ace of spades
+Ace of clubs
+Ace of diamonds
+Ace of hearts
+
+-----
+Shuffling the deck
+2 of hearts
+3 of hearts
+5 of hearts
+6 of spades
+Ace of spades
+3 of clubs
+7 of spades
+King of spades
+4 of diamonds
+7 of clubs
+8 of spades
+Jack of spades
+5 of clubs
+4 of spades
+2 of diamonds
+Ace of clubs
+5 of diamonds
+Queen of clubs
+3 of diamonds
+8 of clubs
+9 of spades
+6 of clubs
+Ace of hearts
+Jack of diamonds
+9 of diamonds
+Queen of spades
+Ten of hearts
+2 of spades
+9 of hearts
+7 of diamonds
+Ten of clubs
+Jack of clubs
+Ace of diamonds
+Ten of diamonds
+4 of clubs
+Queen of diamonds
+3 of spades
+King of hearts
+4 of hearts
+King of clubs
+Jack of hearts
+2 of clubs
+5 of spades
+Queen of hearts
+6 of hearts
+King of diamonds
+6 of diamonds
+9 of clubs
+7 of hearts
+Ten of spades
+8 of diamonds
+8 of hearts
+
+-----
+Creating the players
+Alice (lvl 2)
+Bob (lvl 1)
+-----
+Alice's hand:
+8 of hearts
+Ten of spades
+9 of clubs
+King of diamonds
+Queen of hearts
+-----
+Bob's hand:
+8 of diamonds
+7 of hearts
+6 of diamonds
+6 of hearts
+5 of spades
+-----
+Alice (lvl 2) is playing Queen of hearts
+Alice's hand:
+8 of hearts
+Ten of spades
+9 of clubs
+King of diamonds
+-----
+Bob (lvl 1) is playing 5 of spades
+Bob's hand:
+8 of diamonds
+7 of hearts
+6 of diamonds
+6 of hearts
+-----
+Alice (lvl 2)
+Hand empty: False
+Active pile empty: False
+Discard pile empty: True
+Picking the played pile
+Hand empty: False
+Active pile empty: True
+Discard pile empty: False
+-----
+Alice (lvl 2) is playing King of diamonds
+Alice's hand:
+8 of hearts
+Ten of spades
+9 of clubs
+Bob is winning the round
+Bob (lvl 1)
+Hand empty: False
+Active pile empty: True
+Discard pile empty: False
+-----
+Bob (lvl 1) picking up discard pile
+Bob's hand:
+8 of diamonds
+7 of hearts
+6 of diamonds
+6 of hearts
+King of diamonds
+5 of spades

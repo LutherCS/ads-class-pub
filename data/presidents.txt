@@ -1,0 +1,45 @@
+George Washington 1732 1799
+John Adams 1735 1826
+Thomas Jefferson 1743 1826
+James Madison 1751 1836
+James Monroe 1758 1831
+John Quincy Adams 1767 1848
+Andrew Jackson 1767 1845
+Martin Van Buren 1782 1862
+William Henry Harrison 1773 1841
+John Tyler 1790 1862
+James K. Polk 1795 1849
+Zachary Taylor 1784 1850
+Millard Fillmore 1800 1874
+Franklin Pierce 1804 1869
+James Buchanan 1791 1868
+Abraham Lincoln 1809 1865
+Andrew Johnson 1808 1875
+Ulysses S. Grant 1822 1885
+Rutherford B. Hayes 1822 1893
+James A. Garfield 1831 1881
+Chester A. Arthur 1829 1886
+Grover Cleveland 1837 1908
+Benjamin Harrison 1833 1901
+Grover Cleveland 1837 1908
+William McKinley 1843 1901
+Theodore Roosevelt 1858 1919
+William Howard Taft 1857 1930
+Woodrow Wilson 1856 1924
+Warren G. Harding 1865 1923
+Calvin Coolidge 1872 1933
+Herbert Hoover 1874 1964
+Franklin D. Roosevelt 1882 1945
+Harry S. Truman 1884 1972
+Dwight D. Eisenhower 1890 1969
+John F. Kennedy 1917 1963
+Lyndon B. Johnson 1908 1973
+Richard Nixon 1913 1994
+Gerald Ford 1913 2006
+Jimmy Carter 1924
+Ronald Reagan 1911 2004
+George H. W. Bush 1924
+Bill Clinton 1946
+George W. Bush 1946
+Barack Obama 1961
+Donald Trump 1946

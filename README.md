@@ -18,17 +18,21 @@
 
  * Install *pythonds3*
 
- `python3 -m pip install pythonds3`
+ `python3 -m pip install -U pythonds3`
 
  * Install *pytest*
 
- `python3 -m pip install pytest`
+ `python3 -m pip install -U pytest`
+
+ * Install *pylint*
+
+ `python3 -m pip install -U pylint`
 
 ## References
 
 ### Text Editors and IDEs
 
-[Popular development environments](https://insights.stackoverflow.com/survey/2018) include the following:
+ [Popular development environments](https://insights.stackoverflow.com/survey/2018) include the following:
  * [Visual Studio Code](https://code.visualstudio.com/) | [setup](https://code.visualstudio.com/docs/languages/python)
  * [Sublime Text](https://www.sublimetext.com/) | [setup](https://realpython.com/setting-up-sublime-text-3-for-full-stack-python-development/)
  * [vim](http://www.vim.org/) | [setup](https://realpython.com/vim-and-python-a-match-made-in-heaven/)

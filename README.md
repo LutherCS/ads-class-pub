@@ -8,10 +8,6 @@
 
 ## How do I get set up?
 
- * Install *pythonds3*
-
- `python3 -m pip install pythonds3`
-
  * Clone the repository
 
  `git clone https://github.com/LutherCS/ads-class-pub.git`
@@ -19,6 +15,14 @@
  * Get updates
 
  `git pull origin`
+
+ * Install *pythonds3*
+
+ `python3 -m pip install pythonds3`
+
+ * Install *pytest*
+
+ `python3 -m pip install pytest`
 
 ## References
 

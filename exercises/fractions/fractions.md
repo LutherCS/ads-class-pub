@@ -19,6 +19,6 @@ Complete the following tasks and submit your source file(s) to KATIE.
 ## Test the project
 
     ```
-    pytest tests/exercises/fractions/test_fractions.py
+    python3 -m pytest tests/exercises/fractions/test_fractions.py
 
     ```

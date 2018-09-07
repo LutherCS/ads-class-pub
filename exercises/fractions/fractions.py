@@ -11,7 +11,7 @@ def gcd(num_a, num_b):
     return num_b
 
 
-class Fraction:
+class Fraction: 
     '''Class Fraction'''
     def __init__(self, numerator: int, denominator: int) -> None:
         '''Constructor'''
@@ -31,40 +31,45 @@ class Fraction:
 
     def __str__(self) -> str:
         '''Object as a string'''
-        if self.numerator > self.denominator:
-            return str(self.numerator // self.denominator) + ' ' + \
-                str(self.numerator % self.denominator) + '/' + str(self.denominator)
+        if self._numerator > self._denominator:
+            return str(self._numerator // self._denominator) + ' ' + \
+                str(self._numerator % self._denominator) + '/' + str(self._denominator)
         else:
-            return str(self.numerator) + '/' + str(self.denominator)
+            return str(self._numerator) + '/' + str(self._denominator)
 
     def __repr__(self) -> str:
         '''Object representation'''
-        return 'Fraction({}, {})'.format(self.numerator, self.denominator)
+        return 'Fraction({}, {})'.format(self._numerator, self._denominator)
 
     def __eq__(self, other: object) -> bool:
         '''Equality comparison'''
         if isinstance(other, Fraction):
-            return self.numerator * other.denominator == other.numerator * self.denominator
+            return self._numerator * other._denominator == other._numerator * self._denominator
         else:
             raise TypeError('Can only compare Fractions')
 
     def __gt__(self, other: object) -> bool:
         '''Greater than comparison'''
         if isinstance(other, Fraction):
-            return self.numerator / self.denominator > other.numerator / other.denominator
+            return self._numerator / self._denominator > other._numerator / other._denominator
         else:
             raise TypeError('Can only compare Fractions')
 
     def __ge__(self, other: object) -> bool:
         '''Greater than or equal comparison'''
         if isinstance(other, Fraction):
-            return self.numerator / self.denominator >= other.numerator / other.denominator
+            return self._numerator / self._denominator >= other._numerator / other._denominator
         else:
             raise TypeError('Can only compare Fractions')
 
     def __add__(self, other: object) -> object:
         '''Add two fractions'''
-        raise NotImplementedError
+        if isinstance(other, Fraction):
+            new_numerator = self._numerator * other._denominator + self._denominator * other._numerator
+            new_denominator = self._denominator * other._denominator
+            return Fraction(new_numerator, new_denominator)
+        else:
+            raise TypeError('Can only add two Fractions')
 
     def __sub__(self, other: object) -> object:
         '''Subtract two fractions'''

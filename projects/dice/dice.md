@@ -27,6 +27,6 @@ Implement classes Die, FrozenDie, and Cup. Your program must be properly formatt
 ## Test the project
 
     ```
-    pytest tests/projects/dice/test_dice.py
+    python3 -m pytest tests/projects/dice/test_dice.py
 
     ```

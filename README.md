@@ -10,23 +10,45 @@
 
  * Clone the repository
 
- `git clone https://github.com/LutherCS/ads-class-pub.git`
+    ```
+    git clone https://github.com/LutherCS/ads-class-pub.git
+    ```
 
  * Get updates
 
- `git pull origin`
+    ```
+    git pull origin
+    ```
 
  * Install *pythonds3*
 
- `python3 -m pip install -U pythonds3`
+    ```
+    python3 -m pip install -U pythonds3
+    ```
 
  * Install *pytest*
 
- `python3 -m pip install -U pytest`
+    ```
+    python3 -m pip install -U pytest
+    ```
 
  * Install *pylint*
 
- `python3 -m pip install -U pylint`
+    ```
+    python3 -m pip install -U pylint
+    ```
+
+ *  Run a project
+
+    ```
+    python3 projects/project_name/project_name.py
+    ```
+
+ * Test a project
+
+    ```
+    python3 -m pytest tests/projects/project_name/test_project_name.py
+    ```
 
 ## References
 

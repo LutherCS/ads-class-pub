@@ -16,17 +16,3 @@ Implement classes Die, FrozenDie, and Cup. Your program must be properly formatt
 1. `Cup`: Implement method `add` that appends a new die to the list `self._dice`.
 1. `Cup`: Implement method `remove` that removes a specific die from the cup.
 1. `Cup`: Implement method `roll` that rolls specific dice in the cup.
-
-## Run the project
-
-    ```
-    python3 projects/dice/dice.py
-
-    ```
-
-## Test the project
-
-    ```
-    python3 -m pytest tests/projects/dice/test_dice.py
-
-    ```

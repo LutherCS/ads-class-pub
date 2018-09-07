@@ -7,18 +7,3 @@ Complete the following tasks and submit your source file(s) to KATIE.
 1. Implement `numerator` and `denominator` as properties.
 1. Expand the textbook implementation of the class `Fraction` and implement the remaining simple arithmetic operators (`__sub__`, `__mul__`, and `__truediv__`).
 1. Use the provided function `gcd()` to simplify the resulting fraction whenever possible.
-
-
-## Run the project
-
-    ```
-    python3 exercises/fractions/fractions.py
-
-    ```
-
-## Test the project
-
-    ```
-    python3 -m pytest tests/exercises/fractions/test_fractions.py
-
-    ```

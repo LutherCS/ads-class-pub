@@ -4,19 +4,6 @@ Roman Yasinovskyy, 2017
 '''
 #!/usr/bin/python3
 
-# ''' Access Correct Path from anywhere within the Project Directory '''
-# import sys, os, re
-# sys.path.insert(0, os.path.abspath('.'))
-# project = 'ads-class-prep' #only line to manually change
-# if project not in sys.path[0]:
-#     raise Exception('Incorrect Path; please run from within {} directory'.format(project))
-# regex = re.compile(r'.*/{}$'.format(project))
-# levels = 0
-# while re.match(regex, sys.path[0]) == None:
-#     levels += 1
-#     path = '../'*(levels-1)
-#     path += '..'
-#     sys.path[0] = os.path.abspath(path)
 
 import pytest
 from exercises.fractions.fractions import Fraction
@@ -26,11 +13,11 @@ class TestFractionMethods:
     '''Testing class Fraction'''
 
     @pytest.fixture(scope='function', autouse=True)
-    def setup_class(cls):
+    def setup_class(self):
         '''Setting up'''
-        cls.fraction1 = Fraction(1, 3)
-        cls.fraction2 = Fraction(4, 6)
-        cls.fraction3 = Fraction(6, 4)
+        self.fraction1 = Fraction(1, 3)
+        self.fraction2 = Fraction(4, 6)
+        self.fraction3 = Fraction(6, 4)
 
     def test_init(self):
         '''Testing init'''

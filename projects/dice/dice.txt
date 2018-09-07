@@ -1,0 +1,41 @@
+Let's play a game!
+Let's create a die
+Rolling die 10 times
+ 1)  1
+ 2)  1
+ 3)  6
+ 4)  3
+ 5)  2
+ 6)  2
+ 7)  2
+ 8)  6
+ 9)  1
+10)  6
+The last roll is 6
+Trying to assign a value to a die
+You must roll the die to change its value
+The last roll is (still) 6
+Making a cup of 5 dice
+[6, 5, 1, 5, 4]
+Re-rolling dice 1, 2, and 3
+[1, 1, 1, 5, 4]
+Re-rolling dice 2, 4, and 6
+[1, 2, 1, 2, 4]
+Shaking and rolling
+[5, 5, 1, 5, 2]
+[6, 6, 6, 5, 4]
+[2, 4, 5, 3, 1]
+Using the iterator to print dice values
+2
+4
+5
+3
+1
+Frozen die demo
+2
+False
+6
+True
+6
+6
+6

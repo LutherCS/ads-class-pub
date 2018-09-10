@@ -7,7 +7,6 @@ import random
 from typing import Sequence
 random.seed(42)
 
-
 class Die:
     '''Class Die'''
     def __init__(self, possible_values: Sequence) -> None:
@@ -18,21 +17,21 @@ class Die:
     @property
     def value(self):
         '''Get the die value'''
-        raise NotImplementedError
+        return self._value
 
     @value.setter
     def value(self, _):
         '''Value property setter'''
-        raise NotImplementedError
+        raise ValueError("You are supposed to 'roll' a die to change its value")
 
     def __str__(self):
-        '''__str__ override'''
-        raise NotImplementedError
+       '''__str__ override'''
+       return str(self._value)
 
-    def roll(self):
+    def roll(self) -> int:
         '''Roll the die'''
-        raise NotImplementedError
-
+        self._value = random.choice(self._all_values)
+        return self._value
 
 class FrozenDie(Die):
     '''A die that cannot be rolled'''
@@ -44,17 +43,19 @@ class FrozenDie(Die):
     @property
     def frozen(self) -> bool:
         '''Frozen property getter'''
-        raise NotImplementedError
+        return self._value
 
     @frozen.setter
     def frozen(self, new_value: bool) -> None:
         '''Frozen property setter'''
-        raise NotImplementedError
+        self._frozen = True
 
     def roll(self):
         '''Roll the die'''
-        raise NotImplementedError
-
+        if self._frozen == True:
+            return self._value
+        else:
+            self.roll
 
 class Cup:
     '''Class Cup'''
@@ -68,24 +69,30 @@ class Cup:
 
     def __str__(self) -> str:
         '''__str__ override'''
-        raise NotImplementedError
+        return str([dice._value for dice in self._dice])
 
     def shake(self) -> None:
         '''Shake a cup'''
-        raise NotImplementedError
+        for dice in self._dice:
+            dice.roll()
 
     def add(self, die) -> None:
         '''Add a die to the cup'''
-        raise NotImplementedError
+        self._dice.append(die)
+        return self._dice
+
+
 
     def remove(self, idx: int):
         '''Remove a die from the cup'''
-        raise NotImplementedError
+        self._dive.pop(idx)
+        return self._dice
 
     def roll(self, *args) -> None:
         '''Roll specific dice'''
-        raise NotImplementedError
-
+        for i in args:
+            if i > 0 and i <= len(self._dice):
+                self._dice[i-1].roll()
 
 def main():
     '''Entry point'''

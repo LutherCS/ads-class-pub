@@ -1,3 +1,4 @@
+
 '''
 Implementation of the class Fraction
 '''

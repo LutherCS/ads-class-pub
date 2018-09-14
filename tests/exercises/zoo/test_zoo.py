@@ -80,4 +80,4 @@ class TestAnimalsMethods:
         assert exception_message == "Incorrect habitat value"     
 
 if __name__ == '__main__':
-    pytest.main(['test_animals.py'])
+    pytest.main(['test_zoo.py'])

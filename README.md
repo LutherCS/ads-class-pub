@@ -8,6 +8,8 @@
 
 ## How do I get set up?
 
+  Windows users may have to substitute *python3* with *py -3* for the following commands to work. You should keep the same file structure as **this** repository and run all the commands from its top directory (i.e. ads-class-pub).
+
  * Clone the repository
 
     ```
@@ -38,16 +40,51 @@
     python3 -m pip install -U pylint
     ```
 
- *  Run a project
+## How do I run my code?
+
+ *  Run project *hello*
 
     ```
-    python3 projects/project_name/project_name.py
+    python3 projects/hello/hello.py
     ```
 
- * Test a project
+ * Run project *hello* that takes file *data.in* as input
 
     ```
-    python3 -m pytest tests/projects/project_name/test_project_name.py
+    python3 projects/hello/hello.py data/projects/hello/data.in
+    ```
+
+    The source should be modified as follows (sys.argv contains all the arguments passed to the application, including the application file name itself as sys.argv[0]):
+
+    ```
+    import sys
+    
+    
+    def main(filename):
+        print('Processing file {}'.format(filename))
+    
+    
+    if __name__ == '__main__':
+        main(sys.argv[1])
+    
+    ```
+
+ * Test project *hello*
+
+    ```
+    python3 -m pytest tests/projects/hello/test_hello.py
+    ```
+
+ *  Run exercise *hello*
+
+    ```
+    python3 exercises/hello/hello.py
+    ```
+
+ * Test exercise *hello*
+
+    ```
+    python3 -m pytest tests/exercises/hello/test_hello.py
     ```
 
 ## References

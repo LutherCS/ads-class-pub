@@ -24,7 +24,7 @@ The first line of the input specifies the number of test cases *t* (0 < t < 20).
 
 For each test case, print the list of words sorted by their distance ascending. If two words have the same distance, sort them alphabetically. Print the distance of each word in the same line.
 
-### Sample input (data/projects/sample.in)
+### Sample input (data/projects/keyboard/sample.in)
 
 ```
 2
@@ -40,7 +40,7 @@ plm
 qed
 ```
 
-### Sample output (tests/projects/keyboard/dample.out)
+### Sample output (tests/projects/keyboard/sample.out)
 
 ```
 icpc 3
@@ -51,4 +51,12 @@ rfv 3
 wsx 3
 qed 4
 plm 17
+```
+
+## Running the project
+
+You have to provide input file as a command-line argument to your program.
+
+```
+python3 projects/keyboard/keyboard.py data/projects/keyboard/sample.in
 ```

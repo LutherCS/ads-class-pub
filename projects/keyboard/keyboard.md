@@ -52,11 +52,3 @@ wsx 3
 qed 4
 plm 17
 ```
-
-## Running the project
-
-You have to provide input file as a command-line argument to your program.
-
-```
-python3 projects/keyboard/keyboard.py data/projects/keyboard/sample.in
-```

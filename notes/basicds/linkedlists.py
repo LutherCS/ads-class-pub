@@ -73,7 +73,15 @@ class LinkedList:
         return -1
 
     def append(self, new_node):
-        pass
+        if not self._head:
+            self._head = new_node
+            self._size += 1
+            return
+        current = self._head
+        while current.next:
+            current = current.next
+        current.next = new_node
+        self._size += 1
 
     def insert(self, pos: int, new_node: object) -> None:
         current = self._head
@@ -92,6 +100,27 @@ class LinkedList:
         current.next = new_node
         self._size += 1
 
+    def pop(self, idx = None):
+        if not self._head:
+            raise Exception('Cannot pop from an empty list')
+        if idx == None:
+            idx = self._size
+        if idx < 0:
+            raise ValueError('Negative')
+        current = self._head
+        prev = None
+        cur_idx = 0
+        while current.next and cur_idx < idx:
+            prev = current
+            current = current.next
+            cur_idx += 1
+        result = current.data
+        if prev:
+            prev.next = current.next
+        else:
+            self._head = current.next
+        self._size -= 1
+        return result
 
 def main():
     # print('Working with nodes')
@@ -106,33 +135,50 @@ def main():
 
     print('Working with lists')
     ll = LinkedList()
-    print(ll.size())  # 0
-    print(type(ll))  # LinkedList
-    print('Printing a list')
-    print(ll)
-    ll.add(Node('Q'))
-    print(ll)  # [Q]
-    ll.add(Node('A'))
-    print(ll)  # [A, Q]
-    ll.add(Node('D'))
-    print(ll)  # [D, A, Q]
-    print(len(ll))
-    print(ll.search('Z'))
-    print(ll)  # [D, A, Q]
-    print(len(ll))
-    print(ll.index('D'))  # 0
-    print(ll)  # [D, A, Q]
-    print(len(ll))
-    print(ll.index('Z'))  # -1
-    print(ll)  # [D, A, Q]
-    print(len(ll))
-    print('Inserting a new node')
-    ll.insert(0, Node('K'))
-    print(ll)  # [K, D, A, Q]
+    # print(ll.size())  # 0
+    # print(type(ll))  # LinkedList
+    # print('Printing a list')
+    # print(ll)
+    # ll.add(Node('Q'))
+    # print(ll)  # [Q]
+    # ll.add(Node('A'))
+    # print(ll)  # [A, Q]
+    # ll.add(Node('D'))
+    # print(ll)  # [D, A, Q]
+    # print(len(ll))
+    # print(ll.search('Z'))
+    # print(ll)  # [D, A, Q]
+    # print(len(ll))
+    # print(ll.index('D'))  # 0
+    # print(ll)  # [D, A, Q]
+    # print(len(ll))
+    # print(ll.index('Z'))  # -1
+    # print(ll)  # [D, A, Q]
+    # print(len(ll))
+    # print('Inserting a new node')
+    # ll.insert(0, Node('K'))
+    # print(ll)  # [K, D, A, Q]
+    # print(len(ll))  # 4
+    # ll.insert(2, Node('M'))
+    # print(ll)  # [K, D, M, A, Q]
+    # print(len(ll))  # 5
+    print(ll)  # []
+    ll.append(Node('R'))
+    ll.append(Node('Q'))
+    ll.append(Node('T'))
+    ll.append(Node('S'))
+    print(ll)  # [R, Q, T, S]
     print(len(ll))  # 4
-    ll.insert(2, Node('M'))
-    print(ll)  # [K, D, M, A, Q]
-    print(len(ll))  # 5
+    print(ll.pop(1))  # Q
+    print(ll)  # [R, T, S]
+    print(len(ll))  # 3
+    print(ll.pop())  # S
+    print(ll)  # [R, T]
+    print(len(ll))  # 2
+    print('---')
+    print(ll.pop(0))  # R
+    print(ll)  # [T]
+    print(len(ll))  # 1
 
 if __name__ == '__main__':
     main()

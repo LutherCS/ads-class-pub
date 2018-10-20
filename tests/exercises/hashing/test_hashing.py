@@ -33,8 +33,8 @@ class Testhashing:
     def test_hash_hash_mid_sqr(self):
         result = [hash_mid_sqr(x, 16) for x in self.keys_int]
         result_2 = [hash_mid_sqr(x, 11) for x in self.keys_int_2]
-        assert result == [0, 1, 4, 4, 9, 1, 4, 9, 1]
-        assert result_2 == [6, 6, 9, 9, 9, 1]
+        assert result == [10, 12, 2, 0, 12, 4, 12, 4, 0]
+        assert result_2 == [3, 1, 9, 6, 4, 8]
 
     def test_hash_folding(self):
         result = [hash_folding(x, 16) for x in self.keys_intstr]

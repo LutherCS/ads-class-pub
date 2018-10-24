@@ -102,4 +102,4 @@ class TestWaterMethods:
             
 
 if __name__ == '__main__':
-    pytest.main('test_water.py')
+    pytest.main(['test_water.py'])

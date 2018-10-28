@@ -52,13 +52,9 @@ class TestMap:
 
     def test_setter(self):
         '''Test __setitem__ to add an item'''
-        print(len(self.the_map))
         self.the_map[21] = "jackal"
         assert self.the_map[21] == "jackal"
-        print(self.the_map)
-        print(len(self.the_map))
         self.the_map.put(18, "koala")
-        print(len(self.the_map))
         assert self.the_map.get(18) == "koala"
 
     def test_updater(self):

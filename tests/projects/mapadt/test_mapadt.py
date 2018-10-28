@@ -7,7 +7,7 @@ from projects.mapadt import HashTable
 class TestMap:
     '''Testing module map'''
 
-    @classmethod
+    @pytest.fixture(scope='function', autouse=True)
     def setup_class(self):
         self.the_map = HashTable(11)
         assert len(self.the_map) == 0
@@ -56,6 +56,7 @@ class TestMap:
         assert self.the_map[21] == "jackal"
         self.the_map.put(18, "koala")
         assert self.the_map.get(18) == "koala"
+        assert str(self.the_map) == "{77: 'elephant', 44: 'goat', 20: 'iguana', 55: 'hippo', 26: 'beaver', 93: 'cheetah', 17: 'dolphin', 18: 'koala', 21: 'jackal', 31: 'flamingo', 54: 'aardvark'}"
 
     def test_updater(self):
         '''Test __setitem__ to update an item'''
@@ -63,10 +64,13 @@ class TestMap:
         assert self.the_map[54] == "anteater"
         self.the_map.put(55, "hyena")
         assert self.the_map.get(55) == "hyena"
+        assert str(self.the_map) == "{77: 'elephant', 44: 'goat', 20: 'iguana', 55: 'hyena', 26: 'beaver', 93: 'cheetah', 17: 'dolphin', 31: 'flamingo', 54: 'anteater'}"
 
     def test_setter_error(self):
         with pytest.raises(Exception) as excinfo:
             self.the_map[160] = "zebra"
+            self.the_map[161] = "zebra"
+            self.the_map[162] = "zebra"
         exception_msg = excinfo.value.args[0]
         assert exception_msg == 'Hash Table is full'
         assert len(self.the_map) == 11
@@ -92,25 +96,25 @@ class TestMap:
 
     def test_str(self):
         '''Test __str__'''
-        assert str(self.the_map) == "{77: 'elephant', 44: 'goat', 20: 'iguana', 55: 'hyena', 26: 'beaver', 93: 'cheetah', 17: 'dolphin', 18: 'koala', 21: 'jackal', 31: 'flamingo', 54: 'anteater'}"
+        assert str(self.the_map) == "{77: 'elephant', 44: 'goat', 20: 'iguana', 55: 'hippo', 26: 'beaver', 93: 'cheetah', 17: 'dolphin', 31: 'flamingo', 54: 'aardvark'}"
         assert str(self.simple_map) == "{32: 'b', 17: 'a'}"
         assert str(self.empty_map) == "{}"
 
     def test_keys(self):
         '''Test keys method'''
-        assert self.the_map.keys() == [77, 44, 20, 55, 26, 93, 17, 18, 21, 31, 54]
+        assert self.the_map.keys() == [77, 44, 20, 55, 26, 93, 17, 31, 54]
         assert self.simple_map.keys() == [32, 17]
         assert self.empty_map.keys() == []
 
     def test_values(self):
         '''Test values method'''
-        assert self.the_map.values() == ['elephant', 'goat', 'iguana', 'hyena', 'beaver', 'cheetah', 'dolphin', 'koala', 'jackal', 'flamingo', 'anteater']
+        assert self.the_map.values() == ['elephant', 'goat', 'iguana', 'hippo', 'beaver', 'cheetah', 'dolphin', 'flamingo', 'aardvark']
         assert self.simple_map.values() == ['b', 'a']
         assert self.empty_map.keys() == []
 
     def test_items(self):
         '''Test items method'''
-        assert self.the_map.items() == [(77, 'elephant'), (44, 'goat'), (20, 'iguana'), (55, 'hyena'), (26, 'beaver'), (93, 'cheetah'), (17, 'dolphin'), (18, 'koala'), (21, 'jackal'), (31, 'flamingo'), (54, 'anteater')]
+        assert self.the_map.items() == [(77, 'elephant'), (44, 'goat'), (20, 'iguana'), (55, 'hippo'), (26, 'beaver'), (93, 'cheetah'), (17, 'dolphin'), (31, 'flamingo'), (54, 'aardvark')]
         assert self.simple_map.items() == [(32, 'b'), (17, 'a')]
         assert self.empty_map.items() == []
 

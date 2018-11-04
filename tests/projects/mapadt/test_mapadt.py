@@ -11,18 +11,18 @@ class TestMap:
     def setup_class(self):
         self.the_map = HashTable(11)
         assert len(self.the_map) == 0
-        map_test_items = {
-            54: "aardvark",
-            26: "beaver",
-            93: "cheetah",
-            17: "dolphin",
-            77: "elephant",
-            31: "flamingo",
-            44: "goat",
-            55: "hippo",
-            20: "iguana"
-            }
-        for item in map_test_items.items():
+        map_test_items = [
+            (54, "aardvark"),
+            (26, "beaver"),
+            (93, "cheetah"),
+            (17, "dolphin"),
+            (77, "elephant"),
+            (31, "flamingo"),
+            (44, "goat"),
+            (55, "hippo"),
+            (20, "iguana")
+        ]
+        for item in map_test_items:
             self.the_map.put(item[0], item[1])
 
         self.simple_map = HashTable()

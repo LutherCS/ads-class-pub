@@ -7,7 +7,7 @@ Karina Hoff, 2018
 
 """Testing the Word Ladder project"""
 import pytest
-from projects.words.words import Stack, Queue, read_file, diff_by_one, diff_by_one_all
+from projects.words.words import Stack, Queue, read_file, distance, diff_by_one_all
 
 
 class TestWordsMethods:
@@ -22,17 +22,17 @@ class TestWordsMethods:
         '''Test read_file functino'''
         assert read_file("data/projects/words/words.txt") == {3: 1294, 4: 4994, 5: 5757}
     
-    def test_diff_by_one(self):
-        '''Test diff_by_one function'''
+    def test_distance(self):
+        '''Test distance function'''
         w1 = 'Hello'
         w2 = 'Hello'
-        assert diff_by_one(w1, w2) == 0
+        assert distance(w1, w2) == 0
         w1 = 'Hello'
         w2 = 'Jello'
-        assert diff_by_one(w1, w2) == 1
+        assert distance(w1, w2) == 1
         w1 = 'Hello'
         w2 = 'Happy'
-        assert diff_by_one(w1, w2) == 4
+        assert distance(w1, w2) == 4
     
     def test_diff_by_one_all(self):
         '''Testing diff_by_one_all function'''

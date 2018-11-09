@@ -55,7 +55,7 @@ def read_file(filename: str) -> dict:
     raise NotImplementedError
 
 
-def diff_by_one(word1: str, word2: str) -> int:
+def distance(word1: str, word2: str) -> int:
     '''Differences between words'''
     raise NotImplementedError
 

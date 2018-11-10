@@ -1,0 +1,15 @@
+Encoding 'sos'
+Expected: ... --- ...
+Encoded : ... --- ... 
+---
+Encoding 'data structures'
+Expected: -.. .- - .- ... - .-. ..- -.-. - ..- .-. . ... 
+Encoded : -.. .- - .- ... - .-. ..- -.-. - ..- .-. . ... 
+---
+Encoding '$$'
+Expected: Error message
+ERROR: Could not encode $$: $ is not in the tree
+---
+Decoding '.... . .-.. .-.. --- --..-- -.-. ... .---- -.... -----'
+Expected: hello,cs160
+Decoded : hello,cs160

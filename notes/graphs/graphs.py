@@ -4,6 +4,7 @@ class Vertex:
         self._neighbors = {}
         self._distance = 100
         self._previous = None
+        self._color = "white"
 
     def get_key(self):
         return self._key
@@ -29,6 +30,12 @@ class Vertex:
     def set_distance(self, d):
         self._distance = d
 
+    def get_color(self):
+        return self._color
+    
+    def set_color(self, c):
+        self._color = c
+
 class Graph:
     def __init__(self):
         self._vertices = {}
@@ -49,3 +56,19 @@ class Graph:
 
     def get_vertices(self):
         return self._vertices.keys()
+
+    def bfs(self, start):
+        start.set_distance(0)
+        start.set_previous(None)
+        q = [start]
+        while q:
+            current_vert = q.pop(0)
+            for neigh in current_vert.get_all_neighbors():
+                if neigh.get_color() == "white":
+                    neigh.set_color("gray")
+                    neigh.set_distance(current_vert.get_distance() + 1)
+                    neigh.set_previous(current_vert)
+                    q.append(neigh)
+            current_vert.set_color("black")
+
+        print("Done")

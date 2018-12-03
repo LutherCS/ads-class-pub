@@ -1,8 +1,10 @@
+import sys
+
 class Vertex:
     def __init__(self, key):
         self._key = key
         self._neighbors = {}
-        self._distance = 100
+        self._distance = sys.maxsize
         self._previous = None
         self._color = "white"
 
@@ -14,43 +16,56 @@ class Vertex:
 
     def get_neighbor(self, n):
         return self._neighbors.get(n, None)
-    
+
     def set_neighbor(self, n, weight=0):
         self._neighbors[n] = weight
 
     def get_previous(self):
         return self._previous
-    
+
     def set_previous(self, p):
         self._previous = p
 
     def get_distance(self):
         return self._distance
-    
+
     def set_distance(self, d):
         self._distance = d
 
     def get_color(self):
         return self._color
-    
+
     def set_color(self, c):
         self._color = c
+
 
 class Graph:
     def __init__(self):
         self._vertices = {}
-    
+
+    def __contains__(self, key):
+        """Return True for a statement of the form vertex in graph, if the given vertex is in the graph, False otherwise"""
+        return key in self._vertices
+
+    def __iter__(self):
+        """Iterator"""
+        return iter(self._vertices.values())
+
+    def __len__(self):
+        """Graph's size"""
+        return len(self._vertices)
+
     def add_vertex(self, key):
         new_vertex = Vertex(key)
         self._vertices[key] = new_vertex
-    
+
     def add_edge(self, src_vertex, dst_vertex, weight=0):
         if src_vertex not in self._vertices:
             self.add_vertex(src_vertex)
         if dst_vertex not in self._vertices:
             self.add_vertex(dst_vertex)
-        self._vertices[src_vertex].set_neighbor(dst_vertex, weight)
-    
+        self._vertices[src_vertex].set_neighbor(self._vertices[dst_vertex], weight)
+
     def get_vertex(self, key):
         return self._vertices.get(key, None)
 

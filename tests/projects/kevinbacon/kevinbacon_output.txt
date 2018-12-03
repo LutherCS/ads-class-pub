@@ -1,0 +1,30 @@
+---Kevin Bacon number calculator---
+
+Reading the file
+File read in 6.57 sec
+There are 323157 connected actors in the file
+There are 6564640 connections between actors in the file
+
+Finding paths
+Done
+
+Finding actors with the highest Kevin Bacon number
+1 actor(s) found in 0.10 sec
+Highest Kevin Bacon number is 10
+Wagle Sandow
+
+The main loop
+Enter an actor> 1) Wagle Sandow acted with Fatma Begum in Prithvi Vallabh (1924)
+2) Fatma Begum acted with Sultana in Veer Abhimanyu (1922)
+3) Sultana acted with Master Vithal in Kalyan Khajina (1924)
+4) Master Vithal acted with Zubeida in Alam Ara (1931)
+5) Zubeida acted with Khalil (IX) in Gul-e-Bakavali (1924)
+6) Khalil (IX) acted with Prithviraj Kapoor in Draupadi (1931)
+7) Prithviraj Kapoor acted with Pran in Rajkumar (1964)
+8) Pran acted with Anil (IV) Kapoor in Yudh (1985)
+9) Anil (IV) Kapoor acted with Tom Cruise in Mission: Impossible - Ghost Protocol (2011)
+10) Tom Cruise acted with Kevin Bacon in A Few Good Men (1992)
+
+Wagle Sandow's Kevin Bacon number is 10
+
+Enter another actor> 

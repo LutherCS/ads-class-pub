@@ -36,7 +36,9 @@ Apollo 13 (1995)|Kevin Bacon
 
 There are three smaller problems to solve for this assignment. 
 
-1. Build a graph that represents the links between all the actors. To build the graph you should use the `Graph` and `Vertex` classes found in the *pythonds3* package. These classes are implemented just like the code in the textbook. **This is the most challenging part of the assignment**. You should start with a small part of the movies_actors file OR create your own test file. You DO NOT want to start with the full *movie_actors.csv* file as it contains more than 600,000 lines. With your test file use the Python environment to poke around at the graph and make sure that the links are correct. You will also need to devise a way to keep track of the movie that each actor has in common with her neighbors. See the attached easy.png example graph you might convert into a file and use for testing.
+1. Build a graph that represents the links between all the actors. To build the graph you should use the `Graph` and `Vertex` classes found in the *pythonds3* package. These classes are implemented just like the code in the textbook. **This is the most challenging part of the assignment**. You should start with a small part of the movies_actors file OR create your own test file. You DO NOT want to start with the full *movie_actors.csv* file as it contains more than 600,000 lines. With your test file use the Python environment to poke around at the graph and make sure that the links are correct. You will also need to devise a way to keep track of the movie that each actor has in common with her neighbors. See the attached kevinbacon.png example graph you might convert into a file and use for testing.
+
+![Simple graph](kevinbacon.png)
 
 2. Use the *Breadth First Search* algorithm to create the links from all actors back to **Kevin Bacon**.
 

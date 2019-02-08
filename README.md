@@ -28,16 +28,16 @@
     python3 -m pip install -U pythonds3
     ```
 
- * Install *pytest*
+ * Install *pytest*, *pylint*, *black*, *mypy*
 
     ```
-    python3 -m pip install -U pytest
+    python3 -m pip install -U pytest, pylint, black, mypy
     ```
 
- * Install *pylint*
+ * Install *colorama*
 
     ```
-    python3 -m pip install -U pylint
+    python3 -m pip install -U colorama
     ```
 
 ## How do I run my code?
@@ -45,13 +45,13 @@
  *  Run project *hello*
 
     ```
-    python3 projects/hello/hello.py
+    python3 src/projects/hello/hello.py
     ```
 
  * Run project *hello* that takes file *data.in* as input
 
     ```
-    python3 projects/hello/hello.py data/projects/hello/data.in
+    python3 src/projects/hello/hello.py data/projects/hello/data.in
     ```
 
     The source should be modified as follows (sys.argv contains all the arguments passed to the application, including the application file name itself as sys.argv[0]):
@@ -78,7 +78,7 @@
  *  Run exercise *hello*
 
     ```
-    python3 exercises/hello/hello.py
+    python3 src/exercises/hello/hello.py
     ```
 
  * Test exercise *hello*

@@ -1,0 +1,1 @@
+x is the first non-repeating character in abxba

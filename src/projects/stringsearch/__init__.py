@@ -3,6 +3,6 @@
 stringsearch import statement
 """
 
-from .nonrepeat import find_non_repeat_count
+from .nonrepeat import find_non_repeat
 
-__all__ = ["find_non_repeat_count"]
+__all__ = ["find_non_repeat"]

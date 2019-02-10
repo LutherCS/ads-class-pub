@@ -10,35 +10,47 @@
 
   Windows users may have to substitute *python3* with *py -3* for the following commands to work. You should keep the same file structure as **this** repository and run all the commands from its top directory (i.e. ads-class-pub).
 
- * Clone the repository
+ * Clone the repository.
 
-    ```
-    git clone https://github.com/LutherCS/ads-class-pub.git
-    ```
+   ```
+   git clone https://github.com/LutherCS/ads-class-pub.git
+   ```
 
- * Get updates
+ * Get updates.
 
-    ```
-    git pull origin
-    ```
+   ```
+   git pull origin
+   ```
 
- * Install *pythonds3*
+ * Install *pythonds3* to use textbook implementations of various data structures and algorithms.
 
-    ```
-    python3 -m pip install -U pythonds3
-    ```
+   ```
+   python3 -m pip install -U pythonds3
+   ```
 
- * Install *pytest*, *pylint*, *black*, *mypy*
+ * Install linters *pylint* and *mypy*.
 
-    ```
-    python3 -m pip install -U pytest, pylint, black, mypy
-    ```
+   ```
+   python3 -m pip install -U pylint mypy
+   ```
 
- * Install *colorama*
+* Install formatter *black*.
 
-    ```
-    python3 -m pip install -U colorama
-    ```
+   ```
+   python3 -m pip install -U black
+   ```
+
+* Install testing framework *pytest* and its plugin *pytest-timeout*.
+
+   ```
+   python3 -m pip install -U pytest pytest-timeout
+   ```
+
+ * Install *colorama* to colorize output.
+
+   ```
+   python3 -m pip install -U colorama
+   ```
 
 ## How do I run my code?
 

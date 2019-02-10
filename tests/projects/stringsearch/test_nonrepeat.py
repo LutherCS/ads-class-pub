@@ -15,7 +15,7 @@ TIME_LIMIT = 4
 @pytest.mark.timeout(TIME_LIMIT)
 @pytest.mark.parametrize(
     "a_string, an_answer",
-    [("abxaby", "x"), ("y", "y"), ("abxxbac", "x"), (ascii_lowercase, "a")],
+    [("abxaby", "x"), ("y", "y"), ("abxxbac", "c"), (ascii_lowercase, "a")],
 )
 def test_find_non_repeat(a_string, an_answer):
     """Testing simple cases"""

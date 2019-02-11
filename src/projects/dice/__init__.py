@@ -1,8 +1,8 @@
-'''
+#!/usr/bin/env python3
+"""
 dice import statement
-'''
-name = "dice"
+"""
 
-from .dice import Cup, Die, FrozenDie
+from .dice_classes import Cup, Die, FrozenDie
 
-__all__ = ['Cup', 'Die', 'FrozenDie']
+__all__ = ["Cup", "Die", "FrozenDie"]

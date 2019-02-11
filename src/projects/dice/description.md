@@ -1,6 +1,6 @@
 # Alea iacta est
 
-Implement classes Die, FrozenDie, and Cup. Your program must be properly formatted (use pylint) and  pass all the tests provided (use pytest).
+Implement classes Die, FrozenDie, and Cup. Your program must be properly formatted (use black and pylint) and pass all the tests provided (use pytest).
 
 1. `Die`: Assign random value (out of the list of `possible_values`) to `self._value` in the `__init__`.
 1. `Die`: Implement *property* `value` using getter and setter.
@@ -16,3 +16,22 @@ Implement classes Die, FrozenDie, and Cup. Your program must be properly formatt
 1. `Cup`: Implement method `add` that appends a new die to the list `self._dice`.
 1. `Cup`: Implement method `remove` that removes a specific die from the cup.
 1. `Cup`: Implement method `roll` that rolls specific dice in the cup.
+
+
+## What to do
+
+- Read *src/projects/dice/description.md* (this file).
+
+- Modify *src/projects/dice/dice_classes.py*.
+
+- Run the main file.
+```
+python3 src/projects/dice/dice.py
+```
+
+- Compare your output to that provided in *tests/projects/dice/dice_output.txt*.
+
+- Test your implementation.
+```
+python3 -m pytest tests/projects/dice/test_dice.py
+```

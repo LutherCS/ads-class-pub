@@ -12,21 +12,19 @@ Complete the following tasks and submit your source file(s) to KATIE.
 
 1. Use the provided function `gcd()` to simplify the resulting fraction whenever possible.
 
-
 ## What to do
 
 - Read *src/exercises/fractions/description.md* (this file).
-
 - Modify *src/exercises/fractions/fractions.py*.
-
 - Run the modified file.
-```
+
+```bash
 python3 src/exercises/fractions/fractions.py
 ```
 
 - Compare your output to that provided in *tests/exercises/fractions/fractions_output.txt*.
-
 - Test your implementation.
-```
+
+```bash
 python3 -m pytest tests/exercises/fractions/test_fractions.py
 ```

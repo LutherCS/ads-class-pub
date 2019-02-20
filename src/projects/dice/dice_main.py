@@ -6,6 +6,8 @@ Dice game(s) simulator
 import random
 from src.projects.dice import Die, FrozenDie, Cup
 
+# from dice_classes import Die, FrozenDie, Cup  # try this if the above import statement does not work
+
 random.seed(42)
 
 

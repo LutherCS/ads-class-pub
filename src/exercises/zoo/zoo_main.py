@@ -1,16 +1,18 @@
-'''
-Zoo exercise driver
-'''
 #!/usr/bin/env python3
-#encoding: UTF-8
+"""
+Exercise Zoo driver
+"""
 
 import random
-from zoo import Parrot, Penguin, Dog, HouseCat, BobCat
+from src.exercises.zoo import Parrot, Penguin, Dog, HouseCat, BobCat
+
+# from zoo_classes import Parrot, Penguin, Dog, HouseCat, BobCat  # use this import statement if the other one does not work
 
 random.seed(42)
 
 
 def main():
+    """Main function"""
     animal_classes = [Parrot, Penguin, Dog, HouseCat, BobCat]
     colors = ["White", "Black", "Red", "Green", "Blue", "Striped"]
     habitats = ["Land", "Sea", "Air", "Tree", "Campus"]
@@ -37,9 +39,9 @@ def main():
                 print(habitat + " is " + str(value_error))
                 continue
         zoo.append(new_animal)
-    print("There are {} animals in the zoo".format(len(zoo)))
+    print(f"There are {len(zoo)} animals in the zoo")
     for animal in zoo:
-        print('{} says {}'.format(str(animal), animal.sound()))
+        print(f"{animal} says {animal.sound()}")
 
 
 if __name__ == "__main__":

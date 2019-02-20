@@ -1,8 +1,8 @@
-'''
+#!/usr/bin/env python3
+"""
 keyboard import statement
-'''
-name = "keyboard"
+"""
 
 from .keyboard import spell_check
 
-__all__ = ['spell_check']
+__all__ = ["spell_check"]

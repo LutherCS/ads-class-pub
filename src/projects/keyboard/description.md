@@ -6,7 +6,7 @@ Usually, a spell checker runs after typing a word and suggests other words to se
 
 The typical touchscreen keyboard looks like this:
 
-```
+```text
 qwertyuiop
 asdfghjkl
 zxcvbnm
@@ -26,7 +26,7 @@ For each test case, print the list of words sorted by their distance ascending. 
 
 ### Sample input (data/projects/keyboard/sample.in)
 
-```
+```text
 2
 ifpv 3
 iopc
@@ -42,7 +42,7 @@ qed
 
 ### Sample output (tests/projects/keyboard/sample.out)
 
-```
+```text
 icpc 3
 gcpc 7
 iopc 7

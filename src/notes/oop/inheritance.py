@@ -2,7 +2,10 @@
 Examples of inheritance
 '''
 
-class Animal:
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    # @abstractmethod
     def __init__(self, legs_init_value):
         self._limbs = legs_init_value
     
@@ -20,6 +23,10 @@ class Animal:
     def grow_a_limb(self):
         self._limbs = self._limbs + 1
 
+    @abstractmethod
+    def eat(self):
+        ...
+
 
 class Deer(Animal):
     def __init__(self):
@@ -28,6 +35,23 @@ class Deer(Animal):
     def __str__(self):
         return 'Deer has {} legs'.format(self._limbs)
 
+    def eat(self):
+        print("Happy deer")
+
+
+class LegError(Exception):
+    def __init__(self, *args, **kwags):
+        super().__init__(self, *args, **kwags)
+
+class Snake(Animal):
+    def __init__(self):
+        super().__init__(0)
+    
+    def grow_a_limb(self):
+        raise LegError("I CANNOT!!!")
+    
+    def eat(self):
+        print("Snake is always unhappy")
 
 def main():
     a = Animal(6)
@@ -38,6 +62,16 @@ def main():
     print(d)
     d.grow_a_limb()
     print(d)
+    s = Snake()
+    print(s)
+    try:
+        s.grow_a_limb()
+    except:
+        pass
+    print(s)
+    d.eat()
+    s.eat()
+
 
 
 if __name__ == '__main__':

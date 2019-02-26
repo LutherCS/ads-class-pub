@@ -8,7 +8,7 @@ Complete the following programming project and submit your source code (as a sin
 
 1. Print each expression (line) as it appears in the file (ie. in Reverse Polish notation).
 
-1. Use the *Stack* class (implement your own or use *pythonds3*) to evaluate each expression and print its result, if the expression is valid.
+1. Use the *Stack* class (import from *pythonds3*) to evaluate each expression and print its result, if the expression is valid.
 
 1. Print the source of an error (invalid operation, an insufficient number of operands, incomplete expression etc.) if the expression is invalid.
 

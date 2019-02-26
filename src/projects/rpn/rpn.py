@@ -1,39 +1,24 @@
-'''
-Reverse Polish Notation
-'''
 #!/usr/bin/env python3
+"""
+Reverse Polish Notation
+"""
 
-
-class Stack:
-    '''Stack implementation'''
-    def __init__(self):
-        self._items = []
-
-    def is_empty(self):
-        return self._items == []
-
-    def size(self):
-        return len(self._items)
-
-    def push(self, new_item):
-        self._items.append(new_item)
-
-    def pop(self):
-        return self._items.pop()
-
-    def peek(self):
-        return self._items[-1]
+from pythonds3.basic import Stack
 
 
 class StackError(Exception):
-    '''Stack errors'''
+    """Stack errors"""
+
     def __init__(self, *args, **kwargs):
+        """Initializer"""
         Exception.__init__(self, *args, **kwargs)
 
 
 class TokenError(Exception):
-    '''Token errors'''
+    """Token errors"""
+
     def __init__(self, *args, **kwargs):
+        """Initializer"""
         Exception.__init__(self, *args, **kwargs)
 
 
@@ -53,9 +38,10 @@ def rpn_calc(filename: str) -> int:
 
 
 def main():
-    checksum = rpn_calc('data/projects/rpn/rpn_input_1.txt')
-    print('Checksum is %.2f' % checksum)
+    """Main function"""
+    checksum = rpn_calc("data/projects/rpn/rpn_input_1.txt")
+    print(f"Checksum is {checksum:.2f}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,8 +1,8 @@
-'''
+#!/usr/bin/env python3
+"""
 rpn import statement
-'''
-name = "rpn"
+"""
 
-from .rpn import do_math, postfix_eval
+from .rpn import do_math, postfix_eval, rpn_calc, StackError, TokenError
 
-__all__ = ['do_math', 'postfix_eval']
+__all__ = ["do_math", "postfix_eval", "rpn_calc", "StackError", "TokenError"]

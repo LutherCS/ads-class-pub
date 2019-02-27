@@ -21,7 +21,7 @@ FILENAMES = (
     "gen1000",
     "gen2500",
     "gen5000",
-    "gen1000",
+    "gen10000",
 )
 
 @pytest.mark.timeout(TIME_LIMIT)
@@ -32,9 +32,9 @@ def test_output(filename, capsys):
     spell_check(data_in)
     out, err = capsys.readouterr()
     with open(f"tests/projects/keyboard/{filename}.out") as file_out:
-        expected_output = "".join(file_out.readlines())
+        expected_output = file_out.read()
     assert expected_output == out
-    assert err == ""
+    assert not err
 
 
 if __name__ == "__main__":

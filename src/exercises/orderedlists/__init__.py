@@ -1,8 +1,8 @@
-'''
-linked_list import statement
-'''
-name = "orderedlists"
+#!/usr/bin/env python3
+"""
+orderedlists import statement
+"""
 
-from .orderedlists import Node, OrderedList
+from .orderedlists_classes import Node, OrderedList
 
-__all__ = ['Node', 'OrderedList']
+__all__ = ["Node", "OrderedList"]

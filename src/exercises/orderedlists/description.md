@@ -8,6 +8,6 @@ Complete the *Ordered List* class and implement the following methods. Remember 
 
 3. Implement method `index(item)` of the *OrderedList* class to retrieve the position of an item in the list or -1 if not there.
 
-4. Implement method `pop(position)` of the *OrderedList* class to remove the last item and return its value.
+4. Implement method `pop(position)` of the *OrderedList* class to remove the specified (or the last) item and return its value. Make sure to raise proper exceptions if no value can be returned.
 
 5. Implement a magic method `__getitem__` for the OrderedList class. It allows using a subscript (e.g. `my_list[160]`) to retrieve a specific item (node) of a list.

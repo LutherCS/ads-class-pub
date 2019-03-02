@@ -1,8 +1,8 @@
-'''
+#!/usr/bin/env python3
+"""
 bank import statement
-'''
-name = "bank"
+"""
 
-from .bank import Address, Customer, Account, CheckingAccount, SavingsAccount
+from .bank_classes import Address, Customer, Account, CheckingAccount, SavingsAccount
 
-__all__ = ['Address', 'Customer', 'Account', 'CheckingAccount', 'SavingsAccount']
+__all__ = ["Address", "Customer", "Account", "CheckingAccount", "SavingsAccount"]

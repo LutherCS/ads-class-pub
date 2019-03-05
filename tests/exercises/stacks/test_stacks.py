@@ -36,7 +36,7 @@ def test_par_checker(string, expected):
     "string, expected",
     [("{{([][])}()}", True), ("[{()]", False), ("([{}<>][])", True), (")][(", False)],
 )
-def test_pas_checker_ext(string, expected):
+def test_par_checker_ext(string, expected):
     """Testing par_checker_ext method"""
     assert par_checker_ext(string) == expected
 

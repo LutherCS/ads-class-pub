@@ -1,9 +1,10 @@
 {
-    "python.pythonPath": "python3",
+    "python.pythonPath": ".venv/bin/python",
     "python.unitTest.pyTestArgs": [
         "tests"
     ],
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.nosetestsEnabled": false,
-    "python.unitTest.pyTestEnabled": true
+    "python.unitTest.pyTestEnabled": true,
+    "python.formatting.provider": "black"
 }

@@ -1,4 +1,4 @@
-# Every problem has a solution, right?
+# Every problem has a solution
 
 1. Devise an original problem that can be solved using Python and object-oriented design.
 

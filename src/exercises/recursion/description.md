@@ -7,7 +7,8 @@ Idea for the iterative solutions: try to come up with a formula that connects th
 1. Implement a **recursive** function to find the greatest common divisor of two numbers (i.e. gcd(1860, 2020) is 20).
 
 2. Implement an **iterative** function that, when invoked as `hourglass_ite(5)`, prints the following hourglass figure:
-```
+
+```text
 *********
  *******
   *****
@@ -21,7 +22,7 @@ Idea for the iterative solutions: try to come up with a formula that connects th
 
 3. Implement an **iterative** function that, when invoked as `diamond_ite(5)`, prints the following diamond figure:
 
-```
+```text
     *
    ***
   *****
@@ -35,28 +36,28 @@ Idea for the iterative solutions: try to come up with a formula that connects th
 
 4. Implement a **recursive** function that, when invoked as `hourglass_rec(5)`,  prints the following hourglass figure:
 
-```
-* * * * * 
- * * * *  
-  * * *   
-   * *    
-    *     
-   * *    
-  * * *   
- * * * *  
-* * * * * 
+```text
+* * * * *
+ * * * *
+  * * *
+   * *
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
 ```
 
 5. This is a tricky task. Implement a **recursive** function that, when invoked as `diamond_rec(5)`,  prints the following diamond figure:
 
-```
-    *     
-   * *    
-  * * *   
- * * * *  
-* * * * * 
- * * * *  
-  * * *   
-   * *    
-    *  
+```text
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+ * * * *
+  * * *
+   * *
+    *
 ```

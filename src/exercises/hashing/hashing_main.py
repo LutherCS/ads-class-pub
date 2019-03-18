@@ -1,33 +1,15 @@
 #!/usr/bin/env python3
-"""Hashing exercise code template"""
+"""
+Demonstration of the hashing functions
+"""
 
-
-import random
-
-
-def hash_remainder(key: int, size: int):
-    """Find hash using remainder"""
-    raise NotImplementedError
-
-
-def hash_mid_sqr(key, size):
-    """Find hash using mid-square method"""
-    raise NotImplementedError
-
-
-def hash_folding(key: int, size: int):
-    """Find hash using folding method"""
-    raise NotImplementedError
-
-
-def hash_str(key: str, size: int):
-    """Find string hash using simple sum-of-values method"""
-    raise NotImplementedError
-
-
-def hash_str_weighted(key: str, size: int):
-    """Find string hash using character positions as weights"""
-    raise NotImplementedError
+from src.exercises.hashing import (
+    hash_remainder,
+    hash_mid_sqr,
+    hash_folding,
+    hash_str,
+    hash_str_weighted,
+)
 
 
 def main():

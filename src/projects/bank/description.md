@@ -10,7 +10,6 @@ Implement classes Address, Customer, Account, CheckingAccount, and SavingsAccoun
 
 * Implement all data members as properties .
 
-
 ## Class-specific requirements
 
 1. Class *Address* has members `_street`, `_city`, `_state`, `_zip`, and `__eq__`. Two addresses are equal if all 4 properties are equal.

@@ -48,7 +48,6 @@ To make it clear what you are doing you will want to implement the following met
 
 6. Repeat 2-5 for all possible new states (fill jug 1, fill jug 2, empty jug 1, empty jug 2, pour from jug 1 to jug 2, pour from jug 2 to jug 1).
 
-
 ## Output note
 
 Depending on the chosen approach, your output may deviate from the provided. Don't worry, it's fine, as long as you find **a** path.

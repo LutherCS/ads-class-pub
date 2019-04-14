@@ -1,5 +1,5 @@
-"""Tree building exercise"""
 #!/usr/bin/env python3
+"""Tree building exercise"""
 
 
 class BinaryTree:

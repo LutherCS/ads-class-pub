@@ -1,5 +1,5 @@
-"""Tree building exercise"""
 #!/usr/bin/env python3
+"""Tree building exercise"""
 
 
 def BinaryTree(r):
@@ -39,6 +39,7 @@ def get_child_left(root):
 def get_child_right(root):
     return root[2]
 
+
 def clockwise(root):
     """Clockwise tree traversal"""
     print(get_root_val(root), end=" ")
@@ -46,6 +47,7 @@ def clockwise(root):
         clockwise(get_child_right(root))
     if get_child_left(root):
         clockwise(get_child_left(root))
+
 
 def build_tree_lst() -> list:
     """Build a tree and return it"""

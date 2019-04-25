@@ -1,5 +1,5 @@
-"""Limited size max Binary Heap implementation"""
 #!/usr/bin/env python3
+"""Limited size max Binary Heap implementation"""
 
 
 class BinaryHeapMax:

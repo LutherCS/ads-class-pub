@@ -1,9 +1,8 @@
-"""Morse code encoding and decoding"""
 #!/usr/bin/env python3
-# encoding: UTF-8
+"""Morse code encoding and decoding"""
 
 
-from notes.trees.BinaryTree import BinaryTree
+from src.notes.trees import BinaryTree
 
 
 class Coder:

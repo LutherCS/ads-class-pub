@@ -2,7 +2,8 @@
 """Using Breadth first search to find Kevin Bacon's number of actors"""
 
 
-from pythonds3.graphs import Graph
+# from pythonds3.graphs import Graph
+from src.notes.graphs import Graph
 import sys
 import time
 

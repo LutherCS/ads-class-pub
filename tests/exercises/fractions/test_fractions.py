@@ -2,168 +2,204 @@
 """
 Testing the class Fraction
 @authors: Roman Yasinovskyy, Karina Hoff
-@updated: 2019
+@version: 2021.2
 """
 
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.exercises.fractions import Fraction
+
+try:
+    importlib.util.find_spec("exercises.fractions", "src")
+except ModuleNotFoundError:
+    sys.path.append(str(pathlib.Path(".").parent.parent.parent.absolute()))
+finally:
+    from src.exercises.fractions import Fraction
 
 
-class TestClassFraction:
-    """Testing the class Fraction"""
+def test_init():
+    """Testing init"""
+    fraction = Fraction(1, 3)
+    assert isinstance(fraction, Fraction)
 
-    @pytest.fixture(scope="function", autouse=True)
-    def setup_class(self):
-        """Setting up"""
-        self.fraction1 = Fraction(1, 3)
-        self.fraction2 = Fraction(4, 6)
-        self.fraction3 = Fraction(6, 4)
-        self.fraction4 = Fraction(2, 6)
 
-    def test_init(self):
-        """Testing init"""
-        assert self.fraction1 == Fraction(1, 3)
+def test_init_simplification():
+    """Testing init with gcd"""
+    fraction = Fraction(4, 6)
+    assert fraction == Fraction(2, 3)
 
-    def test_init_simplification(self):
-        """Testing init with gcd"""
-        assert self.fraction2 == Fraction(2, 3)
 
-    def test_init_numerator_error(self):
-        """Testing numerator error"""
-        with pytest.raises(TypeError) as excinfo:
-            self.fraction4 = Fraction(1.5, 2)
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Numerator must be an integer number"
+def test_init_numerator_error():
+    """Testing numerator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction(1.5, 2)
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Numerator must be an integer number"
 
-    def test_init_denominator_error(self):
-        """Testing denominator error"""
-        with pytest.raises(TypeError) as excinfo:
-            self.fraction4 = Fraction(1, 2.5)
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Denominator must be an integer number"
 
-    def test_init_numerator_error_2(self):
-        """Testing numerator error"""
-        with pytest.raises(TypeError) as excinfo:
-            self.fraction4 = Fraction("1", 2)
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Numerator must be an integer number"
+def test_init_numerator_error_2():
+    """Testing numerator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction("1", 2)
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Numerator must be an integer number"
 
-    def test_init_denominator_error_2(self):
-        """Testing denominator error"""
-        with pytest.raises(TypeError) as excinfo:
-            self.fraction4 = Fraction(1, "2")
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Denominator must be an integer number"
 
-    def test_get_numerator(self):
-        """Testing numerator getter"""
-        assert self.fraction1.get_numerator() == 1
+def test_init_denominator_error():
+    """Testing denominator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction(1, 2.5)
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Denominator must be an integer number"
 
-    def test_get_numerator_2(self):
-        """Testing numerator getter"""
-        assert self.fraction1.numerator == 1
 
-    def test_get_denominator(self):
-        """Testing denominator getter"""
-        assert self.fraction1.get_denominator() == 3
+def test_init_denominator_error_2():
+    """Testing denominator error"""
+    with pytest.raises(TypeError) as excinfo:
+        new_fraction = Fraction(1, "2")
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Denominator must be an integer number"
 
-    def test_get_denominator_2(self):
-        """Testing denominator getter"""
-        assert self.fraction1.denominator == 3
 
-    def test_str(self):
-        """Testing __str__method"""
-        assert str(self.fraction3) == "1 1/2"
+def test_get_numerator():
+    """Testing numerator getter"""
+    fraction = Fraction(1, 3)
+    assert fraction.get_numerator() == 1
 
-    def test_repr(self):
-        """Testing __repr__method"""
-        assert repr(self.fraction3) == "Fraction(3, 2)"
 
-    def test_eq(self):
-        """Testing equality operator"""
-        assert Fraction(1, 3) == Fraction(2, 6)
-        assert self.fraction1 == self.fraction4
+def test_get_numerator_2():
+    """Testing numerator getter"""
+    fraction = Fraction(1, 3)
+    assert fraction.numerator == 1
 
-    def test_eq_error(self):
-        """Testing equality operator error"""
-        with pytest.raises(TypeError) as excinfo:
-            _ = self.fraction4 == 1
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Can only compare Fractions"
 
-    def test_gt(self):
-        """Testing greater-than operator"""
-        assert Fraction(1, 3) > Fraction(1, 4)
-        assert Fraction(1, 2) < Fraction(2, 3)
-        assert self.fraction1 < self.fraction2
-        assert self.fraction3 > self.fraction2
+def test_get_denominator():
+    """Testing denominator getter"""
+    fraction = Fraction(1, 3)
+    assert fraction.get_denominator() == 3
 
-    def test_gt_error(self):
-        """Testing greater-than operator error"""
-        with pytest.raises(TypeError) as excinfo:
-            _ = self.fraction4 > 1
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Can only compare Fractions"
 
-    def test_ge(self):
-        """Testing greater-than-or-equal operator"""
-        assert Fraction(1, 3) >= Fraction(1, 4)
-        assert Fraction(1, 2) <= Fraction(2, 3)
-        assert self.fraction1 <= self.fraction4
-        assert self.fraction3 >= self.fraction2
+def test_get_denominator_2():
+    """Testing denominator getter"""
+    fraction = Fraction(1, 3)
+    assert fraction.denominator == 3
 
-    def test_ge_error(self):
-        """Testing greater-than-or-equal operator error"""
-        with pytest.raises(TypeError) as excinfo:
-            _ = self.fraction4 >= 1
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Can only compare Fractions"
 
-    def test_add(self):
-        """Testing addition operator"""
-        assert (self.fraction1 + self.fraction2) == Fraction(1, 1)
+def test_str():
+    """Testing __str__method"""
+    fraction = Fraction(6, 4)
+    assert str(fraction) == "1 1/2"
 
-    def test_add_error(self):
-        """Testing addition operator error"""
-        with pytest.raises(TypeError) as excinfo:
-            _ = self.fraction4 + "1"
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Can only add two Fractions"
 
-    def test_sub(self):
-        """Testing subtraction operator"""
-        assert (self.fraction1 - self.fraction2) == Fraction(-1, 3)
+def test_repr():
+    """Testing __repr__method"""
+    fraction = Fraction(6, 4)
+    assert repr(fraction) == "Fraction(3, 2)"
 
-    def test_sub_error(self):
-        """Testing subtraction operator error"""
-        with pytest.raises(TypeError) as excinfo:
-            _ = self.fraction4 - "1"
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Can only subtract two Fractions"
 
-    def test_mult(self):
-        """Testing multiplication operator"""
-        assert (self.fraction1 * self.fraction2) == Fraction(2, 9)
+def test_eq():
+    """Testing equality operator"""
+    fraction1 = Fraction(1, 3)
+    fraction2 = Fraction(2, 6)
+    assert fraction1 == fraction2
 
-    def test_mult_error(self):
-        """Testing multiplication operator error"""
-        with pytest.raises(TypeError) as excinfo:
-            _ = self.fraction4 * "1"
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Can only multiply two Fractions"
 
-    def test_truediv(self):
-        """Testing true division operator"""
-        assert (self.fraction1 / self.fraction2) == Fraction(1, 2)
+def test_eq_error():
+    """Testing equality operator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction(1, 3) == 1
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Can only compare Fractions"
 
-    def test_truediv_error(self):
-        """Testing true division operator error"""
-        with pytest.raises(TypeError) as excinfo:
-            _ = self.fraction4 / "1"
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "Can only divide two Fractions"
+
+def test_gt():
+    """Testing greater-than operator"""
+    assert Fraction(1, 3) > Fraction(1, 4)
+    assert Fraction(1, 2) < Fraction(2, 3)
+
+
+def test_gt_error():
+    """Testing greater-than operator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction(1, 3) > 1
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Can only compare Fractions"
+
+
+def test_ge():
+    """Testing greater-than-or-equal operator"""
+    assert Fraction(1, 3) >= Fraction(1, 4)
+    assert Fraction(1, 3) >= Fraction(2, 6)
+    assert Fraction(1, 2) <= Fraction(2, 3)
+    assert Fraction(1, 2) <= Fraction(2, 4)
+
+
+def test_ge_error():
+    """Testing greater-than-or-equal operator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction(1, 3) >= 1
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Can only compare Fractions"
+
+
+def test_add():
+    """Testing addition operator"""
+    assert (Fraction(1, 3) + Fraction(2, 3)) == Fraction(1, 1)
+
+
+def test_add_error():
+    """Testing addition operator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction(1, 3) + "1"
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Can only add two Fractions"
+
+
+def test_sub():
+    """Testing subtraction operator"""
+    assert (Fraction(1, 3) - Fraction(2, 3)) == Fraction(-1, 3)
+
+
+def test_sub_error():
+    """Testing subtraction operator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction(1, 3) - "1"
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Can only subtract two Fractions"
+
+
+def test_mult():
+    """Testing multiplication operator"""
+    assert (Fraction(1, 3) * Fraction(2, 3)) == Fraction(2, 9)
+
+
+def test_mult_error():
+    """Testing multiplication operator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction(1, 3) * "1"
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Can only multiply two Fractions"
+
+
+def test_truediv():
+    """Testing true division operator"""
+    assert (Fraction(1, 3) / Fraction(2, 3)) == Fraction(1, 2)
+
+
+def test_truediv_error():
+    """Testing true division operator error"""
+    with pytest.raises(TypeError) as excinfo:
+        Fraction(1, 3) / "1"
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "Can only divide two Fractions"
 
 
 if __name__ == "__main__":
-    pytest.main(["-vv", "test_fractions.py"])
+    pytest.main(
+        [
+            "-vv",
+            str(pathlib.Path("tests", "exercises", "fractions", "test_fractions.py")),
+        ]
+    )

@@ -2,87 +2,163 @@
 """
 Testing classes Die and Cup
 @authors: Roman Yasinovskyy
-@updated: 2019
+@version: 2021.2
 """
 
+import importlib
+import pathlib
 import random
+import sys
+
 import pytest
-from src.projects.dice import Die, FrozenDie, Cup
+
+try:
+    importlib.util.find_spec("projects.dice", "src")
+except ModuleNotFoundError:
+    sys.path.append(str(pathlib.Path(".").parent.parent.parent.absolute()))
+finally:
+    from src.projects.dice import Die, FrozenDie, Cup
 
 
-class TestDiceMethods:
-    """Testing module Dice"""
+random.seed(42)
 
-    @pytest.fixture(scope="function", autouse=True)
-    def setup_class(self):
-        """Setting up"""
-        random.seed(42)
-        self.die = Die(range(1, 7))
-        self.frozen_die = FrozenDie(range(1, 7))
-        self.cup = Cup(2, 6)
-        self.yahtzee = Cup(5, 6)
 
-    def test_die_get_value(self):
-        """Testing value getter"""
-        assert self.die.value == 6
+@pytest.fixture()
+def die():
+    """A simple die with a random value"""
+    return Die(range(1, 7))
 
-    def test_die_set_value(self):
-        """Testing value setter"""
-        with pytest.raises(ValueError) as excinfo:
-            self.die.value = 1
-        exception_msg = excinfo.value.args[0]
-        assert exception_msg == "You must roll the die to change its value"
 
-    def test_die_str(self, capsys):
-        """Testing die.__str__method"""
-        print(self.die)
-        out, err = capsys.readouterr()
-        assert out.strip() == "6"
-        assert err == ""
+@pytest.fixture()
+def frozen_die():
+    """A frozen die that cannot be rolled"""
+    return FrozenDie(range(1, 7))
 
-    def test_die_roll(self):
-        """Testing die roll method"""
-        assert self.die.roll() == 1
 
-    def test_frozen_die_roll(self):
-        """Testing frozen die roll method"""
-        self.frozen_die = FrozenDie(range(1, 7))
-        assert self.frozen_die.value == 1
-        self.frozen_die.frozen = True
-        for _ in range(10):
-            self.frozen_die.roll()
-            assert self.frozen_die.value == 1
+@pytest.fixture()
+def cup():
+    """A cup with two standard dice"""
+    return Cup(2, 6)
 
-    def test_cup_shake(self):
-        """Testing shake method"""
-        self.cup.shake()
-        assert str(self.cup) == "[1, 6]"
 
-    def test_cup_str(self, capsys):
-        """Testing cup.__str__method"""
-        print(self.cup)
-        out, err = capsys.readouterr()
-        assert out.strip() == "[1, 6]"
-        assert err == ""
+@pytest.fixture()
+def yahtzee():
+    """A cup with 5 standard dice"""
+    return Cup(5, 6)
 
-    def test_cup_add(self):
-        """Testing add method"""
-        self.cup.add(Die(range(1, 7)))
-        assert str(self.cup) == "[1, 6, 1]"
 
-    def test_cup_remove(self):
-        """Testing remove method"""
-        self.cup.remove(0)
-        assert str(self.cup) == "[6]"
+def test_die_get_value(die):
+    """Testing value getter"""
+    try:
+        assert die.value == "1"
+        print("exact match", end=" ")
+    except AssertionError:
+        assert die.value in range(1, 7)
+        print("close enough", end=" ")
 
-    def test_cup_roll(self):
-        """Testing cup roll method"""
-        assert str(self.yahtzee) == "[3, 2, 2, 2, 6]"
-        self.yahtzee.shake()
-        assert str(self.yahtzee) == "[1, 6, 6, 5, 1]"
-        self.yahtzee.roll(1, 3, 5)
-        assert str(self.yahtzee) == "[5, 6, 4, 5, 1]"
+
+def test_die_set_value(die):
+    """Testing value setter"""
+    with pytest.raises(ValueError) as excinfo:
+        die.value = 1
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == "You must roll the die to change its value"
+
+
+def test_die_str(capsys, die):
+    """Testing die.__str__method"""
+    print(die)
+    out, _ = capsys.readouterr()
+    try:
+        assert int(out.strip()) == 1
+        print("exact match", end=" ")
+    except AssertionError:
+        assert int(out.strip()) in range(1, 7)
+        print("close enough", end=" ")
+
+
+def test_die_roll(die):
+    """Testing die roll method"""
+    try:
+        assert die.roll() == 1
+        print("exact match", end=" ")
+    except AssertionError:
+        assert die.value in range(1, 7)
+        print("close enough", end=" ")
+
+
+def test_frozen_die_roll(frozen_die):
+    """Testing frozen die roll method"""
+    frozen_die.frozen = True
+    check_value = frozen_die.value
+    for _ in range(100):
+        frozen_die.roll()
+        assert frozen_die.value == check_value
+
+
+def test_cup_shake(cup):
+    """Testing shake method"""
+    check_value = ", ".join([str(d) for d in cup])
+    for i in range(100):
+        cup.shake()
+        if ", ".join([str(d) for d in cup]) != check_value:
+            if 0 == i:
+                assert True
+                break
+    else:
+        assert False, "The cup did not change after vigorous shaking"
+
+
+def test_cup_str(capsys, cup):
+    """Testing cup.__str__method"""
+    print(cup)
+    out, _ = capsys.readouterr()
+    try:
+        assert out.strip() == "[3, 2]"
+        print("exact match", end=" ")
+    except AssertionError:
+        for d in cup:
+            assert int(d.value) in range(1, 7)
+        print("close enough", end=" ")
+
+
+def test_cup_add(cup):
+    """Testing add method"""
+    cup.add(Die(range(1, 7)))
+    try:
+        assert str(cup) == "[2, 2, 6]"
+        print("exact match", end=" ")
+    except AssertionError:
+        for d in cup:
+            assert int(d.value) in range(1, 7)
+        print("close enough", end=" ")
+
+
+def test_cup_remove(cup):
+    """Testing remove method"""
+    cup.remove(0)
+    try:
+        assert str(cup) == "[6]"
+        print("exact match", end=" ")
+    except AssertionError:
+        for d in cup:
+            assert int(d.value) in range(1, 7)
+        print("close enough", end=" ")
+
+
+def test_cup_roll(yahtzee):
+    """Testing cup roll method"""
+    check_value = [d.value for d in yahtzee]
+    for _ in range(100):
+        yahtzee.roll(1, 3, 5)
+        new_value = [d.value for d in yahtzee]
+        assert new_value[1::2] == check_value[1::2]
 
 
 if __name__ == "__main__":
-    pytest.main(["-vv", "test_dice.py"])
+    pytest.main(
+        [
+            "-vv",
+            str(pathlib.Path("tests", "projects", "dice", "test_dice.py")),
+        ]
+    )

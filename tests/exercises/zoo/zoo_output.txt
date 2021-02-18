@@ -1,9 +1,9 @@
 Campus is Incorrect habitat value
 There are 9 animals in the zoo
-Flying Striped Parrot (1 yo) says 'Polly wants a cracker'
+Flying Striped Parrot (1 yo) says Polly wants a cracker
 Non-flying Striped Penguin (3 yo) says nothing
 Blue Tree Bobcat (2 yo) says Meow!
-Flying White Parrot (1 yo) says 'Polly wants a cracker'
+Flying White Parrot (1 yo) says Polly wants a cracker
 Non-flying Green Penguin (9 yo) says nothing
 Red House Cat (10 yo) says Meow!
 Non-flying Red Penguin (7 yo) says nothing

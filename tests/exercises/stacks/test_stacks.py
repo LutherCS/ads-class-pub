@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
 """
-Testing the Stack
+Testing the class Stack
 @authors: Roman Yasinovskyy
-@updated: 2019
+@version: 2021.2
 """
 
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.exercises.stacks.stacks import rev_string
-from src.exercises.stacks.stacks import par_checker
-from src.exercises.stacks.stacks import par_checker_ext
-from src.exercises.stacks.stacks import par_checker_file
-from src.exercises.stacks.stacks import base_converter
-from src.exercises.stacks.stacks import rpn_calc
-from src.exercises.stacks.stacks import StackError, TokenError
+
+try:
+    importlib.util.find_spec("exercises.stacks", "src")
+except ModuleNotFoundError:
+    sys.path.append(str(pathlib.Path(".").parent.parent.parent.absolute()))
+finally:
+    from src.exercises.stacks import (StackError, TokenError, base_converter,
+                                      par_checker, par_checker_ext,
+                                      par_checker_file, rev_string, rpn_calc)
 
 
 @pytest.mark.parametrize(
@@ -124,4 +130,9 @@ def test_rpn_calc_token_err(expression, err_message, token):
 
 
 if __name__ == "__main__":
-    pytest.main(["-vv", "test_stacks.py"])
+    pytest.main(
+        [
+            "-vv",
+            str(pathlib.Path("tests", "exercises", "stacks", "test_stacks.py")),
+        ]
+    )

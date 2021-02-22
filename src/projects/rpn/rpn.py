@@ -35,13 +35,3 @@ def do_math(op: str, op1: int, op2: int) -> int:
 def rpn_calc(filename: str) -> int:
     # TODO: Read lines from the file and pass them to the postfix_eval
     raise NotImplementedError
-
-
-def main():
-    """Main function"""
-    checksum = rpn_calc("data/projects/rpn/rpn_input_1.txt")
-    print(f"Checksum is {checksum:.2f}")
-
-
-if __name__ == "__main__":
-    main()

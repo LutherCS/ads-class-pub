@@ -2,14 +2,24 @@
 """
 Testing the module rpn
 @authors: Roman Yasinovskyy, Karina Hoff
-@updated: 2019
+@version: 2021.2
 """
 
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.projects.rpn import do_math
-from src.projects.rpn import postfix_eval
-from src.projects.rpn import rpn_calc
-from src.projects.rpn import StackError, TokenError
+
+try:
+    importlib.util.find_spec("projects.dice", "src")
+except ModuleNotFoundError:
+    sys.path.append(str(pathlib.Path(".").parent.parent.parent.absolute()))
+finally:
+    from src.projects.rpn import do_math
+    from src.projects.rpn import postfix_eval
+    from src.projects.rpn import rpn_calc
+    from src.projects.rpn import StackError, TokenError
 
 
 @pytest.mark.parametrize(
@@ -109,6 +119,22 @@ def test_do_math_advanced(operation, operand1, operand2, expected):
 
 
 @pytest.mark.parametrize(
+    "operation, operand1, operand2, expected",
+    [
+        ("&", 5, 6, 4),
+        ("&", 51, 61, 49),
+        ("|", 5, 6, 7),
+        ("|", 51, 61, 63),
+        ("^", 5, 6, 3),
+        ("^", 51, 61, 14),
+    ],
+)
+def test_do_math_bitwise(operation, operand1, operand2, expected):
+    """Test simple math expressions"""
+    assert do_math(operation, operand1, operand2) == expected
+
+
+@pytest.mark.parametrize(
     "operation, operand1, operand2, err_message",
     [
         ("//", 2, 0, "integer division or modulo by zero"),
@@ -125,4 +151,9 @@ def test_do_math_advanced_error(operation, operand1, operand2, err_message):
 
 
 if __name__ == "__main__":
-    pytest.main(["-vv", "test_rpn.py"])
+    pytest.main(
+        [
+            "-vv",
+            str(pathlib.Path("tests", "projects", "rpn", "test_rpn.py")),
+        ]
+    )

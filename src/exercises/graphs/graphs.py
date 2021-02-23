@@ -1,6 +1,9 @@
-"""Graphs and graphing algorithms"""
 #!/usr/bin/env python3
-# encoding: UTF-8
+"""
+Exercise `graphs` implementation
+
+@author:
+"""
 
 import heapq
 import sys

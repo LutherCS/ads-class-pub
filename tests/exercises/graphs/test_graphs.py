@@ -1,12 +1,23 @@
+#!/usr/bin/env python3
 """
-Testing the Graphs module
+Exercise `graphs` testing
+
 @authors: Roman Yasinovskyy
-@updated: 2019
+@version: 2021.2
 """
 
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.exercises.graphs import Vertex
-from src.exercises.graphs import Graph
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.exercises.graphs import Graph
 
 
 class TestGraphMethods:
@@ -69,4 +80,4 @@ class TestGraphMethods:
 
 
 if __name__ == "__main__":
-    pytest.main(["-vv", "test_graphs.py"])
+    pytest.main(["-v", __file__])

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Testing the class Stack
+Exercise `stacks` testing
+
 @authors: Roman Yasinovskyy
 @version: 2021.2
 """
@@ -12,13 +13,20 @@ import sys
 import pytest
 
 try:
-    importlib.util.find_spec("exercises.stacks", "src")
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
 except ModuleNotFoundError:
-    sys.path.append(str(pathlib.Path(".").parent.parent.parent.absolute()))
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
 finally:
-    from src.exercises.stacks import (StackError, TokenError, base_converter,
-                                      par_checker, par_checker_ext,
-                                      par_checker_file, rev_string, rpn_calc)
+    from src.exercises.stacks import (
+        StackError,
+        TokenError,
+        base_converter,
+        par_checker,
+        par_checker_ext,
+        par_checker_file,
+        rev_string,
+        rpn_calc,
+    )
 
 
 @pytest.mark.parametrize(
@@ -101,7 +109,7 @@ def test_rpn_calc(expression, expected):
     ],
 )
 def test_rpn_calc_float(expression, expected):
-    """Testing rpn_calc method with floatin point results"""
+    """Testing rpn_calc method with floating point results"""
     assert pytest.approx(rpn_calc(expression)) == expected
 
 
@@ -130,9 +138,4 @@ def test_rpn_calc_token_err(expression, err_message, token):
 
 
 if __name__ == "__main__":
-    pytest.main(
-        [
-            "-vv",
-            str(pathlib.Path("tests", "exercises", "stacks", "test_stacks.py")),
-        ]
-    )
+    pytest.main(["-v", __file__])

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-stacks import statement
+Exercise `stacks` import statement
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
 
 from .stacks import StackError

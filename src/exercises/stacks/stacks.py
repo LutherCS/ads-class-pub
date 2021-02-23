@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Stack exercise"""
+"""
+Exercise `stacks` implementation
+
+@author:
+"""
 
 from pythonds3.basic import Stack
 

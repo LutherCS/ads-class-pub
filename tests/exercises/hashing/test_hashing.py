@@ -1,18 +1,29 @@
 #!/usr/bin/env python3
 """
-Testing the hashing functions
+Exercise `hashing` testing
+
 @authors: Roman Yasinovskyy
-@updated: 2019
+@version: 2021.2
 """
 
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.exercises.hashing import (
-    hash_remainder,
-    hash_mid_sqr,
-    hash_folding,
-    hash_str,
-    hash_str_weighted,
-)
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.exercises.hashing import (
+        hash_remainder,
+        hash_mid_sqr,
+        hash_folding,
+        hash_str,
+        hash_str_weighted,
+    )
 
 
 @pytest.mark.parametrize(
@@ -104,5 +115,4 @@ def test_hash_str_weighted(keys, size, expected):
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_hashing.py"])
-
+    pytest.main(["-v", __file__])

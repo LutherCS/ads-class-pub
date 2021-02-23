@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Hashing functions"""
+"""
+Exercise `hashing` implementation
+
+@author:
+"""
 
 
 def hash_remainder(key: int, size: int) -> int:

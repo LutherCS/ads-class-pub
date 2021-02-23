@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """
-Demonstration of the hashing functions
+Exercise `hashing` driver
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
 
-from src.exercises.hashing import (
+from hashing_functions import (
     hash_remainder,
     hash_mid_sqr,
     hash_folding,
@@ -54,4 +57,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

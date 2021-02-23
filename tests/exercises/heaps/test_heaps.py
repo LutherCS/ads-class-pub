@@ -1,12 +1,23 @@
 #!/usr/bin/env python3
 """
-Testing the Max Binary Heap module
-@author: Roman Yasinovskyy
-@updated: 2019
+Exercise `heaps` testing
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
 
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.exercises.heaps import BinaryHeapMax
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.exercises.heaps import BinaryHeapMax
 
 
 class TestBinaryHeapMethods:
@@ -54,4 +65,4 @@ class TestBinaryHeapMethods:
 
 
 if __name__ == "__main__":
-    pytest.main(["-vv", "test_heaps.py"])
+    pytest.main(["-v", __file__])

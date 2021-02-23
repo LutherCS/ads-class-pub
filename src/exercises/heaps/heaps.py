@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Limited size max Binary Heap implementation"""
+"""
+Exercise `heaps` implementation
+
+@author:
+"""
 
 
 class BinaryHeapMax:

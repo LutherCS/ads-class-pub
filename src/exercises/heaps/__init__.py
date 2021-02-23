@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
 """
-heaps import statement
+Exercise `heaps` import statement
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
-name = "heaps"
 
 from .heaps import BinaryHeapMax
 
 __all__ = ["BinaryHeapMax"]
-

@@ -1,6 +1,6 @@
 # Stack 'em Up
 
-Complete the following tasks and submit your source file(s) to KATIE.
+Complete the following tasks:
 
 1. Implement function `rev_string_stack` that reverses characters in a string **using** a stack.
 
@@ -32,4 +32,4 @@ python3 src/exercises/stacks/stacks_main.py
 
 ```bash
 python -m pytest tests/exercises/stacks/test_stacks.py
-```
+```exercises and submit your source code to KATIE as a single file (archive).

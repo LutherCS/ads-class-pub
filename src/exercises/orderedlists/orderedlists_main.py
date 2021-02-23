@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Ordered List main"""
+"""
+Exercise `orderedlists` driver
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
+"""
 
 
 from random import seed, randint
-from orderedlists_classes import Node, OrderedList
+from orderedlists_classes import OrderedList
 
 
 def print_list_status(lst):
@@ -50,4 +55,5 @@ def main():
 
 
 if __name__ == "__main__":
+    seed(42)
     main()

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Ordered List classes"""
+"""
+Exercise `orderedlists` implementation
+
+@authors:
+"""
 
 import random
 import typing

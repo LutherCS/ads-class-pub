@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-trees import statement
+Exercise `trees` import statement
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
 
-from .trees import build_tree_oop
-from .treeslst import build_tree_lst
-from .treeslst import clockwise
+from .trees import BinaryTree, build_tree_oop
+from .treeslst import build_tree_lst, preorder, inorder, postorder, clockwise
 
 __all__ = ["BinaryTree", "preorder", "inorder", "postorder", "clockwise"]

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Tree building exercise"""
+"""
+Exercise `trees` implementation
+
+@author:
+"""
 
 
 def BinaryTree(r):

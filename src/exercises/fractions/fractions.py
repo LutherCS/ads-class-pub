@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-Implementation of the class Fraction
+Exercise `fractions` impolementation
+
+@author:
 """
 
 

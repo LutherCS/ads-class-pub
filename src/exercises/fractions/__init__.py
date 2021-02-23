@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-fractions import statement
+Exercise `fractions` import statement
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
 
 from .fractions import gcd, Fraction

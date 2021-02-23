@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Using class Fraction
+Exercise `fractions` driver
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
 
 from fractions import Fraction

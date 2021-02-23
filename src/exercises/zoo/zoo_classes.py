@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-Exercise Zoo classes
+Exercise `zoo` implementation
+
+@author:
 """
 
 from abc import ABC, abstractmethod

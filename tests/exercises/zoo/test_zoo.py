@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Testing the Zoo module
+Exercise `zoo` testing
+
 @authors: Roman Yasinovskyy, Karina Hoff
 @version: 2021.2
 """
@@ -12,9 +13,9 @@ import sys
 import pytest
 
 try:
-    importlib.util.find_spec("exercises.zoo", "src")
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
 except ModuleNotFoundError:
-    sys.path.append(str(pathlib.Path(".").parent.parent.parent.absolute()))
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
 finally:
     from src.exercises.zoo import (
         Animal,
@@ -168,9 +169,4 @@ def test_bobcat_error():
 
 
 if __name__ == "__main__":
-    pytest.main(
-        [
-            "-vv",
-            str(pathlib.Path("tests", "exercises", "zoo", "test_zoo.py")),
-        ]
-    )
+    pytest.main(["-v", __file__])

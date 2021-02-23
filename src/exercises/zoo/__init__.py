@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-zoo import statement
+Exercise `zoo` import statement
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
 
 from .zoo_classes import (

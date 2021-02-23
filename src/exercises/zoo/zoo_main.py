@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Zoo exercise driver
+Exercise `zoo` driver
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
 
 import random

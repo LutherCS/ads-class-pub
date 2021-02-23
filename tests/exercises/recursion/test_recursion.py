@@ -1,16 +1,27 @@
 #!/usr/bin/env python3
 """
-Testing the Recursion
+Exercise `recursion` testing
+
 @authors: Roman Yasinovskyy
-@updated: 2019
+@version: 2021.2
 """
 
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.exercises.recursion.recursion import gcd
-from src.exercises.recursion.recursion import hourglass_ite
-from src.exercises.recursion.recursion import diamond_ite
-from src.exercises.recursion.recursion import hourglass_rec
-from src.exercises.recursion.recursion import diamond_rec
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.exercises.recursion import gcd
+    from src.exercises.recursion import hourglass_ite
+    from src.exercises.recursion import diamond_ite
+    from src.exercises.recursion import hourglass_rec
+    from src.exercises.recursion import diamond_rec
 
 
 class TestRecursionMethods:
@@ -91,4 +102,4 @@ class TestRecursionMethods:
 
 
 if __name__ == "__main__":
-    pytest.main(["-vv", "test_recursion.py"])
+    pytest.main(["-v", __file__])

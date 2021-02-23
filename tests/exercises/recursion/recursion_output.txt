@@ -1,3 +1,5 @@
+GCD of 1861 and 2021 is 1
+GCD of 1860 and 2020 is 20
 Hourglass (iterative)
 *********
  ******* 

@@ -1,6 +1,6 @@
 # Fractions
 
-Complete the following tasks and submit your source file(s) to KATIE.
+Complete the following tasks:
 
 1. Modify the constructor of the class `Fraction` so that it checks if the provided numerator and denominator are both integers. If either is not an integer, the constructor should raise a `TypeError` exception.
 
@@ -14,15 +14,17 @@ Complete the following tasks and submit your source file(s) to KATIE.
 
 ## What to do
 
-- Read *src/exercises/fractions/description.md* (this file).
-- Modify *src/exercises/fractions/fractions.py*.
-- Run the modified file.
+`python3` should be `python3.9` or newer.
+
+- Read _src/exercises/fractions/description.md_ (this file).
+- Modify _src/exercises/fractions/fractions.py_.
+- Run _src/exercises/fractions/fractions_main.py_.
 
 ```bash
-python3 src/exercises/fractions/fractions.py
+python3 src/exercises/fractions/fractions_main.py
 ```
 
-- Compare your output to that provided in *tests/exercises/fractions/fractions_output.txt*.
+- Compare your output to that provided in _tests/exercises/fractions/fractions_output.txt_.
 - Test your implementation.
 
 ```bash

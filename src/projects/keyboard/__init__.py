@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-keyboard import statement
+`keyboard` package
+
+@authors: Roman Yasinovskyy
+@version: 2021.2
 """
 
 from .keyboard import spell_check

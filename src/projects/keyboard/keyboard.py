@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-Touchscreen Keyboard
+`keyboard` implementation and driver
+
+@author:
 """
 
 def spell_check(filename: str) -> None:

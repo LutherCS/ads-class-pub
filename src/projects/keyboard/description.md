@@ -14,13 +14,13 @@ asdfghjkl
 zxcvbnm
 ```
 
-You should use the distance between the letters to type a word: the distance is the sum of the horizontal and vertical distance between the typed and proposed letter. Assume you typed a *w*, the distance to *e* is 1, while the distance to *z* is 3.
+You should use the distance between the letters to type a word: the distance is the sum of the horizontal and vertical distance between the typed and proposed letter. Assume you typed a _w_, the distance to _e_ is 1, while the distance to _z_ is 3.
 
-The typed word and the list of words from the spell checker all have the same length. The distance between two words is the sum of the letter distances. So the distance between **ifpv** and **icpc** is 3.
+The typed word and the list of words from the spell checker all have the same length. The distance between two words is the sum of the letter distances. So the distance between _ifpv_ and _icpc_ is 3.
 
 ## Input
 
-The first line of the input specifies the number of test cases *t* (0 < t < 20). Each test case starts with a string and an integer *l* on one line. The string gives the word that was typed using the touchscreen keyboard, while *l* specifies the number of entries in the spell checker list (0 < l ≤ 10). Then follow *l* lines, each with one word of the spell checker list. You may safely assume that all words of one test case have the same length and no word is longer than 10000 characters (only lowercase 'a' - 'z'). Furthermore, each word appears exactly once in the spell checker list on one test case.
+The first line of the input specifies the number of test cases _t_ (0 < t < 20). Each test case starts with a string and an integer _l_ on one line. The string gives the word that was typed using the touchscreen keyboard, while _l_ specifies the number of entries in the spell checker list (0 < l ≤ 10). Then follow _l_ lines, each with one word of the spell checker list. You may safely assume that all words of one test case have the same length and no word is longer than 10000 characters (only lowercase 'a' - 'z'). Furthermore, each word appears exactly once in the spell checker list on one test case.
 
 ## Output
 

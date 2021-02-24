@@ -1,13 +1,23 @@
 #!/usr/bin/env python3
 """
-Testing the module Touchscreen Keyboard
+`keyboard` testing
+
 @authors: Roman Yasinovskyy
-@updated: 2019
+@version: 2021.2
 """
 
-import time
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.projects.keyboard import spell_check
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.projects.keyboard import spell_check
 
 TIME_LIMIT = 4
 
@@ -24,6 +34,7 @@ FILENAMES = (
     "gen10000",
 )
 
+
 @pytest.mark.timeout(TIME_LIMIT)
 @pytest.mark.parametrize("filename", FILENAMES)
 def test_output(filename, capsys):
@@ -38,4 +49,4 @@ def test_output(filename, capsys):
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_keyboard.py"])
+    pytest.main(["-v", __file__])

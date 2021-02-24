@@ -1,5 +1,7 @@
 # Touchscreen Keyboard
 
+[Kattis](https://open.kattis.com/problems/touchscreenkeyboard)
+
 Nowadays, people do not use hardware keyboards but touchscreens. Usually, they touch on the wrong letters with their chunky fingers, because screen space is precious and the letters therefore too small.
 
 Usually, a spell checker runs after typing a word and suggests other words to select the correct spelling from. Your job is to order that list so that more likely words are on top.
@@ -18,7 +20,7 @@ The typed word and the list of words from the spell checker all have the same le
 
 ## Input
 
-The first line of the input specifies the number of test cases *t* (0 < t < 20). Each test case starts with a string and an integer *l* on one line. The string gives the word that was typed using the touchscreen keyboard, while *l* specifies the number of entries in the spell checker list (0 < l ≤ 10). Then follow *l* lines, each with one word of the spell checker list. You may safely assume that all words of one test case have the same length and no word is longer than 10000 characters (only lowercase ’a’ - ’z’). Furthermore, each word appears exactly once in the spell checker list on one test case.
+The first line of the input specifies the number of test cases *t* (0 < t < 20). Each test case starts with a string and an integer *l* on one line. The string gives the word that was typed using the touchscreen keyboard, while *l* specifies the number of entries in the spell checker list (0 < l ≤ 10). Then follow *l* lines, each with one word of the spell checker list. You may safely assume that all words of one test case have the same length and no word is longer than 10000 characters (only lowercase 'a' - 'z'). Furthermore, each word appears exactly once in the spell checker list on one test case.
 
 ## Output
 
@@ -51,4 +53,23 @@ rfv 3
 wsx 3
 qed 4
 plm 17
+```
+
+## What to do
+
+`python3` should be `python3.9` or newer.
+
+- Read _src/projects/keyboard/description.md_ (this file).
+- Modify _src/projects/keyboard/keyboard.py_.
+- Run _src/projects/keyboard/keyboard.py_.
+
+```bash
+python3 src/projects/keyboard/keyboard.py
+```
+
+- Compare your output to that provided in _tests/projects/keyboard/_.
+- Test your implementation.
+
+```bash
+python3 -m pytest tests/projects/keyboard/test_keyboard.py
 ```

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Exercise `zoo` implementation
+`zoo` implementation
 
 @author:
 """

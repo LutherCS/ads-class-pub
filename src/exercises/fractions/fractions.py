@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Exercise `fractions` impolementation
+`fractions` implementation
 
 @author:
 """

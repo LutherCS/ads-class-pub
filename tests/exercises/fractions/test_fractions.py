@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Exercise `fractions` testing
+`fractions` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
 @version: 2021.2
@@ -71,7 +71,7 @@ def test_get_numerator():
 
 
 def test_get_numerator_2():
-    """Testing numerator getter"""
+    """Testing numerator property"""
     fraction = Fraction(1, 3)
     assert fraction.numerator == 1
 
@@ -83,7 +83,7 @@ def test_get_denominator():
 
 
 def test_get_denominator_2():
-    """Testing denominator getter"""
+    """Testing denominator property"""
     fraction = Fraction(1, 3)
     assert fraction.denominator == 3
 
@@ -171,12 +171,12 @@ def test_sub_error():
     assert exception_msg == "Can only subtract two Fractions"
 
 
-def test_mult():
+def test_mul():
     """Testing multiplication operator"""
     assert (Fraction(1, 3) * Fraction(2, 3)) == Fraction(2, 9)
 
 
-def test_mult_error():
+def test_mul_error():
     """Testing multiplication operator error"""
     with pytest.raises(TypeError) as excinfo:
         Fraction(1, 3) * "1"

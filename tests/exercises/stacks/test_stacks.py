@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Exercise `stacks` testing
+`stacks` testing
 
 @authors: Roman Yasinovskyy
 @version: 2021.2
@@ -37,6 +37,7 @@ def test_rev_string(string, expected):
     assert rev_string(string) == expected
 
 
+@pytest.mark.skip("Textbook implementation")
 @pytest.mark.parametrize(
     "string, expected",
     [("((()))", True), ("(()", False), ("()(())", True), ("))((", False)],
@@ -86,8 +87,20 @@ def test_par_checker_file(capsys):
     ],
 )
 def test_base_converter(number, base, expected):
-    """Testing base_convrter method"""
+    """Testing base_converter method"""
     assert base_converter(number, base) == expected
+
+
+@pytest.mark.parametrize(
+    "number, base",
+    [(160, 1), (160, 6), (160, 0)],
+)
+def test_base_converter_error(number, base):
+    """Testing base_converter method errors"""
+    with pytest.raises(ValueError) as excinfo:
+        base_converter(number, base)
+    exception_msg = excinfo.value.args[0]
+    assert exception_msg == f"Cannot convert to base {base}."
 
 
 @pytest.mark.parametrize(

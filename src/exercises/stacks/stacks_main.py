@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 """
-Exercise `stacks` driver
+`stacks` driver
 
 @authors: Roman Yasinovskyy
 @version: 2021.2
 """
 
-from stacks import rev_string
-from stacks import par_checker
-from stacks import par_checker_file
-from stacks import par_checker_ext
-from stacks import base_converter
-from stacks import rpn_calc
+from stacks import (
+    base_converter,
+    par_checker,
+    par_checker_ext,
+    par_checker_file,
+    rev_string,
+    rpn_calc,
+)
 
 
 def main():
@@ -36,9 +38,14 @@ def main():
     print("Base converter")
     n = 160
     print(f"{n} in binary is {base_converter(n, 2)}")
-    print(f"{n} in ternary is {base_converter(n, 3)}")
     print(f"{n} in octal is {base_converter(n, 8)}")
     print(f"{n} in hexadecimal is {base_converter(n, 16)}")
+    bases = [0, 1, 3, 42]
+    for b in bases:
+        try:
+            print(f"{n} in base {b} is {base_converter(n, b)}")
+        except ValueError as ve:
+            print(ve)
     print("RPN Calculator")
     expressions = [
         "2 3 +",

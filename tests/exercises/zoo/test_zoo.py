@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Exercise `zoo` testing
+`zoo` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
 @version: 2021.2
@@ -31,7 +31,7 @@ finally:
     )
 
 
-def test_animal():
+def test_animal_init_error():
     """Test class Animal"""
     with pytest.raises(TypeError) as excinfo:
         _ = Animal("Mammal", 1, "Black")  # pylint: disable=abstract-class-instantiated
@@ -42,7 +42,7 @@ def test_animal():
     )
 
 
-def test_bird():
+def test_bird_init_error():
     """Test class Bird"""
     with pytest.raises(TypeError) as excinfo:
         _ = Bird(
@@ -55,7 +55,7 @@ def test_bird():
     )
 
 
-def test_mammal():
+def test_mammal_init_error():
     """Test class mammal"""
     with pytest.raises(TypeError) as excinfo:
         _ = Mammal(
@@ -68,7 +68,7 @@ def test_mammal():
     )
 
 
-def test_canine():
+def test_canine_init_error():
     """Test class Canine"""
     with pytest.raises(TypeError) as excinfo:
         _ = Canine(
@@ -81,7 +81,7 @@ def test_canine():
     )
 
 
-def test_feline():
+def test_feline_init_error():
     """Test class Feline"""
     with pytest.raises(TypeError) as excinfo:
         _ = Feline(
@@ -92,6 +92,14 @@ def test_feline():
         exception_message
         == "Can't instantiate abstract class Feline with abstract method __init__"
     )
+
+
+def test_parrot_init_():
+    """Test class Parrot"""
+    parrot1 = Parrot(160, "Red", True)
+    assert isinstance(parrot1, Parrot)
+    parrot2 = Parrot(5, "Rainbow", False)
+    assert isinstance(parrot2, Parrot)
 
 
 def test_parrot_str():
@@ -110,6 +118,12 @@ def test_parrot_sound():
     assert parrot2.sound() == "nothing"
 
 
+def test_penguin_init():
+    """Test class Penguin"""
+    penguin = Penguin(2, "Black and White")
+    assert isinstance(penguin, Penguin)
+
+
 def test_penguin_str():
     """Test class Penguin"""
     penguin = Penguin(2, "Black and White")
@@ -120,6 +134,12 @@ def test_penguin_sound():
     """Test class Penguin"""
     penguin = Penguin(2, "Black and White")
     assert penguin.sound() == "nothing"
+
+
+def test_dog_init():
+    """Test class Dog"""
+    dog = Dog(7, "Brown")
+    assert isinstance(dog, Dog)
 
 
 def test_dog_str():
@@ -134,6 +154,12 @@ def test_dog_sound():
     assert dog.sound() == "Woof!"
 
 
+def test_housecat_init():
+    """Test class HouseCat"""
+    housecat = HouseCat(10, "Grey")
+    assert isinstance(housecat, HouseCat)
+
+
 def test_housecat_str():
     """Test class HouseCat"""
     housecat = HouseCat(10, "Grey")
@@ -144,6 +170,21 @@ def test_housecat_sound():
     """Test class HouseCat"""
     housecat = HouseCat(10, "Grey")
     assert housecat.sound() == "Meow!"
+
+
+def test_bobcat_init():
+    """Test class BobCat"""
+    for habitat in ["Land", "Sea", "Air", "Tree"]:
+        bobcat = BobCat(3, "Brown", habitat)
+        assert isinstance(bobcat, BobCat)
+
+
+def test_bobcat_init_error():
+    """Test class BobCat error message"""
+    with pytest.raises(ValueError) as excinfo:
+        _ = BobCat(3, "Brown", "House")
+    exception_message = excinfo.value.args[0]
+    assert exception_message == "Incorrect habitat value"
 
 
 def test_bobcat_str():
@@ -158,14 +199,6 @@ def test_bobcat_sound():
     for habitat in ["Land", "Sea", "Air", "Tree"]:
         bobcat = BobCat(3, "Brown", habitat)
         assert bobcat.sound() == "Meow!"
-
-
-def test_bobcat_error():
-    """Test class BobCat error message"""
-    with pytest.raises(ValueError) as excinfo:
-        bobcat = BobCat(3, "Brown", "House")
-    exception_message = excinfo.value.args[0]
-    assert exception_message == "Incorrect habitat value"
 
 
 if __name__ == "__main__":

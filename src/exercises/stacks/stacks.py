@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """
-Exercise `stacks` implementation
+`stacks` implementation
 
 @author:
 """
+
+from typing import Union
 
 from pythonds3.basic import Stack
 
@@ -22,12 +24,12 @@ class TokenError(Exception):
         Exception.__init__(self, *args, **kwargs)
 
 
-def rev_string(my_str):
+def rev_string(my_str: str) -> str:
     """Reverse characters in a string using a stack"""
     raise NotImplementedError
 
 
-def par_checker(line):
+def par_checker(line: str) -> bool:
     """Textbook implementation"""
     stack = Stack()
     balanced = True
@@ -45,26 +47,26 @@ def par_checker(line):
     return balanced and stack.is_empty()
 
 
-def par_checker_ext(line):
+def par_checker_ext(line: str) -> bool:
     """Check if parentheses are balanced"""
     raise NotImplementedError
 
 
-def par_checker_file(filename):
+def par_checker_file(filename: str) -> None:
     """Check expressions in the file"""
     raise NotImplementedError
 
 
-def base_converter(dec_num, base):
+def base_converter(dec_num: int, base: int) -> str:
     """Convert a decimal number to any base"""
     raise NotImplementedError
 
 
-def rpn_calc(postfix_expr):
+def rpn_calc(postfix_expr: str) -> Union[int, float]:
     """Evaluate a postfix expression"""
     raise NotImplementedError
 
 
-def do_math(op, op1, op2):
+def do_math(operation: str, operand1: Union[int, float], operand2: Union[int, float]):
     """Evaluate a mathematical operation"""
     raise NotImplementedError

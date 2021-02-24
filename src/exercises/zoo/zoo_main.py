@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Exercise `zoo` driver
+`zoo` driver
 
 @authors: Roman Yasinovskyy
 @version: 2021.2

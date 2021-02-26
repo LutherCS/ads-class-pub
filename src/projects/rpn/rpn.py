@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-Reverse Polish Notation
+Project `rpn` implementation
+
+@author:
 """
 
 from pythonds3.basic import Stack

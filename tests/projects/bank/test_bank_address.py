@@ -1,12 +1,23 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
-Testing the class Address
+`bank` testing
+
 @authors: Roman Yasinovskyy
-@updated: 2019
+@version: 2021.2
 """
 
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.projects.bank import Address
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.projects.bank import Address
 
 address_attributes = "street, city, state, zip_code"
 addresses = [
@@ -48,4 +59,4 @@ class TestAddress:
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_bank_address.py"])
+    pytest.main(["-v", __file__])

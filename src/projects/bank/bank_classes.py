@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Banking classes implementation"""
+"""
+`bank` implementation
+
+@author:
+"""
 
 from abc import ABC, abstractmethod
 

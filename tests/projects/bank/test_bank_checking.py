@@ -1,12 +1,23 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
-Testing the Bank module
+`bank` testing
+
 @authors: Roman Yasinovskyy
-@updated: 2019
+@version: 2021.2
 """
 
+import importlib
+import pathlib
+import sys
+
 import pytest
-from src.projects.bank import Address, Customer, CheckingAccount
+
+try:
+    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
+except ModuleNotFoundError:
+    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
+finally:
+    from src.projects.bank import Address, Customer, CheckingAccount
 
 addresses = [
     ("700 College Dr", "Decorah", "IA", "52101"),
@@ -84,4 +95,4 @@ class TestCheckingAccount:
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_bank.py"])
+    pytest.main(["-v", __file__])

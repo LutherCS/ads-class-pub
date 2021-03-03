@@ -1,5 +1,4 @@
 colorama
-pylint
 pytest
 pytest-timeout
 pythonds3

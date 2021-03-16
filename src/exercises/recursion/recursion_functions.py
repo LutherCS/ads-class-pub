@@ -1,38 +1,31 @@
 #!/usr/bin/env python3
 """
-Exercise `recursion` implementation
+`recursion` implementation
 
-@authors:
+@author:
 """
 
 
 def gcd(a: int, b: int) -> int:
-    raise NotImplementedError
-
-
-def hourglass_ite(levels: int) -> None:
+    """Greatest Common Denominator"""
     raise NotImplementedError
 
 
 def diamond_ite(levels: int) -> None:
-    raise NotImplementedError
-
-
-def hourglass_rec(levels: int) -> None:
+    """Print a diamond"""
     raise NotImplementedError
 
 
 def diamond_rec(levels: int) -> None:
+    """Print a diamond"""
     raise NotImplementedError
 
 
-def main():
-    """Main function"""
-    hourglass_ite(5)
-    hourglass_rec(5)
-    diamond_ite(5)
-    diamond_rec(5)
+def hourglass_ite(levels: int) -> None:
+    """Print an hourglass"""
+    raise NotImplementedError
 
 
-if __name__ == "__main__":
-    main()
+def hourglass_rec(levels: int) -> None:
+    """Print an hourglass"""
+    raise NotImplementedError

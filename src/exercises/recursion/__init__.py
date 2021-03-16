@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-Exercise `recursion` import statement
+`recursion` package
 
 @authors: Roman Yasinovskyy
-@version: 2021.2
+@version: 2021.3
 """
 
 from .recursion_functions import gcd
-from .recursion_functions import hourglass_ite
 from .recursion_functions import diamond_ite
-from .recursion_functions import hourglass_rec
 from .recursion_functions import diamond_rec
+from .recursion_functions import hourglass_ite
+from .recursion_functions import hourglass_rec
 
 
 __all__ = [
     "gcd",
-    "hourglass_ite",
     "diamond_ite",
-    "hourglass_rec",
     "diamond_rec",
+    "hourglass_ite",
+    "hourglass_rec",
 ]

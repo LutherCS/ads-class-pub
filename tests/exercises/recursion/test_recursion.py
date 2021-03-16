@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Exercise `recursion` testing
+`recursion` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.2
+@version: 2021.3
 """
 
 import importlib
@@ -18,87 +18,138 @@ except ModuleNotFoundError:
     sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
 finally:
     from src.exercises.recursion import gcd
-    from src.exercises.recursion import hourglass_ite
     from src.exercises.recursion import diamond_ite
-    from src.exercises.recursion import hourglass_rec
     from src.exercises.recursion import diamond_rec
+    from src.exercises.recursion import hourglass_ite
+    from src.exercises.recursion import hourglass_rec
 
 
-class TestRecursionMethods:
-    """Testing exercise recursion"""
+@pytest.mark.parametrize(
+    "number1, number2, result", [(1861, 2021, 1), (1860, 2020, 20)]
+)
+def test_gcd(number1, number2, result):
+    """Testing gcd method"""
+    assert gcd(number1, number2) == result
 
-    def test_gcd(self):
-        """Testing gcd method"""
-        assert gcd(1860, 2020) == 20
-        assert gcd(1861, 2019) == 1
 
-    def test_hourglass_ite(self, capsys):
-        """Testing hourglass_ite method"""
-        expected_output = (
-            "*********\n"
-            + " ******* \n"
-            + "  *****  \n"
-            + "   ***   \n"
-            + "    *    \n"
-            + "   ***   \n"
-            + "  *****  \n"
-            + " ******* \n"
-            + "*********"
-        )
-        hourglass_ite(5)
-        out, _ = capsys.readouterr()
-        assert out.strip() == expected_output
+@pytest.mark.parametrize(
+    "n, expected_output",
+    [
+        (
+            2,
+            " * " + 
+            "***" + 
+            " * ",
+        ),
+        (
+            5,
+            "    *    " + 
+            "   ***   " + 
+            "  *****  " + 
+            " ******* " + 
+            "*********" + 
+            " ******* " + 
+            "  *****  " + 
+            "   ***   " + 
+            "    *    ",
+        ),
+    ],
+)
+def test_diamond_ite(n, expected_output, capsys):
+    """Testing diamond_ite method"""
+    diamond_ite(n)
+    out, _ = capsys.readouterr()
+    assert "".join([line.strip("\n").strip("\r") for line in out]) == expected_output
 
-    def test_diamond_ite(self, capsys):
-        """Testing diamond_ite method"""
-        expected_output = (
-            "*    \n"
-            + "   ***   \n"
-            + "  *****  \n"
-            + " ******* \n"
-            + "*********\n"
-            + " ******* \n"
-            + "  *****  \n"
-            + "   ***   \n"
-            + "    *"
-        )
-        diamond_ite(5)
-        out, _ = capsys.readouterr()
-        assert out.strip() == expected_output
 
-    def test_hourglass_rec(self, capsys):
-        """Testing hourglass_rec method"""
-        expected_output = (
-            "*********\n"
-            + " ******* \n"
-            + "  *****  \n"
-            + "   ***   \n"
-            + "    *    \n"
-            + "   ***   \n"
-            + "  *****  \n"
-            + " ******* \n"
-            + "*********"
-        )
-        hourglass_rec(5)
-        out, _ = capsys.readouterr()
-        assert out.strip() == expected_output
+@pytest.mark.parametrize(
+    "n, expected_output",
+    [
+        (
+            2,
+            " * " + 
+            "***" + 
+            " * ",
+        ),
+        (
+            5,
+            "    *    " + 
+            "   ***   " + 
+            "  *****  " + 
+            " ******* " + 
+            "*********" + 
+            " ******* " + 
+            "  *****  " + 
+            "   ***   " + 
+            "    *    ",
+        ),
+    ],
+)
+def test_diamond_rec(n, expected_output, capsys):
+    """Testing diamond_rec method"""
+    diamond_rec(n)
+    out, _ = capsys.readouterr()
+    assert "".join([line.strip("\n").strip("\r") for line in out]) == expected_output
 
-    def test_diamond_rec(self, capsys):
-        """Testing diamond_rec method"""
-        expected_output = (
-            "*    \n"
-            + "   ***   \n"
-            + "  *****  \n"
-            + " ******* \n"
-            + "*********\n"
-            + " ******* \n"
-            + "  *****  \n"
-            + "   ***   \n"
-            + "    *"
-        )
-        diamond_rec(5)
-        out, _ = capsys.readouterr()
-        assert out.strip() == expected_output
+
+@pytest.mark.parametrize(
+    "n, expected_output",
+    [
+        (
+            2,
+            "***" + 
+            " * " + 
+            "***",
+        ),
+        (
+            5,
+            "*********" + 
+            " ******* " + 
+            "  *****  " + 
+            "   ***   " + 
+            "    *    " + 
+            "   ***   " + 
+            "  *****  " + 
+            " ******* " + 
+            "*********",
+        ),
+    ],
+)
+def test_hourglass_ite(n, expected_output, capsys):
+    """Testing hourglass_ite method"""
+    hourglass_ite(n)
+    out, _ = capsys.readouterr()
+    assert "".join([line.strip("\n").strip("\r") for line in out]) == expected_output
+
+
+@pytest.mark.parametrize(
+    "n, expected_output",
+    [
+        (
+            2,
+            "***" + 
+            " * " + 
+            "***",
+        ),
+        (
+            5,
+            "*********" + 
+            " ******* " + 
+            "  *****  " + 
+            "   ***   " + 
+            "    *    " + 
+            "   ***   " + 
+            "  *****  " + 
+            " ******* " + 
+            "*********",
+        ),
+    ],
+)
+def test_hourglass_rec(n, expected_output, capsys):
+    """Testing hourglass_rec method"""
+    hourglass_rec(n)
+    out, _ = capsys.readouterr()
+    assert "".join([line.strip("\n").strip("\r") for line in out]) == expected_output
 
 
 if __name__ == "__main__":

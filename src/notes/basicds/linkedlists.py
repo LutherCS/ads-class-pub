@@ -1,16 +1,19 @@
-#!/usr/bin/env/ python3
+#!/usr/bin/env python3
 """Linked list implementation"""
 
 
+from typing import Any
+
+
 class Node:
-    def __init__(self, init_value):
+    def __init__(self, init_value: Any) -> None:
         self._value = init_value
         self._next = None
 
-    def get_data(self):
+    def get_data(self) -> Any:
         return self._value
 
-    def set_data(self, new_data):
+    def set_data(self, new_data) -> None:
         self._value = new_data
 
     data = property(get_data, set_data)
@@ -61,7 +64,7 @@ class LinkedList:
         # return self._size
         return self.__len__()
 
-    def add(self, new_node: object) -> None:
+    def add(self, new_node: Node) -> None:
         new_node.next = self._head
         self._head = new_node
         self._size += 1
@@ -107,7 +110,7 @@ class LinkedList:
         current.next = new_node
         self._size += 1
 
-    def insert(self, pos: int, new_node: object) -> None:
+    def insert(self, pos: int, new_node: Node) -> None:
         current = self._head
         idx = 0
         if pos <= 0:
@@ -124,7 +127,7 @@ class LinkedList:
         current.next = new_node
         self._size += 1
 
-    def pop(self, idx=None):
+    def pop(self, idx=None) -> Any:
         if not self._head:
             raise Exception("Cannot pop from an empty list")
         if idx == None:

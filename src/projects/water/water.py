@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-"""Water jugs project"""
+"""
+`water` implementation
 
+@authors:
+"""
 
 JUG_1_MAX = 5
 JUG_2_MAX = 3
@@ -13,11 +16,15 @@ class State:
         """__init__"""
         raise NotImplementedError
 
-    def __eq__(self, other: object):
+    def __eq__(self, other: object) -> bool:
         """__eq__"""
         raise NotImplementedError
 
-    def __str__(self):
+    def __repr__(self) -> str:
+        """__repr__"""
+        raise NotImplementedError
+
+    def __str__(self) -> str:
         """__str__"""
         raise NotImplementedError
 
@@ -50,19 +57,6 @@ class State:
         raise NotImplementedError
 
 
-def search(start_state: object, goal: object, moves_lst: list):
+def search(start_state: State, goal: State, moves_lst: list):
     """Find a sequence of states"""
     raise NotImplementedError
-
-
-def main():
-    """Main function"""
-    goal = State(4, 0)
-    start = State(0, 0)
-    moves = []
-    search(start, goal, moves)
-    print(", ".join([str(s) for s in moves]))
-
-
-if __name__ == "__main__":
-    main()

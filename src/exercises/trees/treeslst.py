@@ -44,6 +44,21 @@ def get_child_right(root):
     return root[2]
 
 
+def preorder(root):
+    """Pre-order tree traversal"""
+    raise NotImplementedError
+
+
+def inorder(root):
+    """In-order tree traversal"""
+    raise NotImplementedError
+
+
+def postorder(root):
+    """Post-order tree traversal"""
+    raise NotImplementedError
+
+
 def clockwise(root):
     """Clockwise tree traversal"""
     print(get_root_val(root), end=" ")

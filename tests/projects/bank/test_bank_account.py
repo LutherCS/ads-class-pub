@@ -3,7 +3,7 @@
 `bank` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.2
+@version: 2021.3
 """
 
 import importlib

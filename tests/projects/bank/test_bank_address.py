@@ -3,7 +3,7 @@
 `bank` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.2
+@version: 2021.3
 """
 
 import importlib
@@ -19,7 +19,6 @@ except ModuleNotFoundError:
 finally:
     from src.projects.bank import Address
 
-address_attributes = "street, city, state, zip_code"
 addresses = [
     ("700 College Dr", "Decorah", "IA", "52101"),
     ("520 W Water St", "Decorah", "IA", "52101"),
@@ -31,8 +30,14 @@ addresses = [
 class TestAddress:
     """Testing class Address"""
 
-    @pytest.mark.parametrize(address_attributes, addresses)
+    @pytest.mark.parametrize("street, city, state, zip_code", addresses)
     def test_address_init(self, street, city, state, zip_code):
+        """Testing address constructor"""
+        address = Address(street, city, state, zip_code)
+        assert isinstance(address, Address)
+
+    @pytest.mark.parametrize("street, city, state, zip_code", addresses)
+    def test_address_members(self, street, city, state, zip_code):
         """Testing address properties"""
         address = Address(street, city, state, zip_code)
         assert address.street == street
@@ -40,22 +45,33 @@ class TestAddress:
         assert address.state == state
         assert address.zip == zip_code
 
-    @pytest.mark.parametrize(address_attributes, addresses)
-    def test_address_str(self, street, city, state, zip_code, capsys):
+    @pytest.mark.parametrize("street, city, state, zip_code", addresses)
+    def test_address_repr(self, street, city, state, zip_code):
+        """Testing address.__repr__ method"""
+        address = Address(street, city, state, zip_code)
+        assert repr(address) == f"Address({street}, {city}, {state}, {zip_code})"
+
+    @pytest.mark.parametrize("street, city, state, zip_code", addresses)
+    def test_address_str(self, street, city, state, zip_code):
         """Testing address.__str__ method"""
         address = Address(street, city, state, zip_code)
-        print(address)
-        out, err = capsys.readouterr()
-        assert out.strip() == (f"{street}\n{city}, {state} {zip_code}")
-        assert err == ""
+        assert str(address) == f"{street}\n{city}, {state} {zip_code}"
 
-    @pytest.mark.parametrize(address_attributes, addresses)
+    @pytest.mark.parametrize("street, city, state, zip_code", addresses)
     def test_address_eq(self, street, city, state, zip_code):
         """Testing address.__eq__ method"""
         address1 = Address(street, city, state, zip_code)
         address2 = Address(street, city, state, zip_code)
         assert address1 == address2
         assert address1 is not address2
+
+    @pytest.mark.parametrize("street, city, state, zip_code", addresses)
+    def test_address_street_setter(self, street, city, state, zip_code):
+        """Testing address.set_street method"""
+        address = Address(street, city, state, zip_code)
+        assert address.street == street
+        address.street = "1861 College Dr"
+        assert address.street == "1861 College Dr"
 
 
 if __name__ == "__main__":

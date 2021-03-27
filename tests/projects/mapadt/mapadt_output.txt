@@ -1,0 +1,41 @@
+Map (empty)
+Expected output: {}
+Produced output: {}
+Adding items
+Retrieval
+Expected output: ant
+Produced output: ant
+Expected output: deer
+Produced output: deer
+Updating
+Expected output: dog
+Produced output: dog
+Map (str)
+Expected output: {20: 'cat', 61: 'bee', 21: 'dog', 18: 'ant'}
+Produced output: {20: 'cat', 61: 'bee', 21: 'dog', 18: 'ant'}
+Contains
+Expected output: True
+Produced output: True
+Expected output: False
+Produced output: False
+Size
+Expected output: 4
+Produced output: 4
+Keys (raw)
+Expected output: [20, 61, 21, 18, None]
+Produced output: [20, 61, 21, 18, None]
+Keys (raw)
+Expected output: [20, 61, 21, 18, None]
+Produced output: [20, 61, 21, 18, None]
+Keys (method)
+Expected output: [20, 61, 21, 18]
+Produced output: [20, 61, 21, 18]
+Values (raw)
+Expected output: ['cat', 'bee', 'dog', 'ant', None]
+Produced output: ['cat', 'bee', 'dog', 'ant', None]
+Values (method)
+Expected output: ['cat', 'bee', 'dog', 'ant']
+Produced output: ['cat', 'bee', 'dog', 'ant']
+Items (method)
+Expected output: [(20, 'cat'), (61, 'bee'), (21, 'dog'), (18, 'ant')]
+Produced output: [(20, 'cat'), (61, 'bee'), (21, 'dog'), (18, 'ant')]

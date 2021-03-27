@@ -6,7 +6,20 @@
   "python.testing.pytestEnabled": true,
   "python.formatting.provider": "black",
   "python.analysis.extraPaths": [
+    "src/notes/sorting",
+    "src/exercises/hello",
+    "src/exercises/fractions",
+    "src/exercises/zoo",
+    "src/exercises/stacks",
+    "src/exercises/orderedlists",
     "src/exercises/recursion",
-    "src/projects/water"
+    "src/exercises/hashing",
+    "src/projects/dice",
+    "src/projects/bank",
+    "src/projects/keyboard",
+    "src/projects/customproblem",
+    "src/projects/rpn",
+    "src/projects/water",
+    "src/projects/mapadt"
   ]
 }

@@ -1,8 +1,12 @@
-'''
-mapadt import statement
-'''
-name = "mapadt"
+#!/usr/bin/env python3
+"""
+`mapadt` package
 
-from .mapadt import HashTable
+@authors: Roman Yasinovskyy
+@version: 2021.3
+"""
 
-__all__ = ['HashTable']
+
+from .mapadt import HashMap
+
+__all__ = ["HashMap"]

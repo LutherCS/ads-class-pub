@@ -4,15 +4,11 @@ Complete the following exercises and submit your answer to KATIE as a single fil
 
 You can complete this exercise either manually (paper and pencil) or by modifying the implementations of the algorithms provided in the textbook and pythonds3 to print status after each iteration.
 
-1. Sort list `[20, 16, 12, 14, 14, 15, 17, 17, 7, 13]` using Insertion sorting algorithm. Show every step of the process.
-
-1. Sort list `[20, 16, 12, 14, 14, 15, 17, 17, 7, 13]` using Selection sorting algorithm. Show every step of the process.
-
-1. Sort list `[20, 16, 12, 14, 14, 15, 17, 17, 7, 13]` using MergeSort algorithm. Show every step of the process.
-
-1. Sort list `[20, 16, 12, 14, 14, 15, 17, 17, 7, 13]` using QuickSort algorithm. Show every step of the process.
-
-1. Sort list `[20, 16, 12, 14, 14, 15, 17, 17, 7, 13]` using HeapSort algorithm. Show every step of the process.
+1. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _Insertion_ sorting algorithm. Show every step of the process.
+2. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _Selection_ sorting algorithm. Show every step of the process.
+3. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _MergeSort_ algorithm. Show every step of the process.
+4. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _QuickSort_ algorithm. Show every step of the process.
+5. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _HeapSort_ algorithm. Show every step of the process.
 
 The provided output file contains the results of using various algorithms to sort list `[594, 850, 281, 952, 129, 348, 264, 972, 598, 758]`.
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Exercise `heaps` import statement
+`heaps` package
 
 @authors: Roman Yasinovskyy
-@version: 2021.2
+@version: 2021.4
 """
 
 from .heaps import BinaryHeapMax

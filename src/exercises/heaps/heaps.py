@@ -1,48 +1,46 @@
 #!/usr/bin/env python3
 """
-Exercise `heaps` implementation
+`heaps` implementation
 
 @author:
 """
 
 
+from typing import Any, List
+
+
 class BinaryHeapMax:
     """Heap class implementation"""
 
-    def __init__(self, limit: int = 0):
-        self.heap = []
+    def __init__(self):
+        """Initializer"""
+        self.heap: List[Any] = []
         self.size = 0
-        self.max_size = limit
-        self.smallest = None
 
-    def perc_up(self, cur_idx):
-        """Moving a node up"""
+    def perc_up(self, cur_idx: int):
+        """Move a node up"""
         raise NotImplementedError
 
-    def perc_down(self, cur_idx):
-        """Moving a node down"""
+    def perc_down(self, cur_idx: int):
+        """Move a node down"""
         raise NotImplementedError
 
-    def insert(self, item):
-        """Adding a new item"""
+    def insert(self, item: Any):
+        """Add a new item"""
         raise NotImplementedError
 
-    def heapify(self, not_a_heap):
-        """Turning a list into a heap"""
-        self.heap = [] + not_a_heap[:]
-        self.size = len(not_a_heap)
-        cur_idx = self.size // 2 - 1
-        while cur_idx >= 0:
-            self.perc_down(cur_idx)
-            cur_idx = cur_idx - 1
-
-    def get_max_child(self, parent_idx):
-        """Getting a larger child"""
+    def delete(self) -> Any:
+        """Remove an item from the heap"""
         raise NotImplementedError
 
-    def __len__(self):
+    def heapify(self, not_a_heap: List[Any]) -> None:
+        """Turn a list into a heap"""
+        raise NotImplementedError
+
+    def __len__(self) -> int:
         """Get heap size"""
         return self.size
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Heap as a string """
         return str(self.heap)

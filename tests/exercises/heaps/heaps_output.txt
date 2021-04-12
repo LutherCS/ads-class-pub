@@ -1,0 +1,7 @@
+Working with heaps
+Turning a list into a min heap
+Original list : [55, 73, 17, 41, 83, 89, 7, 28, 10, 69]
+Heapified data: [7, 10, 17, 28, 69, 89, 55, 73, 41, 83]
+Turning a list into a max heap
+Original list : [69, 10, 28, 7, 89, 83, 41, 17, 73, 55]
+Heapified data: [89, 73, 83, 69, 55, 28, 41, 17, 7, 10]

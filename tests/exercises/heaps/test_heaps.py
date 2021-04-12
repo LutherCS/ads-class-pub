@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Exercise `heaps` testing
+`heaps` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.2
+@version: 2021.4
 """
 
 import importlib
@@ -20,48 +20,102 @@ finally:
     from src.exercises.heaps import BinaryHeapMax
 
 
-class TestBinaryHeapMethods:
-    """Testing the Max Binary Heap module"""
+names = [
+    "Alfred",
+    "Batman",
+    "Catwoman",
+    "Dent",
+    "Elfo",
+    "Frodo",
+    "Gordon",
+    "Pavel",
+    "Robin",
+]
 
-    @pytest.fixture(scope="function", autouse=True)
-    def setup_class(self):
-        """Setting up"""
-        self.b_movie_heap = BinaryHeapMax()
-        self.b_movie_heap.insert("Alfred")
-        self.b_movie_heap.insert("Batman")
-        self.b_movie_heap.insert("Catwoman")
-        self.b_movie_heap.insert("Dent")
-        self.b_movie_heap.insert("Elfo")
-        self.b_movie_heap.insert("Frodo")
-        self.b_movie_heap.insert("Gordon")
-        self.b_movie_heap.insert("Pavel")
-        self.b_movie_heap.insert("Robin")
+numbers = [55, 73, 17, 41, 83, 89, 7, 28, 10, 69]
 
-        self.b_movie_heap_5 = BinaryHeapMax(5)
-        self.b_movie_heap_5.insert("Alfred")
-        self.b_movie_heap_5.insert("Batman")
-        self.b_movie_heap_5.insert("Catwoman")
-        self.b_movie_heap_5.insert("Dent")
-        self.b_movie_heap_5.insert("Elfo")
-        self.b_movie_heap_5.insert("Frodo")
-        self.b_movie_heap_5.insert("Gordon")
-        self.b_movie_heap_5.insert("Pavel")
-        self.b_movie_heap_5.insert("Robin")
 
-    def test_len(self):
-        """Testing __len__ method"""
-        assert len(self.b_movie_heap) == 9
-        assert len(self.b_movie_heap_5) == 5
+@pytest.mark.parametrize(
+    "data, expected_result",
+    [
+        (
+            names,
+            [
+                "Robin",
+                "Pavel",
+                "Frodo",
+                "Gordon",
+                "Catwoman",
+                "Batman",
+                "Elfo",
+                "Alfred",
+                "Dent",
+            ],
+        ),
+        (numbers, [89, 73, 83, 41, 69, 17, 7, 28, 10, 55]),
+    ],
+)
+def test_insert(data, expected_result):
+    """Testing insert method"""
+    heap = BinaryHeapMax()
+    for n in data:
+        heap.insert(n)
+    assert str(heap) == str(expected_result)
 
-    def test_str(self):
-        """Testing __str__ method"""
-        assert (
-            str(self.b_movie_heap)
-            == "['Robin', 'Pavel', 'Frodo', 'Gordon', 'Catwoman', 'Batman', 'Elfo', 'Alfred', 'Dent']"
-        )
-        assert (
-            str(self.b_movie_heap_5) == "['Robin', 'Pavel', 'Elfo', 'Frodo', 'Gordon']"
-        )
+
+@pytest.mark.parametrize(
+    "data, expected_result",
+    [
+        (
+            names,
+            [
+                "Pavel",
+                "Gordon",
+                "Frodo",
+                "Dent",
+                "Catwoman",
+                "Batman",
+                "Elfo",
+                "Alfred",
+            ],
+        ),
+        (numbers, [83, 73, 55, 41, 69, 17, 7, 28, 10]),
+    ],
+)
+def test_delete(data, expected_result):
+    """Testing delete method"""
+    heap = BinaryHeapMax()
+    for n in data:
+        heap.insert(n)
+    heap.delete()
+    assert str(heap) == str(expected_result)
+
+
+@pytest.mark.parametrize(
+    "data, expected_result",
+    [
+        (
+            names,
+            [
+                "Robin",
+                "Pavel",
+                "Gordon",
+                "Dent",
+                "Elfo",
+                "Frodo",
+                "Catwoman",
+                "Batman",
+                "Alfred",
+            ],
+        ),
+        (numbers, [89, 83, 55, 41, 73, 17, 7, 28, 10, 69]),
+    ],
+)
+def test_heapify(data, expected_result):
+    """Testing heapify method"""
+    heap = BinaryHeapMax()
+    heap.heapify(data)
+    assert str(heap) == str(expected_result)
 
 
 if __name__ == "__main__":

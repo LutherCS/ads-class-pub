@@ -13,6 +13,7 @@
     "src/exercises/orderedlists",
     "src/exercises/recursion",
     "src/exercises/hashing",
+    "src/exercises/heaps",
     "src/projects/stringsearch",
     "src/projects/dice",
     "src/projects/keyboard",

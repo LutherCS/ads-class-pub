@@ -22,6 +22,7 @@
     "src/projects/customproblem",
     "src/projects/water",
     "src/projects/mapadt",
-    "src/projects/morse"
+    "src/projects/morse",
+    "src/projects/wordladder"
   ]
 }

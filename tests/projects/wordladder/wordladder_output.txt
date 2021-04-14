@@ -1,0 +1,44 @@
+Let's turn elk into elf
+Ladder found!
+elk -> elf
+Let's turn elf into elk
+Ladder found!
+elf -> elk
+Let's turn odd into peg
+Ladder found!
+odd -> ods -> oes -> pes -> peg
+Let's turn tar into pit
+Ladder found!
+tar -> par -> pat -> pit
+Let's turn milk into mint
+Ladder found!
+milk -> milt -> mint
+Let's turn memo into koko
+Ladder found!
+memo -> momo -> moko -> koko
+Let's turn myxo into zuza
+Ladder found!
+myxo -> myxa -> myra -> mura -> jura -> juza -> zuza
+Let's turn snob into rynd
+Ladder found!
+snob -> snod -> sned -> seed -> send -> rend -> rynd
+Let's turn tenor into xenon
+Ladder found!
+tenor -> tenon -> xenon
+Let's turn start into spark
+Ladder found!
+start -> stark -> spark
+Let's turn camel into amigo
+Ladder found!
+camel -> cameo -> campo -> camps -> comps -> coops -> poops -> props -> proms -> prims -> prime -> prise -> arise -> anise -> anile -> anole -> anode -> abode -> abide -> amide -> amine -> amino -> amigo
+Let's turn water into stone
+Ladder found!
+water -> pater -> payer -> sayer -> shyer -> shier -> shirr -> shire -> shine -> shone -> stone
+Let's turn abc into xyz
+Ladder not found
+Let's turn gizmo into mulch
+Ladder not found
+Let's turn tutor into xenon
+Ladder not found
+Let's turn peace into piece
+Ladder not found

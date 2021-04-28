@@ -1,0 +1,21 @@
+Kevin Bacon number calculator
+Reading the file
+File read in 14.96 sec
+
+Analyzing the graph
+There are 323157 connected actors in the file
+There are 6564640 connections between actors in the file
+
+Finding paths
+Paths found in 11.87 sec
+
+Looking for actors with the highest Kevin Bacon number
+1 actor(s) found in 0.19 sec
+The following actor(s) have the Kevin Bacon number of 10:
+Wagle Sandow
+
+Buster Keaton's Kevin Bacon number is 3
+1) Buster Keaton acted with Claire Bloom in Limelight (1952)
+2) Claire Bloom acted with Kevin Pollak in Max Rose (2013)
+3) Kevin Pollak acted with Kevin Bacon in A Few Good Men (1992)
+Buster Keaton's Kevin Bacon number is 3

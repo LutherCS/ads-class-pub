@@ -2,76 +2,80 @@
 
 Write a program to find the first non-repeated character in a string.
 
-
 ## How to setup your development environment
 
 - Make sure you are using **python3** (at least 3.6 is available on all major platforms)
 - Install VisualStudioCode (other IDEs are fine too)
-- Modify the file `nonrepeat.py` in *src/projects/stringsearch/* and add your code there.
-    - **Current implementation is slow and incorrect!**
-
+- Modify the file _src/projects/stringsearch/nonrepeat.py_ and add your code there.
 - `__init__.py` turns `stringsearch` into a module and allows other programs and modules to import from it. The provided file should be sufficient.
-- Install *pylint*, *black*, *mypy*, *pytest*
+- Install `pylint`, `black`, `mypy`, `pytest`
 
-    - Windows (Python installed from the App Store)
-    ```
+  - Windows (Python installed from the App Store)
+
+    ```powershell
     python3 -m pip install pylint, black, mypy, pytest
     ```
 
-    - Windows (Python installed from the downloaded executable)
-    ```
+  - Windows (Python installed from the downloaded executable)
+
+    ```powershell
     py -3 -m pip install pylint, black, mypy, pytest
     ```
 
-    - Linux (install for the current user)
-    ```
+  - Linux (install for the current user)
+
+    ```bash
     python3 -m pip install --user pylint, black, mypy, pytest
     ```
 
-    - Linux (install for all users)
-    ```
+  - Linux (install for all users)
+
+    ```bash
     sudo python3 -m pip install pylint, black, mypy, pytest
     ```
-
 
 ## How to format, run, and test your solution
 
 - `black`
-```
-python3 -m black src/projects/stringsearch/nonrepeat.py
-```
+
+  ```bash
+  python3 -m black src/projects/stringsearch/nonrepeat.py
+  ```
 
 - `pylint`
-```
-python3 -m pylint src/projects/stringsearch/nonrepeat.py
-```
+
+  ```bash
+  python3 -m pylint src/projects/stringsearch/nonrepeat.py
+  ```
 
 - `mypy`
-```
-python3 -m mypy src/projects/stringsearch/nonrepeat.py
-```
+
+  ```bash
+  python3 -m mypy src/projects/stringsearch/nonrepeat.py
+  ```
 
 - `pytest`
-```
-python3 -m pytest tests/projects/stringsearch/test_nonrepeat.py
-```
+
+  ```bash
+  python3 -m pytest tests/projects/stringsearch/test_nonrepeat.py
+  ```
 
 - Use terminal to run
-```
-python3 src/projects/stringsearch/nonrepeat.py
-```
- 
-You may have to use the following command on Windows:
 
-```
-py -3 src/projects/stringsearch/nonrepeat.py
-```
+  ```bash
+  python3 src/projects/stringsearch/nonrepeat.py
+  ```
+
+- You may have to use the following command on Windows:
+
+  ```powershell
+  py -3 src/projects/stringsearch/nonrepeat.py
+  ```
 
 ## How to submit your solution
 
 - Submit your modified `nonrepeat.py` to KATIE.
-    - There is no need to submit data and test files, I already have them.
-
+  - There is no need to submit data and test files, I already have them.
 
 ## References
 

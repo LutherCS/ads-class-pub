@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-Testing the module stringsearch
+`stringsearch` testing
+
 @authors: Roman Yasinovskyy, Karina Hoff
-@updated: 2019
+@updated: 2021.8
 """
 
 from string import ascii_lowercase
 import pytest
-from src.projects.stringsearch import find_non_repeat
+from nonrepeat import find_non_repeat
 
 TIME_LIMIT = 4
 
@@ -59,4 +60,4 @@ def test_find_non_repeat_error_long():
 
 
 if __name__ == "__main__":
-    pytest.main(["-vv", "test_nonrepeat.py"])
+    pytest.main(["-vv", __file__])

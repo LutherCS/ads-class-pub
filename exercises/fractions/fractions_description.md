@@ -22,17 +22,17 @@ Complete the following tasks to complete class `Fraction`:
 
 `python3` should be `python3.9` or newer.
 
-- Read _src/exercises/fractions/description.md_ (this file).
-- Modify _src/exercises/fractions/fractions.py_.
-- Run _src/exercises/fractions/fractions_main.py_.
+- Read _exercises/fractions/description.md_ (this file).
+- Modify _exercises/fractions/fractions.py_.
+- Run _exercises/fractions/fractions.py_.
 
 ```bash
-python3 src/exercises/fractions/fractions_main.py
+python3 exercises/fractions/fractions.py
 ```
 
-- Compare your output to that provided in _tests/exercises/fractions/fractions_output.txt_.
+- Compare your output to that provided in _tests/exercises/fractions/fractions\_output.txt_.
 - Test your implementation.
 
 ```bash
-python3 -m pytest tests/exercises/fractions/test_fractions.py
+python3 -m pytest exercises/fractions/fractions_test.py
 ```

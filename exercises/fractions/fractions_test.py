@@ -6,18 +6,9 @@
 @version: 2021.2
 """
 
-import importlib
-import pathlib
-import sys
-
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.exercises.fractions import Fraction
+from fractions import Fraction
 
 
 def test_init():

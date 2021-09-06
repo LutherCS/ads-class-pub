@@ -1,24 +1,16 @@
 #!/usr/bin/env python3
 """
-Testing classes Die and Cup
+`dice` testing
+
 @authors: Roman Yasinovskyy
-@version: 2021.2
+@version: 2021.9
 """
 
-import importlib
-import pathlib
 import random
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec("projects.dice", "src")
-except ModuleNotFoundError:
-    sys.path.append(str(pathlib.Path(".").parent.parent.parent.absolute()))
-finally:
-    from src.projects.dice import Die, FrozenDie, Cup
-
+from dice import Cup, Die, FrozenDie
 
 random.seed(42)
 
@@ -156,9 +148,4 @@ def test_cup_roll(yahtzee):
 
 
 if __name__ == "__main__":
-    pytest.main(
-        [
-            "-vv",
-            str(pathlib.Path("tests", "projects", "dice", "test_dice.py")),
-        ]
-    )
+    pytest.main(["-v", __file__])

@@ -1,6 +1,6 @@
 # Alea iacta est
 
-Implement classes Die, FrozenDie, and Cup. Your program must be properly formatted (use `black` and `pylint`) and pass all the tests provided (use pytest).
+Implement classes Die, FrozenDie, and Cup. Your program must be properly formatted (use `black` and `pylint`) and pass all the tests provided (use `pytest`).
 
 1. `Die`: Assign random value (out of the list of `possible_values`) to `self._value` in the `__init__`.
 1. `Die`: Implement _property_ `value` using getter and setter.
@@ -21,17 +21,17 @@ Implement classes Die, FrozenDie, and Cup. Your program must be properly formatt
 
 `python` should be `python3.9` or newer.
 
-- Read _src/projects/dice/description.md_ (this file).
-- Modify _src/projects/dice/dice\_classes.py_.
-- Run _src/projects/dice/dice\_main.py_.
+- Read _projects/dice/dice\_description.md_ (this file).
+- Modify _projects/dice/dice.py_.
+- Run _projects/dice/dice.py_.
 
 ```bash
-python src/projects/dice/dice_main.py
+python src/projects/dice/dice.py
 ```
 
-- Compare your output to that provided in _tests/projects/dice/dice\_output.txt_.
+- Compare your output to that provided in _projects/dice/dice\_output.txt_.
 - Test your implementation.
 
 ```bash
-python -m pytest tests/projects/dice/test_dice.py
+python -m pytest projects/dice/dice_test.py
 ```

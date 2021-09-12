@@ -3,30 +3,21 @@
 `stacks` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.2
+@version: 2021.9
 """
-
-import importlib
-import pathlib
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.exercises.stacks import (
-        StackError,
-        TokenError,
-        base_converter,
-        par_checker,
-        par_checker_ext,
-        par_checker_file,
-        rev_string,
-        rpn_calc,
-    )
+from stacks import (
+    StackError,
+    TokenError,
+    base_converter,
+    par_checker,
+    par_checker_ext,
+    par_checker_file,
+    rev_string,
+    rpn_calc,
+)
 
 
 @pytest.mark.parametrize(
@@ -67,7 +58,7 @@ def test_par_checker_file(capsys):
         + "() is balanced\n"
         + ") is NOT balanced"
     )
-    par_checker_file("data/exercises/stacks/parentheses.txt")
+    par_checker_file("parentheses.txt")
     out, _ = capsys.readouterr()
     assert out.strip() == expected_output
 

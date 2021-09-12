@@ -14,17 +14,17 @@ Complete the following tasks:
 
 ## What to do
 
-- Read _src/exercises/stacks/description.md_ (this file).
-- Modify _src/exercises/stacks/stacks.py_.
-- Run _src/exercises/stacks/stacks_main.py_.
+- Read _exercises/stacks/stacks\_description.md_ (this file).
+- Modify _exercises/stacks/stacks.py_.
+- Run _exercises/stacks/stacks.py_.
 
 ```bash
-python3 src/exercises/stacks/stacks_main.py
+python3 exercises/stacks/stacks.py
 ```
 
-- Compare your output to that provided in _tests/exercises/stacks/stacks_output.txt_.
+- Compare your output to that provided in _exercises/stacks/stacks_output.txt_.
 - Test your implementation.
 
 ```bash
-python -m pytest tests/exercises/stacks/test_stacks.py
+python -m pytest exercises/stacks/stacks_test.py
 ```

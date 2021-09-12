@@ -2,12 +2,13 @@
 """
 `keyboard` implementation and driver
 
-@author:
+@authors:
 """
 
 def spell_check(filename: str) -> None:
     """Rank words by their proximity to the target"""
-    raise NotImplementedError
+    # TODO: Implement this function
+    ...
 
 
 def main():

@@ -26,7 +26,7 @@ The first line of the input specifies the number of test cases _t_ (0 < t < 20).
 
 For each test case, print the list of words sorted by their distance ascending. If two words have the same distance, sort them alphabetically. Print the distance of each word in the same line.
 
-### Sample input (data/projects/keyboard/sample.in)
+### Sample input (projects/keyboard/sample.in.txt)
 
 ```text
 2
@@ -42,7 +42,7 @@ plm
 qed
 ```
 
-### Sample output (tests/projects/keyboard/sample.out)
+### Sample output (projects/keyboard/sample.out.txt)
 
 ```text
 icpc 3
@@ -59,17 +59,17 @@ plm 17
 
 `python3` should be `python3.9` or newer.
 
-- Read _src/projects/keyboard/description.md_ (this file).
-- Modify _src/projects/keyboard/keyboard.py_.
-- Run _src/projects/keyboard/keyboard.py_.
+- Read _projects/keyboard/keyboard\_description.md_ (this file).
+- Modify _projects/keyboard/keyboard.py_.
+- Run _projects/keyboard/keyboard.py_.
 
 ```bash
-python3 src/projects/keyboard/keyboard.py
+python3 projects/keyboard/keyboard.py
 ```
 
-- Compare your output to that provided in _tests/projects/keyboard/_.
+- Compare your output to that provided in _projects/keyboard/_.
 - Test your implementation.
 
 ```bash
-python3 -m pytest tests/projects/keyboard/test_keyboard.py
+python3 -m pytest projects/keyboard/keyboard_test.py
 ```

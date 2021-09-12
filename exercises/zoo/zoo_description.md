@@ -29,17 +29,17 @@ You should take advantage of inheritance and call `super()` wherever applicable.
 
 ## What to do
 
-- Read _src/exercises/zoo/description.md_ (this file).
-- Modify _src/exercises/zoo/zoo_classes.py_.
-- Run _src/exercises/zoo/zoo_main.py_.
+- Read _exercises/zoo/zoo\_description.md_ (this file).
+- Modify _exercises/zoo/zoo.py_.
+- Run _exercises/zoo/zoo.py_.
 
 ```bash
-python3 src/exercises/zoo/zoo_main.py
+python3 src/exercises/zoo/zoo.py
 ```
 
-- Compare your output to that provided in _tests/exercises/zoo/zoo_output.txt_.
+- Compare your output to that provided in _exercises/zoo/zoo\_output.txt_.
 - Test your implementation.
 
 ```bash
-python -m pytest tests/exercises/zoo/test_zoo.py
+python -m pytest exercises/zoo/zoo_test.py
 ```

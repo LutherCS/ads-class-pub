@@ -3,32 +3,23 @@
 `zoo` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.2
+@version: 2021.9
 """
-
-import importlib
-import pathlib
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.exercises.zoo import (
-        Animal,
-        Bird,
-        Mammal,
-        Parrot,
-        Penguin,
-        Canine,
-        Feline,
-        Dog,
-        HouseCat,
-        BobCat,
-    )
+from zoo import (
+    Animal,
+    Bird,
+    Mammal,
+    Parrot,
+    Penguin,
+    Canine,
+    Feline,
+    Dog,
+    HouseCat,
+    BobCat,
+)
 
 
 def test_animal_init_error():

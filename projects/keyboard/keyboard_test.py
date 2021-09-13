@@ -30,10 +30,10 @@ FILENAMES = (
 @pytest.mark.parametrize("filename", FILENAMES)
 def test_output(filename, capsys):
     """Testing the output"""
-    data_in = f"projects/keyboard/{filename}.in.txt"
+    data_in = f"{filename}.in.txt"
     spell_check(data_in)
     out, err = capsys.readouterr()
-    with open(f"projects/keyboard/{filename}.out.txt") as file_out:
+    with open(f"{filename}.out.txt") as file_out:
         expected_output = file_out.read()
     assert expected_output == out
     assert not err

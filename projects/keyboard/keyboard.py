@@ -13,7 +13,7 @@ def spell_check(filename: str) -> None:
 
 def main():
     """Entry point"""
-    spell_check("data/projects/keyboard/sample.in")
+    spell_check("sample.in.txt")
 
 
 if __name__ == "__main__":

@@ -5,6 +5,8 @@
 @authors:
 """
 
+import pathlib
+
 def spell_check(filename: str) -> None:
     """Rank words by their proximity to the target"""
     # TODO: Implement this function
@@ -13,7 +15,10 @@ def spell_check(filename: str) -> None:
 
 def main():
     """Entry point"""
-    spell_check("sample.in.txt")
+    filename = "sample.in.txt"
+    if not pathlib.Path(filename).exists():
+        filename = f"projects/keyboard/{filename}"
+    spell_check(filename)
 
 
 if __name__ == "__main__":

@@ -6,6 +6,7 @@
 @version: 2021.9
 """
 
+import pathlib
 import pytest
 
 from keyboard import spell_check
@@ -30,6 +31,8 @@ FILENAMES = (
 @pytest.mark.parametrize("filename", FILENAMES)
 def test_output(filename, capsys):
     """Testing the output"""
+    if not pathlib.Path(f"{filename}.in.txt").exists():
+        filename = f"projects/keyboard/{filename}"
     data_in = f"{filename}.in.txt"
     spell_check(data_in)
     out, err = capsys.readouterr()

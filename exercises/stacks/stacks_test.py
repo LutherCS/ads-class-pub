@@ -6,6 +6,8 @@
 @version: 2021.9
 """
 
+import pathlib
+
 import pytest
 
 from stacks import (
@@ -58,7 +60,10 @@ def test_par_checker_file(capsys):
         + "() is balanced\n"
         + ") is NOT balanced"
     )
-    par_checker_file("parentheses.txt")
+    filename = "parentheses.txt"
+    if not pathlib.Path(f"{filename}").exists():
+        filename = f"exercises/stacks/{filename}"
+    par_checker_file(filename)
     out, _ = capsys.readouterr()
     assert out.strip() == expected_output
 

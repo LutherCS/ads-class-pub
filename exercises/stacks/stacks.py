@@ -5,6 +5,8 @@
 @authors:
 """
 
+import pathlib
+
 from typing import Union
 
 from pythonds3.basic import Stack
@@ -96,7 +98,10 @@ def main():
     else:
         print(f"Extended checker says: {exp} is not balanced")
     print("Checking a file using the simple checker")
-    par_checker_file("parentheses_simple.txt")
+    filename = "parentheses_simple.txt"
+    if not pathlib.Path(f"{filename}").exists():
+        filename = f"exercises/stacks/{filename}"
+    par_checker_file(filename)
     print("Base converter")
     n = 160
     print(f"{n} in binary is {base_converter(n, 2)}")

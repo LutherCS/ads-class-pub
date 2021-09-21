@@ -15,7 +15,7 @@ class Animal(ABC):
     """Class Animal"""
 
     @abstractmethod
-    def __init__(self, spec_init, age_init: int, color_init: str):
+    def __init__(self, spec_init: str, age_init: int, color_init: str):
         """Animal __init__"""
         self._spec = spec_init
         self._age = age_init
@@ -28,7 +28,7 @@ class Animal(ABC):
 
     def __str__(self) -> str:
         """__str__"""
-        return "{} {} ({} yo)".format(self._color, self._spec, self._age)
+        return f"{self._color} {self._spec} ({self._age} yo)"
 
 
 class Bird(Animal):
@@ -53,7 +53,7 @@ class Mammal(Animal):
     """Class Mammal"""
 
     @abstractmethod
-    def __init__(self, spec_init, age_init: int, color_init: str, habitat_init: str):
+    def __init__(self, spec_init: str, age_init: int, color_init: str, habitat_init: str):
         """Mammal __init__"""
         # TODO: Invoke __init__ of the superclass
         # TODO: If habitat_init is "Land", "Sea", "Air" or "Tree", initialize self._habitat, else raise a ValueError
@@ -63,7 +63,7 @@ class Mammal(Animal):
 class Parrot(Bird):
     """Parrot class"""
 
-    def __init__(self, age_init: int, color_init: int, talking_init: bool):
+    def __init__(self, age_init: int, color_init: str, talking_init: bool):
         """Parrot __init__"""
         # TODO: Invoke __init__ of the superclass
         # TODO: Initialize self._talking
@@ -80,7 +80,7 @@ class Parrot(Bird):
 class Penguin(Bird):
     """Penguin class"""
 
-    def __init__(self, age_init, color_init):
+    def __init__(self, age_init: int, color_init: str):
         """Penguin __init__"""
         super().__init__("Penguin", age_init, color_init, False)
 
@@ -102,7 +102,7 @@ class Feline(Mammal):
     """Class Feline"""
 
     @abstractmethod
-    def __init__(self, spec_init, age_init: int, color_init: str, habitat_init: str):
+    def __init__(self, spec_init: str, age_init: int, color_init: str, habitat_init: str):
         super().__init__(spec_init, age_init, color_init, habitat_init)
 
     def sound(self) -> str:

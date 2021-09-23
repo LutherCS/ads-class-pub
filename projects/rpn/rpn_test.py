@@ -1,22 +1,16 @@
 #!/usr/bin/env python3
 """
-Testing project rpn
+`rpn` testing
+
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.2
+@version: 2021.9
 """
 
-import importlib
 import pathlib
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.projects.rpn import StackError, TokenError, do_math, postfix_eval, rpn_calc
+from rpn import StackError, TokenError, do_math, postfix_eval, rpn_calc
 
 
 @pytest.mark.parametrize(
@@ -28,12 +22,12 @@ def test_postfix_eval(expression, expected):
     assert postfix_eval(expression) == expected
 
 
-@pytest.mark.parametrize(
-    "filename, expected", [("rpn_input_1.txt", 18.61), ("rpn_input_2.txt", 8118)]
-)
+@pytest.mark.parametrize("filename, expected", [("rpn_1", 18.61), ("rpn_2", 8118)])
 def test_checksum(filename, expected):
     """Test correct postfix expressions"""
-    assert pytest.approx(rpn_calc(f"data/projects/rpn/{filename}"), 0.01) == expected
+    if not pathlib.Path(f"{filename}.in.txt").exists():
+        filename = f"projects/rpn/{filename}"
+    assert pytest.approx(rpn_calc(f"{filename}.in.txt"), 0.01) == expected
 
 
 @pytest.mark.parametrize(
@@ -75,7 +69,7 @@ def test_do_math_simple_int_success(operation, operand1, operand2, expected):
 
 
 @pytest.mark.parametrize(
-    "operation, operand1, operand2, expected", [("/", 2, 3, 2 / 3)]
+    "operation, operand1, operand2, expected", [("/", 2, 3, 0.6666), ("/", 3, 2, 1.5)]
 )
 def test_do_math_simple_float_success(operation, operand1, operand2, expected):
     """Test simple math expressions"""
@@ -115,6 +109,7 @@ def test_do_math_advanced(operation, operand1, operand2, expected):
     assert do_math(operation, operand1, operand2) == expected
 
 
+@pytest.mark.skip
 @pytest.mark.parametrize(
     "operation, operand1, operand2, expected",
     [
@@ -127,7 +122,7 @@ def test_do_math_advanced(operation, operand1, operand2, expected):
     ],
 )
 def test_do_math_bitwise(operation, operand1, operand2, expected):
-    """Test simple math expressions"""
+    """Test bitwise expressions"""
     assert do_math(operation, operand1, operand2) == expected
 
 
@@ -139,7 +134,7 @@ def test_do_math_bitwise(operation, operand1, operand2, expected):
     ],
 )
 def test_do_math_advanced_error(operation, operand1, operand2, err_message):
-    """Test simple math expressions"""
+    """Test advanced math errors"""
 
     with pytest.raises(ZeroDivisionError) as excinfo:
         do_math(operation, operand1, operand2)

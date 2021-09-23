@@ -23,17 +23,16 @@ Implement bitwise operators `&`, `|`, and `^`.
 
 `python3` should be `python3.9` or newer.
 
-- Read _src/projects/rpn/description.md_ (this file).
-- Modify _src/projects/rpn/rpn.py_.
-- Run _src/projects/rpn/rpn_main.py_.
+- Read _projects/rpn/rpn_description.md_ (this file).
+- Modify and run _projects/rpn/rpn.py_.
 
 ```bash
-python3 src/projects/rpn/rpn_main.py
+python3 projects/rpn/rpn.py
 ```
 
-- Compare your output to that provided in _tests/projects/rpn/rpn_output.txt_.
+- Compare your output to that provided in _projects/rpn/rpn_output.txt_.
 - Test your implementation.
 
 ```bash
-python3 -m pytest tests/projects/rpn/test_rpn.py
+python3 -m pytest projects/rpn/rpn_test.py
 ```

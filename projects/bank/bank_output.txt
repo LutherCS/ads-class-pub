@@ -1,0 +1,12 @@
+Customer
+John Doe (2021-03-11)
+700 College Dr
+Decorah, IA 52101
+Customer moved
+John Doe (2021-03-11)
+100 Water St
+Decorah, IA 52101
+Address changed
+John Doe (2021-03-11)
+100 Short St
+Decorah, IA 52101

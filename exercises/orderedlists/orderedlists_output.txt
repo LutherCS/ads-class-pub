@@ -2,33 +2,37 @@ Working with ordered linked lists
 The list: []
 List is empty: True
 Size of the list: 0
+__len__ of the list: 0
 160 is in the list: False
 Position of 160 in the list: -1
-The list is empty
+lst[0] is The list is empty
 -----
 Adding 160 to the list
 The list: [160]
 List is empty: False
 Size of the list: 1
+__len__ of the list: 1
 160 is in the list: True
 Position of 160 in the list: 0
-Item at position 0: 160
+lst[0] is 160
 -----
 Adding 5 random values to the list
 The list: [117, 128, 131, 135, 160, 194]
 List is empty: False
 Size of the list: 6
+__len__ of the list: 6
 160 is in the list: True
 Position of 160 in the list: 4
-Item at position 5: 194
+lst[5] is 194
 -----
 Inserting 5 random values to the list
 The list: [104, 111, 117, 128, 131, 135, 160, 169, 175, 186, 194]
 List is empty: False
 Size of the list: 11
+__len__ of the list: 11
 160 is in the list: True
 Position of 160 in the list: 6
-Item at position 3: 128
+lst[3] is 128
 -----
 Popping 5 items from random positions
 Popped 128
@@ -39,9 +43,10 @@ Popped 175
 The list: [111, 117, 131, 160, 169, 194]
 List is empty: False
 Size of the list: 6
+__len__ of the list: 6
 160 is in the list: True
 Position of 160 in the list: 3
-Item at position 5: 194
+lst[5] is 194
 -----
 Popping 5 last items
 Popped 194
@@ -52,7 +57,8 @@ Popped 117
 The list: [111]
 List is empty: False
 Size of the list: 1
+__len__ of the list: 1
 160 is in the list: False
 Position of 160 in the list: -1
-Item at position 0: 111
+lst[1] is List index out of range: too large
 -----

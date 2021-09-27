@@ -12,17 +12,16 @@ Complete class _OrderedList_ and implement the following methods. Remember that 
 
 `python3` should be `python3.9` or newer.
 
-- Read _src/exercises/orderedlists/description.md_ (this file).
-- Modify _src/exercises/orderedlists/orderedlists.py_.
-- Run _src/exercises/orderedlists/orderedlists_main.py_.
+- Read _exercises/orderedlists/orderedlists\_description.md_ (this file).
+- Modify and run _exercises/orderedlists/orderedlists.py_.
 
 ```bash
-python3 src/exercises/orderedlists/orderedlists_main.py
+python3 exercises/orderedlists/orderedlists.py
 ```
 
-- Compare your output to that provided in _tests/exercises/orderedlists/orderedlists_output.txt_.
+- Compare your output to that provided in _exercises/orderedlists/orderedlists\_output.txt_.
 - Test your implementation.
 
 ```bash
-python3 -m pytest tests/exercises/orderedlists/test_orderedlists.py
+python3 -m pytest exercises/orderedlists/orderedlists_test.py
 ```

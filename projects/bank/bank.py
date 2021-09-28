@@ -118,7 +118,6 @@ class CheckingAccount(Account):
     # TODO: Implement data members as properties
     ...
 
-    @property
     def __repr__(self) -> str:
         """Checking account representation"""
         # TODO: Implement this method

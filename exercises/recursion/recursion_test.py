@@ -3,25 +3,13 @@
 `recursion` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.3
+@version: 2021.10
 """
-
-import importlib
-import pathlib
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.exercises.recursion import gcd
-    from src.exercises.recursion import diamond_ite
-    from src.exercises.recursion import diamond_rec
-    from src.exercises.recursion import hourglass_ite
-    from src.exercises.recursion import hourglass_rec
+from recursion import (diamond_ite, diamond_rec, gcd, hourglass_ite,
+                       hourglass_rec)
 
 
 @pytest.mark.parametrize(

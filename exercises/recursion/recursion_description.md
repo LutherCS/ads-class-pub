@@ -67,17 +67,16 @@ Idea for the recursive solutions: you may need additional function(s) to print t
 
 `python3` should be `python3.9` or newer.
 
-- Read _src/exercises/recursion/description.md_ (this file).
-- Modify _src/exercises/recursion/recursion.py_.
-- Run _src/exercises/recursion/recursion_main.py_.
+- Read _exercises/recursion/recursion_description.md_ (this file).
+- Modify and run _exercises/recursion/recursion.py_.
 
 ```bash
-python3 src/exercises/recursion/recursion_main.py
+python3 exercises/recursion/recursion.py
 ```
 
-- Compare your output to that provided in _tests/exercises/recursion/recursion_output.txt_.
+- Compare your output to that provided in _exercises/recursion/recursion_output.txt_.
 - Test your implementation.
 
 ```bash
-python3 -m pytest tests/exercises/recursion/test_recursion.py
+python3 -m pytest exercises/recursion/recursion_test.py
 ```

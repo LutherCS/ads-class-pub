@@ -3,21 +3,12 @@
 `water` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.3
+@version: 2021.10
 """
-
-import importlib
-import pathlib
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.projects.water import State, search
+from water import State, search
 
 
 @pytest.mark.parametrize("jug_1, jug_2", [(1, 2), (2, 0)])

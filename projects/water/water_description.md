@@ -50,19 +50,18 @@ A properly implemented `search` function is **50%** of the grade, as indicated b
 
 `python3` should be `python3.9` or newer.
 
-- Read _src/projects/water/description.md_ (this file).
-- Modify _src/projects/water/water.py_.
-- Run _src/projects/water/water_main.py_.
+- Read _projects/water/water_description.md_ (this file).
+- Modify and run _projects/water/water.py_.
 
 ```bash
-python3 src/projects/water/water_main.py
+python3 projects/water/water.py
 ```
 
-- Compare your output to that provided in _tests/projects/water/water_output.txt_.
+- Compare your output to that provided in _projects/water/water_output.txt_.
 - Test your implementation.
 
 ```bash
-python3 -m pytest tests/projects/water/test_water.py
+python3 -m pytest projects/water/water_test.py
 ```
 
 ## References

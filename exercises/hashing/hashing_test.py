@@ -1,29 +1,20 @@
 #!/usr/bin/env python3
 """
-Exercise `hashing` testing
+`hashing` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.2
+@version: 2021.10
 """
-
-import importlib
-import pathlib
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.exercises.hashing import (
-        hash_remainder,
-        hash_mid_sqr,
-        hash_folding,
-        hash_str,
-        hash_str_weighted,
-    )
+from hashing import (
+    hash_remainder,
+    hash_mid_sqr,
+    hash_folding,
+    hash_str,
+    hash_str_weighted,
+)
 
 
 @pytest.mark.parametrize(

@@ -3,22 +3,12 @@
 `mapadt` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.3
+@version: 2021.10
 """
-
-
-import importlib
-import pathlib
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.projects.mapadt import HashMap
+from mapadt import HashMap
 
 
 @pytest.fixture
@@ -45,6 +35,7 @@ def zoo():
     return map
 
 
+@pytest.mark.skip("Textbook implementation")
 def test_init():
     """Testing __init__"""
     map = HashMap()
@@ -61,7 +52,9 @@ def test_setitem_new(zoo):
     zoo[998] = "koala"
     assert (
         str(zoo)
-        == "{77: 'elephant', 44: 'goat', 20: 'iguana', 55: 'hippo', 26: 'beaver', 93: 'cheetah', 17: 'dolphin', 999: 'jackal', 998: 'koala', 31: 'flamingo', 54: 'aardvark'}"
+        == "{77: 'elephant', 44: 'goat', 20: 'iguana', 55: 'hippo', 26: 'beaver', "
+        + "93: 'cheetah', 17: 'dolphin', 999: 'jackal', 998: 'koala', 31: 'flamingo', "
+        + "54: 'aardvark'}"
     )
 
 
@@ -73,14 +66,17 @@ def test_setitem_update(zoo):
     zoo[998] = "kangaroo"
     assert (
         str(zoo)
-        == "{77: 'elephant', 44: 'goat', 20: 'iguana', 55: 'hippo', 26: 'beaver', 93: 'cheetah', 17: 'dolphin', 999: 'jackalope', 998: 'kangaroo', 31: 'flamingo', 54: 'aardvark'}"
+        == "{77: 'elephant', 44: 'goat', 20: 'iguana', 55: 'hippo', 26: 'beaver', "
+        + "93: 'cheetah', 17: 'dolphin', 999: 'jackalope', 998: 'kangaroo', "
+        + "31: 'flamingo', 54: 'aardvark'}"
     )
 
 
 def test_setitem_error(zoo):
     """Testing __setitem__ error"""
+    assert len(zoo) == 9
     with pytest.raises(MemoryError) as excinfo:
-        for i in range(10):
+        for i in range(20):
             zoo[i] = "zebra"
     exception_msg = excinfo.value.args[0]
     assert exception_msg == "Hash Table is full"
@@ -88,8 +84,12 @@ def test_setitem_error(zoo):
 
 def test_getitem_nokey(zoo):
     """Testing _getitem__ with nonexistent key"""
-    assert zoo[999] is None
-    assert zoo.get(998) is None
+    with pytest.raises(KeyError) as excinfo:
+        zoo[998]
+    assert excinfo.value.args[0] == "There is no such key in the map: 998."
+    with pytest.raises(KeyError) as excinfo:
+        zoo.get(999)
+    assert excinfo.value.args[0] == "There is no such key in the map: 999."
 
 
 def test_getitem_validkey(zoo):
@@ -119,7 +119,7 @@ def test_contains(zoo, key, result):
 
 
 def test_str_empty():
-    """Testing __len__ of an empty map"""
+    """Testing __str__ of an empty map"""
     map = HashMap()
     assert str(map) == "{}"
 

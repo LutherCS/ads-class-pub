@@ -8,7 +8,7 @@ You can complete this exercise either manually (paper and pencil) or by modifyin
 2. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _Selection_ sorting algorithm. Show every step of the process.
 3. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _MergeSort_ algorithm. Show every step of the process.
 4. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _QuickSort_ algorithm. Show every step of the process.
-5. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _HeapSort_ algorithm. Show every step of the process.
+5. Sort list `[15, 16, 73, 65, 38, 10, 22, 79, 87, 64]` using _HeapSort_ algorithm. Show every step of the process. *This task is optional*.
 
 The provided output file contains the results of using various algorithms to sort list `[594, 850, 281, 952, 129, 348, 264, 972, 598, 758]`.
 

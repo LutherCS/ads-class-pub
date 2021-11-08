@@ -10,7 +10,7 @@ Build a tree similar to the following (ours is going to be smaller as our alphab
 
 Store each letter of the alphabet in a node of a binary tree. The root node is at level 0 and stores no letter. The left node at level 1 stores the letter _e_ (code is `•`), and the right node stores the letter _t_ (code is `–`). The 4 nodes at level 2 store the letters with codes `••`, `•–`, `–•`, and `––`. Other nodes follow the same pattern.
 
-To build the tree, read the file _data/projects/morse/morse.txt_ in which each line consists of a letter followed by its code. The letters should be placed properly in the tree. To find the position for a letter in the tree, scan the code and branch left for a _dot_ and branch right for a _dash_.
+To build the tree, read the file _projects/morse/morse.txt_ in which each line consists of a letter followed by its code. The letters should be placed properly in the tree. To find the position for a letter in the tree, scan the code and branch left for a _dot_ and branch right for a _dash_.
 
 _Encode_ a message by replacing each letter with its code.
 
@@ -74,17 +74,16 @@ _Decode_ a message using the Morse code tree.
 
 `python3` should be `python3.9` or newer.
 
-- Read _src/projects/morse/description.md_ (this file).
-- Modify _src/projects/morse/morse.py_.
-- Run _src/projects/morse/morse_main.py_.
+- Read _projects/morse/description.md_ (this file).
+- Modify and run _projects/morse/morse.py_.
 
 ```bash
-python3 src/projects/morse/morse_main.py
+python3 projects/morse/morse.py
 ```
 
-- Compare your output to that provided in _tests/projects/morse/morse_output.txt_.
+- Compare your output to that provided in _projects/morse/morse_output.txt_.
 - Test your implementation.
 
 ```bash
-python3 -m pytest tests/projects/morse/test_morse.py
+python3 -m pytest projects/morse/morse_test.py
 ```

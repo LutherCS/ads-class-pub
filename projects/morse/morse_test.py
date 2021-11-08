@@ -3,32 +3,31 @@
 `morse` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.4
+@version: 2021.11
 """
 
-import importlib
 import pathlib
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.projects.morse import Coder
+from morse import Coder
 
 
-@pytest.fixture()
-def the_tree():
+@pytest.fixture(name="the_tree")
+def fixture_the_tree():
     """Setting up"""
-    return Coder("data/projects/morse/morse.txt")
+    filename = "morse.txt"
+    if not pathlib.Path(filename).exists():
+        filename = f"projects/morse/{filename}"
+    return Coder(filename)
 
 
 def test_init():
     """Test __init__ error"""
-    the_coder = Coder("data/projects/morse/morse.txt")
+    filename = "morse.txt"
+    if not pathlib.Path(filename).exists():
+        filename = f"projects/morse/{filename}"
+    the_coder = Coder(filename)
     assert isinstance(the_coder, Coder)
 
 

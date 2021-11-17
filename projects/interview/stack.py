@@ -3,7 +3,7 @@
 `stack` implementation
 
 @authors: Roman Yasinovskyy
-@version: 2021.4
+@version: 2021.11
 """
 
 from queue import SimpleQueue
@@ -27,46 +27,52 @@ class Stack:
 
     def __init__(self):
         """Initialize a stack using queue.SimpleQueue"""
+        # NOTE: DO not modify this method
         self.items = SimpleQueue()
 
     def push(self, item: Any) -> None:
         """
         Add a new item to stack
 
-        @param item: a new item to push onto the stack
+        :param item: a new item to push onto the stack
         """
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...
 
     def pop(self) -> Any:
         """
         Remove an item from the stack
 
-        @return the top element of the stack
-        @raise StackError is the stack is empty
+        :return: the top element of the stack
+        :raise StackError is the stack is empty
         """
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...
 
     def peek(self) -> Any:
         """
         Look at the top item without removing it
 
-        @return the top element of the stack
-        @raise StackError is the stack is empty
+        :return: the top element of the stack
+        :raise StackError is the stack is empty
         """
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...
 
     def __bool__(self) -> bool:
         """
         Evaluate the stack
 
-        @return False if the stack is empty, True otherwise
+        :return: False if the stack is empty, True otherwise
         """
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...
 
     def __len__(self) -> int:
         """
         Return the number of items in the stack
 
-        @return number of items in the stack (0 if the stack is empty)
+        :return: number of items in the stack (0 if the stack is empty)
         """
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...

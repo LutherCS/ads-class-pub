@@ -3,21 +3,13 @@
 `stack` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.4
+@version: 2021.11
 """
 
-import importlib
-import pathlib
-import sys
 
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.projects.interview import Stack, StackError
+from stack import Stack, StackError
 
 
 def test_init():

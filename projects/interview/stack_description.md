@@ -14,13 +14,13 @@ See the class and method descriptions in the `stack.py` for implementation detai
 
 `python` should be `python3.9` or newer.
 
-- Read _src/projects/interview/description.md_ (this file).
-- Modify _src/projects/interview/stack.py_.
+- Read _projects/interview/stack_description.md_ (this file).
+- Modify _projects/interview/stack.py_.
 
 - Test your implementation.
 
 ```bash
-python -m pytest tests/projects/interview/test_stack.py
+python -m pytest projects/interview/stack_test.py
 ```
 
 ## References

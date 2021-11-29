@@ -59,18 +59,17 @@ Whether you are using a `Stack` or a `deque` object, make sure you are creating 
 
 `python3` should be `python3.9` or newer.
 
-- Read _src/projects/wordladder/description.md_ (this file).
-- Modify _src/projects/wordladder/wordladder.py_.
-- Run _src/projects/wordladder/wordladder_main.py_.
+- Read _projects/wordladder/wordladder_description.md_ (this file).
+- Modify and run _projects/wordladder/wordladder.py_.
 
 ```bash
-python3 src/projects/wordladder/wordladder_main.py
+python3 projects/wordladder/wordladder.py
 ```
 
-- Compare your output to that provided in _tests/projects/wordladder/wordladder_output.txt_.
-- _tests/projects/wordladder/wordladder_output_debug.txt_ shows some intermediate steps when turning _stone_ into _water_.
+- Compare your output to that provided in _projects/wordladder/wordladder_output.txt_.
+- _projects/wordladder/wordladder_output_debug.txt_ shows some intermediate steps when turning _stone_ into _water_.
 - Test your implementation.
 
 ```bash
-python3 -m pytest tests/projects/wordladder/test_wordladder.py
+python3 -m pytest projects/wordladder/wordladder_test.py
 ```

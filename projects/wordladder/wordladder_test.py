@@ -3,27 +3,21 @@
 `wordladder` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.4
+@version: 2021.11
 """
 
-import importlib
 import pathlib
-import sys
-from typing import List, Set
-
 import pytest
 
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.projects.wordladder import Solver
+from wordladder import Solver
 
 
-@pytest.fixture
-def solver():
-    return Solver("data/projects/wordladder/words.txt")
+@pytest.fixture(name="solver")
+def fixture_solver():
+    filename = "words.txt"
+    if not pathlib.Path(filename).exists():
+        filename = f"projects/wordladder/{filename}"
+    return Solver(filename)
 
 
 def test_init(solver):
@@ -95,12 +89,13 @@ def test_distance_error(solver, word1, word2):
     ],
 )
 def test_diff_by_one_all(
-    solver, word: str, all_words: Set[str], used_words: Set[str], expected: List[str]
+    solver, word: str, all_words: set[str], used_words: set[str], expected: list[str]
 ):
     """Testing diff_by_one_all function"""
     assert sorted(solver.diff_by_one_all(word, all_words, used_words)) == expected
 
 
+@pytest.mark.timeout(60)
 @pytest.mark.parametrize(
     "word1, word2",
     [
@@ -123,6 +118,7 @@ def test_build_ladder(solver, word1: str, word2: str):
     assert solver.build_ladder(word1, word2)
 
 
+@pytest.mark.timeout(60)
 @pytest.mark.parametrize(
     "word1, word2",
     [

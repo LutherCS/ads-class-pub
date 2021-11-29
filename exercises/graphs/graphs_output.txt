@@ -1,0 +1,18 @@
+Searching from t
+  t    u    v    w    x    y    z  
+  0    2    4   inf  inf   7   inf 
+  0    2    4    5   inf   7   inf 
+  0    2    4    5    7    7   inf 
+  0    2    4    5    7    7   inf 
+  0    2    4    5    7    7   15  
+  0    2    4    5    7    7   15  
+  0    2    4    5    7    7   15  
+Searching from x
+  t    u    v    w    x    y    z  
+ inf  inf   3    6    0    6    8  
+  7    6    3    6    0    6    8  
+  7    6    3    6    0    6    8  
+  7    6    3    6    0    6    8  
+  7    6    3    6    0    6    8  
+  7    6    3    6    0    6    8  
+  7    6    3    6    0    6    8  

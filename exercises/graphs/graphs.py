@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-Exercise `graphs` implementation
+`graphs` implementation and driver
 
-@author:
+@authors: Roman Yasinovskyy
+@version: 2021.11
 """
 
 import heapq
+import pathlib
 import sys
 
 
@@ -78,9 +80,9 @@ class Vertex:
         """Get discovery time"""
         return self._discovered
 
-    def set_discovery(self, t):
+    def set_discovery(self, time_value):
         """Set discovery time"""
-        self._discovered = t
+        self._discovered = time_value
 
     discovered = property(get_discovery, set_discovery)
 
@@ -88,9 +90,9 @@ class Vertex:
         """Get finish time"""
         return self._colored
 
-    def set_finish(self, t):
+    def set_finish(self, time_value):
         """Set finish time"""
-        self._colored = t
+        self._colored = time_value
 
     finished = property(get_finish, set_finish)
 
@@ -119,12 +121,12 @@ class Graph:
         self.vertices = {}
         self.time = 0
 
-    def add_vertex(self, key: str):
+    def add_vertex(self, key: str) -> None:
         """Add an instance of Vertex to the graph"""
         new_vertex = Vertex(key)
         self.vertices[key] = new_vertex
 
-    def add_edge(self, from_vertex: str, to_vertex: str, weight=0):
+    def add_edge(self, from_vertex: str, to_vertex: str, weight: int = 0) -> None:
         """Add a new, weighted, directed edge to the graph that connects two vertices"""
         if from_vertex not in self.vertices:
             self.add_vertex(from_vertex)
@@ -132,38 +134,44 @@ class Graph:
             self.add_vertex(to_vertex)
         self.vertices[from_vertex].set_neighbor(self.vertices[to_vertex], weight)
 
-    def get_vertex(self, key: str):
+    def get_vertex(self, key: str) -> Vertex:
         """Find the vertex in the graph named vert_key"""
         return self.vertices.get(key, None)
 
-    def get_vertices(self):
+    def get_vertices(self) -> list[Vertex]:
         """Return the list of all vertices in the graph"""
         return self.vertices.keys()
 
-    def reset_distances(self):
+    def reset_distances(self) -> None:
         """Reset distances to test Dijkstra's"""
-        for v in self:
-            v.set_distance(sys.maxsize)
+        for a_vertex in self:
+            a_vertex.set_distance(sys.maxsize)
 
-    def __contains__(self, key: str):
-        """Return True for a statement of the form vertex in graph, if the given vertex is in the graph, False otherwise"""
+    def __contains__(self, key: str) -> bool:
+        """
+        Testing the belonging: vertex in graph
+        Return True, if the given vertex is in the graph
+        Return False, if the given vertex is NOT in the graph"""
         return key in self.vertices
 
     def __iter__(self):
         """Iterator"""
         return iter(self.vertices.values())
 
-    def __len__(self):
+    def __len__(self) -> int:
         """Graph's size"""
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...
 
-    def hub(self):
+    def hub(self) -> Vertex:
         """Find a Vertex with the most outgoing edges"""
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...
 
-    def size(self):
+    def size(self) -> int:
         """Find the number of edges in a Graph"""
-        raise NotImplementedError
+        # TODO: Implement this method
+        ...
 
     def dijkstra(self, start: Vertex) -> None:
         """Dijkstra's shortest path algorithm"""
@@ -188,3 +196,33 @@ class Graph:
                     if not found:
                         heapq.heappush(pq, [next_vertex.distance, next_vertex])
 
+
+
+
+def build_graph(filename: str) -> Graph:
+    g = Graph()
+    with open(filename, "r") as f:
+        f.readline()
+        for line in f:
+            src, dst, cost = line.strip().split(",")
+            g.add_edge(src, dst, int(cost))
+    return g
+
+
+def main():
+    """Main function"""
+    filename = "network.txt"
+    if not pathlib.Path(filename).exists():
+        filename = f"exercises/graphs/{filename}"
+    g = build_graph(filename)
+    v = g.get_vertex("t")
+    print(f"Searching from {v.key}")
+    g.dijkstra(v)
+    g.reset_distances()
+    v = g.get_vertex("x")
+    print(f"Searching from {v.key}")
+    g.dijkstra(v)
+
+
+if __name__ == "__main__":
+    main()

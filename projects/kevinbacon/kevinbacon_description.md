@@ -83,17 +83,16 @@ Buster Keaton's Kevin Bacon number is 3
 
 `python` should be `python3.9` or newer.
 
-- Read _src/projects/kevinbacon/description.md_ (this file).
-- Modify _src/projects/kevinbacon/kevinbacon.py_.
-- Run _src/projects/kevinbacon/kevinbacon_main.py_.
+- Read _projects/kevinbacon/kevinbacon_description.md_ (this file).
+- Modify and run _projects/kevinbacon/kevinbacon.py_.
 
 ```bash
-python src/projects/kevinbacon/kevinbacon_main.py
+python projects/kevinbacon/kevinbacon.py
 ```
 
-- Compare your output to that provided in _tests/projects/kevinbacon/kevinbacon_output.txt_.
+- Compare your output to that provided in _projects/kevinbacon/kevinbacon_output.txt_.
 - Test your implementation.
 
 ```bash
-python -m pytest tests/projects/kevinbacon/test_kevinbacon.py
+python -m pytest projects/kevinbacon/kevinbacon_test.py
 ```

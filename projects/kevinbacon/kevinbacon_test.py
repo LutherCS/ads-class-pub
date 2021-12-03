@@ -3,27 +3,22 @@
 `kevinbacon` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.4
+@version: 2021.11
 """
 
-import importlib
 import pathlib
-import sys
 
 import pytest
-
-try:
-    importlib.util.find_spec(".".join(pathlib.Path(__file__).parts[-3:-1]), "src")
-except ModuleNotFoundError:
-    sys.path.append(f"{pathlib.Path(__file__).parents[3]}/")
-finally:
-    from src.projects.kevinbacon import read_file, find_max_kbn_actors
+from kevinbacon import find_max_kbn_actors, read_file
 
 
 @pytest.fixture(scope="session")
 def graph():
     """Setting up"""
-    g = read_file("data/projects/kevinbacon/movie_actors_test.txt")
+    filename = "movie_actors_test.txt"
+    if not pathlib.Path(filename).exists():
+        filename = f"projects/kevinbacon/{filename}"
+    g = read_file(filename)
     kevin = g.get_vertex("Kevin Bacon")
     g.bfs(kevin)
     return g

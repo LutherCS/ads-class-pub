@@ -3,6 +3,7 @@
 `collatz` implementation and driver
 
 @authors: 
+@version: 2023.9
 """
 
 
@@ -13,12 +14,12 @@ def collatz(number: int) -> tuple[int, int]:
     :param number: number to analyze
     :returns: tuple of (steps, max trajectory point)
 
-    >>> collatz(27)
-    (111, 9232)
     >>> collatz(42)
-    (8, 64)
-    >>> collatz(2021)
-    (63, 6064)
+    (9, 64)
+    >>> collatz(1861)
+    (38, 5584)
+    >>> collatz(1862)
+    (38, 4192)
     """
     # TODO: Implement this function
     ...
@@ -26,12 +27,12 @@ def collatz(number: int) -> tuple[int, int]:
 
 def main() -> None:
     """Main function"""
-    for n in [27, 42, 2021]:
-        result = collatz(n)
+    for n in [42, 1861, 1862]:
+        steps, max_point = collatz(n)
         print(
             f"Number: {n:5d} "
-            + f"| Stopping distance: {result[0]:>5d} "
-            + f"| Highest point: {result[1]:>5d}"
+            + f"| Stopping distance: {steps:>5d} "
+            + f"| Highest point: {max_point:>5d}"
         )
 
 

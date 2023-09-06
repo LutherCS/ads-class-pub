@@ -1,3 +1,3 @@
-Number:    27 | Stopping distance:   111 | Highest point:  9232
-Number:    42 | Stopping distance:     8 | Highest point:    64
-Number:  2021 | Stopping distance:    63 | Highest point:  6064
+Number:    42 | Stopping distance:     9 | Highest point:    64
+Number:  1861 | Stopping distance:    38 | Highest point:  5584
+Number:  1862 | Stopping distance:    38 | Highest point:  4192

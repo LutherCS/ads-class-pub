@@ -6,7 +6,7 @@ The conjecture is named after Lothar Collatz, who introduced the idea in 1937, t
 
 ## Task
 
-Given number `n`, calculate its *total stopping time* (the first step of the sequence when number becomes 1) and the *maximum trajectory point* (the largest number in the sequence). For example, if `n` is 26, the hailstone sequence is `13, 40, 20, 10, 5, 16, 8, 4, 2, 1`, the total stopping time is 10, and the highest point is 40.
+Given number `n`, calculate its *total stopping time* (the first step of the sequence when number becomes 1) and the *maximum trajectory point* (the largest number in the sequence). For example, if `n` is 26, the hailstone sequence is `26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1`, the total stopping time is 11, and the highest point is 40.
 
 You have to implement function `collatz` and verify its correctness using the provided tests.
 

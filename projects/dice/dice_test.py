@@ -3,7 +3,7 @@
 `dice` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.9
+@version: 2023.9
 """
 
 import random
@@ -15,26 +15,26 @@ from dice import Cup, Die, FrozenDie
 random.seed(42)
 
 
-@pytest.fixture()
-def die():
+@pytest.fixture(name="die")
+def fixture_die():
     """A simple die with a random value"""
     return Die(range(1, 7))
 
 
-@pytest.fixture()
-def frozen_die():
+@pytest.fixture(name="frozen_die")
+def fixture_frozen_die():
     """A frozen die that cannot be rolled"""
     return FrozenDie(range(1, 7))
 
 
-@pytest.fixture()
-def cup():
+@pytest.fixture(name="cup")
+def fixture_cup():
     """A cup with two standard dice"""
     return Cup(2, 6)
 
 
-@pytest.fixture()
-def yahtzee():
+@pytest.fixture(name="yahtzee")
+def fixture_yahtzee():
     """A cup with 5 standard dice"""
     return Cup(5, 6)
 
@@ -109,8 +109,8 @@ def test_cup_str(capsys, cup):
         assert out.strip() == "[3, 2]"
         print("exact match", end=" ")
     except AssertionError:
-        for d in cup:
-            assert int(d.value) in range(1, 7)
+        for a_die in cup:
+            assert int(a_die.value) in range(1, 7)
         print("close enough", end=" ")
 
 
@@ -121,8 +121,8 @@ def test_cup_add(cup):
         assert str(cup) == "[2, 2, 6]"
         print("exact match", end=" ")
     except AssertionError:
-        for d in cup:
-            assert int(d.value) in range(1, 7)
+        for a_die in cup:
+            assert int(a_die.value) in range(1, 7)
         print("close enough", end=" ")
 
 
@@ -133,8 +133,8 @@ def test_cup_remove(cup):
         assert str(cup) == "[6]"
         print("exact match", end=" ")
     except AssertionError:
-        for d in cup:
-            assert int(d.value) in range(1, 7)
+        for a_die in cup:
+            assert int(a_die.value) in range(1, 7)
         print("close enough", end=" ")
 
 

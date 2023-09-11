@@ -206,3 +206,91 @@ car20 = Car()
 print(f"Our {car20.color} car was made in {car20.year} and has {car20.wheels} wheels")
 car20.paint("green")
 print(f"Our {car20.color} car was made in {car20.year} and has {car20.wheels} wheels")
+
+from functools import total_ordering
+
+
+@total_ordering
+class Car:
+    def __init__(
+        self, wheels_param: int = 4, year_param: int = 1923, color_param: str = "black"
+    ) -> None:
+        self._wheels = wheels_param
+        self._year = year_param
+        self._color = color_param
+
+    def get_wheels(self) -> int:
+        return self._wheels
+
+    def get_year(self) -> int:
+        return self._year
+
+    def get_color(self) -> str:
+        return self._color
+
+    def set_wheels(self, new_value: int) -> None:
+        self._wheels = new_value
+
+    def set_color(self, new_value: str) -> None:
+        self._color = new_value
+
+    wheels = property(get_wheels, set_wheels)
+    color = property(get_color, set_color)
+    year = property(get_year)
+
+    def paint(self, new_color):
+        self._color = new_color
+
+    def __str__(self) -> str:
+        return (
+            f"It's a(n) {self.color} car with {self.wheels} wheels made in {self.year}"
+        )
+
+    def __repr__(self) -> str:
+        return f"Car({self._wheels}, {self._year}, '{self._color}')"
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Car):
+            raise TypeError("The other thing is not a car!")
+        return (
+            self._wheels == other.wheels
+            and self._color == other.color
+            and self._year == other.year
+        )
+
+    def __gt__(self, other: object):
+        if not isinstance(other, Car):
+            raise TypeError("The other thing is not a car!")
+        return self._year > other.year
+
+    def __add__(self, other: object) -> "Car":
+        if not isinstance(other, Car):
+            raise TypeError("The other thing is not a car!")
+        return Car(self._wheels + other.wheels, 2023, f"{self._color}-{other.color}")
+
+
+car21 = Car()
+print(f"Our {car21.color} car was made in {car21.year} and has {car21.wheels} wheels")
+print(car21)
+
+garage = [car21]
+print(garage)
+print([str(car) for car in garage])
+
+car22 = eval(repr(car21))
+print(car22)
+print(car21 == car22)
+
+car23 = (4, 1923, "black")
+try:
+    print(car21 == car23)
+except TypeError as t_err:
+    print(t_err)
+
+car24 = Car(8, 2020, "white")
+print(car24)
+print(car22 > car24)
+
+print(car22 + car24)
+
+print("Done!")

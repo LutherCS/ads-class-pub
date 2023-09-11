@@ -3,12 +3,13 @@
 `fractions` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.2
+@version: 2023.9
 """
+from fractions import Fraction
 
 import pytest
 
-from fractions import Fraction
+# pylint: disable=W0106
 
 
 def test_init():
@@ -50,7 +51,7 @@ def test_init_denominator_error():
 def test_init_denominator_error_2():
     """Testing denominator error"""
     with pytest.raises(TypeError) as excinfo:
-        new_fraction = Fraction(1, "2")
+        Fraction(1, "2")
     exception_msg = excinfo.value.args[0]
     assert exception_msg == "Denominator must be an integer number"
 
@@ -141,6 +142,11 @@ def test_add():
     assert (Fraction(1, 3) + Fraction(2, 3)) == Fraction(1, 1)
 
 
+def test_add_2():
+    """Testing addition operator"""
+    assert (Fraction(6, 4) + Fraction(4, 6)) == Fraction(13, 6)
+
+
 def test_add_error():
     """Testing addition operator error"""
     with pytest.raises(TypeError) as excinfo:
@@ -152,6 +158,11 @@ def test_add_error():
 def test_sub():
     """Testing subtraction operator"""
     assert (Fraction(1, 3) - Fraction(2, 3)) == Fraction(-1, 3)
+
+
+def test_sub_2():
+    """Testing subtraction operator"""
+    assert (Fraction(6, 4) - Fraction(4, 6)) == Fraction(5, 6)
 
 
 def test_sub_error():
@@ -167,6 +178,11 @@ def test_mul():
     assert (Fraction(1, 3) * Fraction(2, 3)) == Fraction(2, 9)
 
 
+def test_mul_2():
+    """Testing multiplication operator"""
+    assert (Fraction(6, 4) * Fraction(4, 6)) == Fraction(1, 1)
+
+
 def test_mul_error():
     """Testing multiplication operator error"""
     with pytest.raises(TypeError) as excinfo:
@@ -178,6 +194,11 @@ def test_mul_error():
 def test_truediv():
     """Testing true division operator"""
     assert (Fraction(1, 3) / Fraction(2, 3)) == Fraction(1, 2)
+
+
+def test_truediv_2():
+    """Testing true division operator"""
+    assert (Fraction(6, 4) / Fraction(4, 6)) == Fraction(9, 4)
 
 
 def test_truediv_error():

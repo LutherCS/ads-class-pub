@@ -72,7 +72,7 @@ class Parrot(Bird):
     def sound(self) -> str:
         """Making Parrot noise"""
         if self._talking:
-            return "'Polly wants a cracker'"
+            return "Polly wants a cracker"
         else:
             return "nothing"
 

@@ -79,6 +79,10 @@ class Car(Vehicle):
             raise TypeError("The other thing is not a car!")
         return Car(self._wheels + other.wheels, 2023, f"{self._color}-{other.color}")
 
+    @classmethod
+    def copy(cls, original: "Car") -> "Car":
+        return Car(original.wheels, original.year, original.color)
+
 
 class Boat(Vehicle):
     """Class Boat"""
@@ -101,3 +105,44 @@ print(boat1)
 
 # v = Vehicle()
 # print(v)
+
+garage = []
+garage.append(car1)
+garage.append(boat1)
+print(garage)
+print([str(v) for v in garage])
+
+
+class Garage:
+    def __init__(self) -> None:
+        self._my_garage = []
+
+    def buy(self, v: Vehicle) -> None:
+        self._my_garage.append(v)
+
+    def sell(self, v: Vehicle) -> None:
+        self._my_garage.remove(v)
+
+    def __len__(self) -> int:
+        return len(self._my_garage)
+
+    def size(self) -> int:
+        return len(self._my_garage)
+
+    def __str__(self) -> str:
+        return (
+            f"There are {len(self._my_garage)} vehicles in this garage:\n"
+            + "\n".join([str(v) for v in self._my_garage])
+        )
+
+
+print("Garage as an object")
+garage2 = Garage()
+garage2.buy(car1)
+garage2.buy(boat1)
+print(garage2)
+car2 = Car.copy(car1)
+garage2.buy(car2)
+print(garage2)
+garage2.sell(car1)
+print(garage2)

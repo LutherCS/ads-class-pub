@@ -7,17 +7,7 @@
 
 
 from functools import total_ordering
-
-
-def gcd(num_a: int, num_b: int) -> int:
-    """
-    Calculates the greatest Common Denominator of two integers
-
-    Helper function to simplify fractions
-    """
-    while num_a % num_b:
-        num_a, num_b = num_b, num_a % num_b
-    return num_b
+from math import gcd
 
 
 @total_ordering

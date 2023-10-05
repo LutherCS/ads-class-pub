@@ -30,11 +30,20 @@ class Node:
     def __repr__(self) -> str:
         return f"Node({self._data})"
 
+    def __eq__(self, other: "Node") -> bool:
+        if not isinstance(other, Node):
+            return False
+        return self.data == other.data
+
 
 class LinkedList:
     def __init__(self) -> None:
         self._size = 0
         self._head = None
+
+    @property
+    def head(self):
+        return self._head
 
     def __len__(self) -> int:
         return self._size
@@ -54,7 +63,52 @@ class LinkedList:
         self._size += 1
 
     def __str__(self) -> str:
-        pass
+        ll_str = []
+        current = self.head
+        while current:
+            ll_str.append(current.data)
+            current = current.next
+        return " -> ".join([str(item) for item in ll_str])
+
+    def append(self, new_node: Node) -> None:
+        if not self.head:
+            self._head = new_node
+            self._size += 1
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+        self._size += 1
+
+    def insert(self, new_node: Node, pos: int) -> None:
+        ...
+
+    def search(self, value: Any) -> bool:
+        current = self.head
+        while current:
+            if current.data == value:
+                return True
+            if isinstance(value, Node) and (value.data == current.data):
+                return True
+            current = current.next
+        return False
+
+    def index(self, value: Any) -> int:
+        pos = -1
+        current = self.head
+        while current:
+            pos += 1
+            if current.data == value:
+                return pos
+            current = current.next
+        return -1
+
+    def remove(self, new_node: Node) -> None:
+        ...
+
+    def pop(self, pos: int) -> None:
+        ...
 
 
 def main():
@@ -71,6 +125,26 @@ def main():
     new_node = Node(70)
     ll.add(new_node)
     print(ll.size())
+    print("Traversing the list")
+    print(ll)
+    ll.add(Node("Cat"))
+    print(ll)
+    print("Searching")
+    print(ll.search(14))
+    print(ll.search("Fourteen"))
+    print(ll.search(Node("Fourteen")))
+    print(ll.search("Dog"))
+    print("Index of an item")
+    print(ll.index(14))
+    print(ll.index("Fourteen"))
+    print(ll.index(Node("Fourteen")))
+    print(ll.index("Dog"))
+    print("Appending")
+    ll.append(Node(42))
+    print(ll)
+    ll2 = LinkedList()
+    ll2.append(Node(43))
+    print(ll2)
 
 
 if __name__ == "__main__":

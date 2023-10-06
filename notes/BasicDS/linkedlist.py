@@ -1,15 +1,24 @@
 #! /usr/env/bin python3
+"""
+Linked list
+
+@author: Roman Yasinovskyy
+@version: 2023.10
+"""
 
 from typing import Any
 
 
 class Node:
+    """Node of a linked list"""
+
     def __init__(self, init_data: Any) -> None:
         self._data = init_data
         self._next = None
 
     @property
     def data(self) -> Any:
+        """Data inside the Node"""
         return self._data
 
     @data.setter
@@ -18,6 +27,7 @@ class Node:
 
     @property
     def next(self) -> Any:
+        """Link to the next Node"""
         return self._next
 
     @next.setter
@@ -30,37 +40,29 @@ class Node:
     def __repr__(self) -> str:
         return f"Node({self._data})"
 
-    def __eq__(self, other: "Node") -> bool:
+    def __eq__(self, other: object) -> bool:
         if not isinstance(other, Node):
             return False
         return self.data == other.data
 
 
 class LinkedList:
+    """Class Linked list"""
+
     def __init__(self) -> None:
-        self._size = 0
-        self._head = None
+        self._size: int = 0
+        self._head: Node | None = None
 
     @property
     def head(self):
+        """Head of the list"""
         return self._head
 
     def __len__(self) -> int:
         return self._size
 
-    def size(self) -> int:
-        return self._size
-
-    def is_empty(self) -> bool:
-        # return self._size == 0
-        return self._head is None
-
-    def add(self, new_node: Node) -> None:
-        if not isinstance(new_node, Node):
-            raise TypeError("Cannot add this")
-        new_node.next = self._head
-        self._head = new_node
-        self._size += 1
+    def __bool__(self) -> bool:
+        return self._head is not None
 
     def __str__(self) -> str:
         ll_str = []
@@ -70,7 +72,16 @@ class LinkedList:
             current = current.next
         return " -> ".join([str(item) for item in ll_str])
 
-    def append(self, new_node: Node) -> None:
+    def add(self, new_node: Node | None) -> None:
+        """Add a new node to the beginning of the list"""
+        if not isinstance(new_node, Node):
+            raise TypeError("Cannot add this")
+        new_node.next = self._head
+        self._head = new_node
+        self._size += 1
+
+    def append(self, new_node: Node | None) -> None:
+        """Add a new node to the end of the list"""
         if not self.head:
             self._head = new_node
             self._size += 1
@@ -82,9 +93,11 @@ class LinkedList:
         self._size += 1
 
     def insert(self, new_node: Node, pos: int) -> None:
+        """Insert a new node in the middle of the list"""
         ...
 
     def search(self, value: Any) -> bool:
+        """Search for a specific value"""
         current = self.head
         while current:
             if current.data == value:
@@ -95,6 +108,7 @@ class LinkedList:
         return False
 
     def index(self, value: Any) -> int:
+        """Get position of the Node with a specific value"""
         pos = -1
         current = self.head
         while current:
@@ -105,6 +119,7 @@ class LinkedList:
         return -1
 
     def remove(self, node_to_remove: Node) -> None:
+        """Remove a Node with a specific value"""
         current = self.head
         if current is None:
             return  # or raise ValueError("Not found")
@@ -118,10 +133,12 @@ class LinkedList:
         #     raise ValueError("Not found")
 
     def pop(self, pos: int) -> None:
+        """Remove a Node at the specified position"""
         ...
 
 
 def main():
+    """Main"""
     print("Working with nodes")
     new_node = Node(13)
     print(new_node)
@@ -129,12 +146,13 @@ def main():
     print(new_node)
     print("Working with lists")
     ll = LinkedList()
-    print(ll.size())
+    print(bool(ll))
+    print(len(ll))
     ll.add(new_node)
-    print(ll.size())
+    print(len(ll))
     new_node = Node(70)
     ll.add(new_node)
-    print(ll.size())
+    print(len(ll))
     print("Traversing the list")
     print(ll)
     ll.add(Node("Cat"))
@@ -155,6 +173,7 @@ def main():
     ll2 = LinkedList()
     ll2.append(Node(43))
     print(ll2)
+    print("Removing")
     ll.remove(Node(70))
     print(ll)
     ll.remove(Node(70))

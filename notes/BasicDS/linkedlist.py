@@ -104,8 +104,18 @@ class LinkedList:
             current = current.next
         return -1
 
-    def remove(self, new_node: Node) -> None:
-        ...
+    def remove(self, node_to_remove: Node) -> None:
+        current = self.head
+        if current is None:
+            return  # or raise ValueError("Not found")
+        if current.data == node_to_remove.data:
+            self._head = current.next
+        while current.next and (current.next.data != node_to_remove.data):
+            current = current.next
+        if current.next:
+            current.next = current.next.next
+        # else:
+        #     raise ValueError("Not found")
 
     def pop(self, pos: int) -> None:
         ...
@@ -145,6 +155,22 @@ def main():
     ll2 = LinkedList()
     ll2.append(Node(43))
     print(ll2)
+    ll.remove(Node(70))
+    print(ll)
+    ll.remove(Node(70))
+    print(ll)
+    ll.remove(Node("Cat"))
+    print(ll)
+    ll.remove(Node(42))
+    print(ll)
+    ll.remove(Node("Fourteen"))
+    print(ll)
+    ll.remove(Node("Cat"))
+    print(ll)
+    # ll.add(Node(12))
+    # print(ll)
+    # ll.remove(Node(12))
+    # print(ll)
 
 
 if __name__ == "__main__":

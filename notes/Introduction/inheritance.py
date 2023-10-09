@@ -136,6 +136,12 @@ class Garage:
         )
 
 
+class SmallGarage(Garage):
+    def __init__(self) -> None:
+        super().__init__()
+    def __str__(self) -> str:
+        return super().__str__().replace("garage", "small garage")
+
 print("Garage as an object")
 garage2 = Garage()
 garage2.buy(car1)
@@ -146,3 +152,8 @@ garage2.buy(car2)
 print(garage2)
 garage2.sell(car1)
 print(garage2)
+
+
+sm = SmallGarage()
+sm.buy(car1)
+print(sm)

@@ -3,7 +3,7 @@
 `orderedlists` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.9
+@version: 2023.10
 """
 
 import pytest
@@ -278,7 +278,7 @@ def test_getitem_error_1(the_list):
     exception_message = excinfo.value.args[0]
     assert (
         exception_message
-        == "__getitem__() missing 1 required positional argument: 'position'"
+        == "OrderedList.__getitem__() missing 1 required positional argument: 'position'"
     )
 
 

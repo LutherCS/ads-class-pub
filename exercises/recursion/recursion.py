@@ -3,7 +3,7 @@
 `recursion` implementation and driver
 
 @authors: Roman Yasinovskyy
-@version: 2021.10
+@version: 2023.10
 """
 
 
@@ -15,7 +15,7 @@ def gcd(a: int, b: int) -> int:
     :return: the greatest common denominator between `a` and `b`
     >>> gcd(1860, 2020)
     20
-    >>> gcd(1861, 2021)
+    >>> gcd(1861, 2023)
     1
     """
     # TODO: Implement this function
@@ -60,7 +60,7 @@ def hourglass_rec(levels: int) -> None:
 
 def main():
     """Main function"""
-    print(f"GCD of 1861 and 2021 is {gcd(1861, 2021)}")
+    print(f"GCD of 1861 and 2021 is {gcd(1861, 2023)}")
     print(f"GCD of 1860 and 2020 is {gcd(1860, 2020)}")
     print("Diamond (iterative)")
     diamond_ite(5)

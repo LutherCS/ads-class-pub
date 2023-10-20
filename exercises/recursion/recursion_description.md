@@ -5,7 +5,7 @@ Hint: read [PyFormat: Using % and .format() for great good!](https://pyformat.in
 Idea for the iterative solutions: try to come up with a formula that connects the row number and the number of stars in it. You may need more than one loop.
 Idea for the recursive solutions: you may need additional function(s) to print top and bottom of the figure.
 
-1. Implement a _recursive_ function to find the greatest common divisor of two numbers (i.e. `gcd(1860, 2020)` is 20, `gcd(1861, 2021)` is 1).
+1. Implement a _recursive_ function to find the greatest common divisor of two numbers (i.e. `gcd(1860, 2020)` is 20, `gcd(1861, 2023` is 1).
 
 2. Implement an _iterative_ function that, when invoked as `diamond_ite(n)`, prints a diamond figure with `2n-1` lines. Each line should have an odd number of asterisks with `2n-1` asterisks in the the widest (middle) line. For example, calling `diamond_ite(5)` prints the following diamond figure:
 
@@ -62,21 +62,3 @@ Idea for the recursive solutions: you may need additional function(s) to print t
     *******
    *********
    ```
-
-## What to do
-
-`python3` should be `python3.9` or newer.
-
-- Read _exercises/recursion/recursion_description.md_ (this file).
-- Modify and run _exercises/recursion/recursion.py_.
-
-```bash
-python3 exercises/recursion/recursion.py
-```
-
-- Compare your output to that provided in _exercises/recursion/recursion_output.txt_.
-- Test your implementation.
-
-```bash
-python3 -m pytest exercises/recursion/recursion_test.py
-```

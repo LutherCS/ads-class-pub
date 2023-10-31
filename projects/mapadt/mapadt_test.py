@@ -3,7 +3,7 @@
 `mapadt` testing
 
 @authors: Roman Yasinovskyy
-@version: 2021.10
+@version: 2023.10
 """
 
 import pytest
@@ -11,14 +11,16 @@ import pytest
 from mapadt import HashMap
 
 
-@pytest.fixture
-def empty_map():
+@pytest.fixture(name="empty_map")
+def fixture_empty_map():
+    """Empty map"""
     return HashMap()
 
 
-@pytest.fixture
-def zoo():
-    map = HashMap(11)
+@pytest.fixture(name="zoo")
+def fixture_zoo():
+    """Fixture zoo"""
+    a_map = HashMap(11)
     map_items = [
         (54, "aardvark"),
         (26, "beaver"),
@@ -31,19 +33,31 @@ def zoo():
         (20, "iguana"),
     ]
     for key, value in map_items:
-        map[key] = value
-    return map
+        a_map[key] = value
+    return a_map
+
+
+@pytest.fixture(name="edge")
+def fixture_edge():
+    """Edge case map"""
+    a_map = HashMap(101)
+    a_map.put(0, "Audi")
+    a_map.put(100, "Bentley")
+    a_map.put(200, "Chevy")
+    a_map.put(300, None)
+    a_map.put(400, False)
+    return a_map
 
 
 @pytest.mark.skip("Textbook implementation")
 def test_init():
     """Testing __init__"""
-    map = HashMap()
-    assert isinstance(map, HashMap)
-    assert not map
-    map = HashMap(160)
-    assert isinstance(map, HashMap)
-    assert not map
+    a_map = HashMap()
+    assert isinstance(a_map, HashMap)
+    assert not a_map
+    a_map = HashMap(160)
+    assert isinstance(a_map, HashMap)
+    assert not a_map
 
 
 def test_setitem_new(zoo):
@@ -85,7 +99,7 @@ def test_setitem_error(zoo):
 def test_getitem_nokey(zoo):
     """Testing _getitem__ with nonexistent key"""
     with pytest.raises(KeyError) as excinfo:
-        zoo[998]
+        zoo[998]  # pylint: disable=pointless-statement
     assert excinfo.value.args[0] == "There is no such key in the map: 998."
     with pytest.raises(KeyError) as excinfo:
         zoo.get(999)
@@ -110,6 +124,11 @@ def test_len(zoo):
     assert len(zoo) == 10
 
 
+def test_len_edge(edge):
+    """Testing __len__"""
+    assert len(edge) == 5
+
+
 @pytest.mark.parametrize(
     "key, result", [(54, True), (55, True), (56, False), (57, False)]
 )
@@ -118,17 +137,24 @@ def test_contains(zoo, key, result):
     assert (key in zoo) is result
 
 
+def test_contains_edge(edge):
+    """Testing __contains__"""
+    assert edge.get(0) == "Audi"
+
+
 def test_str_empty():
     """Testing __str__ of an empty map"""
-    map = HashMap()
-    assert str(map) == "{}"
+    a_map = HashMap()
+    assert str(a_map) == "{}"
 
 
 def test_str(zoo):
     """Testing __str__"""
     assert (
         str(zoo)
-        == "{77: 'elephant', 44: 'goat', 20: 'iguana', 55: 'hippo', 26: 'beaver', 93: 'cheetah', 17: 'dolphin', 31: 'flamingo', 54: 'aardvark'}"
+        == "{77: 'elephant', 44: 'goat', 20: 'iguana', "
+        + "55: 'hippo', 26: 'beaver', 93: 'cheetah', "
+        + "17: 'dolphin', 31: 'flamingo', 54: 'aardvark'}"
     )
 
 
@@ -140,6 +166,11 @@ def test_keys_empty(empty_map):
 def test_keys(zoo):
     """Testing keys method"""
     assert zoo.keys() == [77, 44, 20, 55, 26, 93, 17, 31, 54]
+
+
+def test_keys_edge(edge):
+    """Testing keys method"""
+    assert edge.keys() == [0, 400, 300, 200, 100]
 
 
 def test_values_empty(empty_map):
@@ -162,6 +193,11 @@ def test_values(zoo):
     ]
 
 
+def test_values_edge(edge):
+    """Testing values method"""
+    assert edge.values() == ["Audi", False, None, "Chevy", "Bentley"]
+
+
 def test_items_empty(empty_map):
     """Testing items method"""
     assert empty_map.items() == []
@@ -179,6 +215,17 @@ def test_items(zoo):
         (17, "dolphin"),
         (31, "flamingo"),
         (54, "aardvark"),
+    ]
+
+
+def test_items_edge(edge):
+    """Testing items method"""
+    assert edge.items() == [
+        (0, "Audi"),
+        (400, False),
+        (300, None),
+        (200, "Chevy"),
+        (100, "Bentley"),
     ]
 
 

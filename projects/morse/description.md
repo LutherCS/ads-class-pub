@@ -69,21 +69,3 @@ _Decode_ a message using the Morse code tree.
 3. Letter retrieval function is properly implemented.
 4. Recursive code retrieval function is properly implemented.
 5. Pass all unit tests.
-
-## What to do
-
-`python3` should be `python3.9` or newer.
-
-- Read _projects/morse/description.md_ (this file).
-- Modify and run _projects/morse/morse.py_.
-
-```bash
-python3 projects/morse/morse.py
-```
-
-- Compare your output to that provided in _projects/morse/morse_output.txt_.
-- Test your implementation.
-
-```bash
-python3 -m pytest projects/morse/morse_test.py
-```

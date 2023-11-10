@@ -3,7 +3,7 @@
 `morse` implementation and driver
 
 @authors: Roman Yasinovskyy
-@version: 2021.11
+@version: 2023.11
 """
 
 import pathlib
@@ -17,7 +17,7 @@ class Coder:
     def __init__(self, file_in: str):
         self.morse_tree = BinaryTree("")
 
-        with open(file_in) as morse_file:
+        with open(file_in, "r", encoding="utf8") as morse_file:
             for line in morse_file:
                 letter, code = line.split()
                 self.follow_and_insert(code, letter)

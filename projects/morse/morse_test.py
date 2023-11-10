@@ -3,7 +3,7 @@
 `morse` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.11
+@version: 2023.11
 """
 
 import pathlib
@@ -38,7 +38,7 @@ def test_init_error():
     exception_message = excinfo.value.args[0]
     assert (
         exception_message
-        == "__init__() missing 1 required positional argument: 'file_in'"
+        == "Coder.__init__() missing 1 required positional argument: 'file_in'"
     )
 
 

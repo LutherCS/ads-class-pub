@@ -143,7 +143,7 @@ class HashMap:
 
 
 def main():
-    """MAin function"""
+    """Main function"""
     my_map = HashMap(5)
     print("Map (empty)")
     print("Expected output: {}")

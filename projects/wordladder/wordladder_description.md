@@ -54,22 +54,3 @@ The attached input dictionary is simply a text file with 12,000 words. You will 
 5. Build the word ladder solution using all of the parts above.
 
 Whether you are using a `Stack` or a `deque` object, make sure you are creating a deep copy (clone) of those objects and not shallow copies. A properly created `clone` is a brand new stack, with the same set of words pushed onto the new stack in the same order as the stack you are cloning. Many people get this wrong by making a new stack but using something like `newstack.items = self.items`. This statement makes the items of the `newstack` reference the same list as the current stack, which means that if you push something on to `newstack` it will also be pushed onto the old stack as well.
-
-## What to do
-
-`python3` should be `python3.9` or newer.
-
-- Read _projects/wordladder/wordladder_description.md_ (this file).
-- Modify and run _projects/wordladder/wordladder.py_.
-
-```bash
-python3 projects/wordladder/wordladder.py
-```
-
-- Compare your output to that provided in _projects/wordladder/wordladder_output.txt_.
-- _projects/wordladder/wordladder_output_debug.txt_ shows some intermediate steps when turning _stone_ into _water_.
-- Test your implementation.
-
-```bash
-python3 -m pytest projects/wordladder/wordladder_test.py
-```

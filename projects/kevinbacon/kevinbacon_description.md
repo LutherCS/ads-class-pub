@@ -78,21 +78,3 @@ Buster Keaton's Kevin Bacon number is 3
 8. User input is processed properly
 9. Produced output is correct
 10. Application is efficient
-
-## What to do
-
-`python` should be `python3.9` or newer.
-
-- Read _projects/kevinbacon/kevinbacon_description.md_ (this file).
-- Modify and run _projects/kevinbacon/kevinbacon.py_.
-
-```bash
-python projects/kevinbacon/kevinbacon.py
-```
-
-- Compare your output to that provided in _projects/kevinbacon/kevinbacon_output.txt_.
-- Test your implementation.
-
-```bash
-python -m pytest projects/kevinbacon/kevinbacon_test.py
-```

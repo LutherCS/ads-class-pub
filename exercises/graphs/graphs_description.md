@@ -13,20 +13,3 @@ Complete the following tasks and submit your source code to KATIE as a single fi
 4. Add `size` method to the textbook implementation of the `Graph` class. It should print the number of edges in a graph. For the sake of simplicity, count edges from `a` to `b` and from `b` to `a` as a single edge.
 
 5. Add `hub` property to the textbook implementation of the `Graph` class. It should return the vertex with the most **outgoing** connections (edges).
-
-## What to do
-
-`python3` should be `python3.9` or newer.
-
-- Read _exercises/graphs/graphs_description.md_ (this file).
-- Modify nd run _exercises/graphs/graphs.py_.
-
-```bash
-python3 exercises/graphs/graphs.py
-```
-
-- Test your implementation.
-
-```bash
-python3 -m pytest exercises/graphs/graphs_test.py
-```

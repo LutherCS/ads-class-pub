@@ -3,7 +3,7 @@
 `wordladder` testing
 
 @authors: Roman Yasinovskyy, Karina Hoff
-@version: 2021.11
+@version: 2023.12
 """
 
 import pathlib
@@ -34,7 +34,7 @@ def test_init_error():
     exception_message = excinfo.value.args[0]
     assert (
         exception_message
-        == "__init__() missing 1 required positional argument: 'filename'"
+        == "Solver.__init__() missing 1 required positional argument: 'filename'"
     )
 
 

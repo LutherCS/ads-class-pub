@@ -74,8 +74,8 @@ import sys
 def main(filename):
     print(f"Processing file {filename}")
 
-    if __name__ == '__main__':
-        main(sys.argv[1])
+if __name__ == '__main__':
+    main(sys.argv[1])
 ```
 
 - Test project _hello_

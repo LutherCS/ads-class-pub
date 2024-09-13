@@ -1,7 +1,4 @@
-colorama==0.4.6
-iniconfig==2.0.0
-packaging==24.1
-pluggy==1.5.0
-pytest==8.3.3
-pytest-timeout==2.3.1
-pythonds3==3.1.0
+colorama
+pytest
+pytest-timeout
+pythonds3
